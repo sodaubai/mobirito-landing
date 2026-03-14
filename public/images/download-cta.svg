@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 460" fill="none">
+  <!-- Phone with app + driving context -->
+  <rect x="40" y="10" width="200" height="420" rx="24" fill="#111" stroke="#333" stroke-width="2"/>
+  <rect x="52" y="32" width="176" height="376" rx="4" fill="#0a0a1a"/>
+  <!-- Map -->
+  <rect x="52" y="50" width="176" height="270" fill="#0f1729"/>
+  <!-- Japanese road pattern -->
+  <g stroke="rgba(255,255,255,0.12)" stroke-width="1.5">
+    <path d="M52 120 L228 120" /><path d="M52 180 L228 180"/>
+    <path d="M52 240 L228 240"/><path d="M120 50 L120 320"/>
+    <path d="M170 50 L170 320"/>
+  </g>
+  <!-- Active route -->
+  <path d="M80 300 L80 180 L120 180 L120 100 L190 100" stroke="#F15A22" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <circle cx="80" cy="300" r="6" fill="#F15A22"/>
+  <circle cx="80" cy="300" r="10" fill="#F15A22" opacity="0.2"/>
+  <!-- Warning popup -->
+  <rect x="130" y="140" width="90" height="50" rx="8" fill="rgba(241,90,34,0.95)"/>
+  <polygon points="155,190 160,198 165,190" fill="rgba(241,90,34,0.95)"/>
+  <text x="175" y="158" text-anchor="middle" fill="#fff" font-size="8" font-family="sans-serif" font-weight="700">Cảnh báo</text>
+  <text x="175" y="172" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="7" font-family="sans-serif">Ngõ hẹp 1.8m</text>
+  <text x="175" y="184" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7" font-family="sans-serif">Đang tìm đường khác...</text>
+  <!-- Bottom nav panel -->
+  <rect x="52" y="324" width="176" height="84" fill="#111"/>
+  <rect x="62" y="334" width="34" height="34" rx="8" fill="#F15A22"/>
+  <text x="79" y="356" text-anchor="middle" fill="#fff" font-size="14" font-family="sans-serif" font-weight="700">↗</text>
+  <text x="108" y="350" fill="#fff" font-size="10" font-family="sans-serif" font-weight="600">Đi thẳng 500m</text>
+  <text x="108" y="364" fill="rgba(255,255,255,0.5)" font-size="8" font-family="sans-serif">Tuyến an toàn • 12 phút</text>
+  <!-- Language selector -->
+  <g transform="translate(62, 380)">
+    <rect width="36" height="20" rx="10" fill="#F15A22"/>
+    <text x="18" y="14" text-anchor="middle" fill="#fff" font-size="8" font-family="sans-serif" font-weight="600">VN</text>
+    <rect x="42" width="28" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
+    <text x="56" y="14" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8" font-family="sans-serif">EN</text>
+    <rect x="76" width="28" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
+    <text x="90" y="14" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8" font-family="sans-serif">JP</text>
+  </g>
+  <!-- Navinext branding -->
+  <text x="140" y="445" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-size="10" font-family="sans-serif" font-weight="600">navinext</text>
+</svg>

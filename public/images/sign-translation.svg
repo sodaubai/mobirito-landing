@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" fill="none">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="480" y2="360">
+      <stop offset="0%" stop-color="#1E1E1E"/>
+      <stop offset="100%" stop-color="#2C2C2C"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="360" rx="24" fill="url(#bg2)"/>
+  <!-- Phone frame -->
+  <rect x="150" y="30" width="180" height="300" rx="20" fill="#111" stroke="#444" stroke-width="2"/>
+  <rect x="160" y="50" width="160" height="240" rx="4" fill="#1a1a2e"/>
+  <!-- Camera viewfinder lines -->
+  <g stroke="#F15A22" stroke-width="2" opacity="0.6">
+    <path d="M180 80 L180 70 L190 70" fill="none"/>
+    <path d="M300 80 L300 70 L290 70" fill="none"/>
+    <path d="M180 220 L180 230 L190 230" fill="none"/>
+    <path d="M300 220 L300 230 L290 230" fill="none"/>
+  </g>
+  <!-- Japanese sign in camera view -->
+  <rect x="200" y="100" width="80" height="50" rx="4" fill="#2255aa"/>
+  <text x="240" y="122" text-anchor="middle" fill="#fff" font-size="14" font-family="sans-serif" font-weight="700">止まれ</text>
+  <text x="240" y="140" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9" font-family="sans-serif">STOP</text>
+  <!-- Translation arrow -->
+  <path d="M240 158 L240 175" stroke="#F15A22" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <circle cx="240" cy="175" r="3" fill="#F15A22"/>
+  <!-- Vietnamese translation bubble -->
+  <rect x="185" y="182" width="110" height="36" rx="8" fill="#F15A22"/>
+  <polygon points="235,182 240,174 245,182" fill="#F15A22"/>
+  <text x="240" y="198" text-anchor="middle" fill="#fff" font-size="11" font-family="sans-serif" font-weight="700">DỪNG LẠI</text>
+  <text x="240" y="212" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="8" font-family="sans-serif">Biển báo dừng</text>
+  <!-- AI badge -->
+  <rect x="170" y="248" width="50" height="22" rx="11" fill="#F15A22" opacity="0.2"/>
+  <text x="195" y="263" text-anchor="middle" fill="#F15A22" font-size="9" font-family="sans-serif" font-weight="700">AI</text>
+  <!-- Accuracy badge -->
+  <rect x="230" y="248" width="80" height="22" rx="11" fill="rgba(255,255,255,0.1)"/>
+  <text x="270" y="263" text-anchor="middle" fill="#fff" font-size="9" font-family="sans-serif">99% chính xác</text>
+  <!-- Floating signs around phone -->
+  <g opacity="0.4">
+    <rect x="60" y="80" width="50" height="30" rx="4" fill="#cc3333"/>
+    <text x="85" y="100" text-anchor="middle" fill="#fff" font-size="8" font-family="sans-serif">速度制限</text>
+    <rect x="370" y="120" width="60" height="30" rx="4" fill="#2255aa"/>
+    <text x="400" y="140" text-anchor="middle" fill="#fff" font-size="8" font-family="sans-serif">一方通行</text>
+    <rect x="80" y="240" width="45" height="30" rx="4" fill="#ffcc00"/>
+    <text x="102" y="260" text-anchor="middle" fill="#333" font-size="8" font-family="sans-serif">注意</text>
+    <rect x="380" y="230" width="55" height="30" rx="4" fill="#cc3333"/>
+    <text x="407" y="250" text-anchor="middle" fill="#fff" font-size="8" font-family="sans-serif">進入禁止</text>
+  </g>
+</svg>

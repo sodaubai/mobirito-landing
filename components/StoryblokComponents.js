@@ -183,10 +183,7 @@ function HeroSection({ blok }) {
           {blok.hero_image?.filename ? (
             <img src={blok.hero_image.filename} alt={blok.hero_image.alt || "Hero"} style={{maxHeight:500,borderRadius:16,objectFit:"contain",width:"100%"}} />
           ) : (
-            <div style={{width:280,height:480,background:"rgba(255,255,255,0.15)",borderRadius:32,margin:"0 auto",backdropFilter:"blur(10px)",padding:24}}>
-              <div style={{color:"#fff",fontSize:14,opacity:0.7,marginBottom:8}}>Balance</div>
-              <div style={{color:"#fff",fontSize:28,fontWeight:800}}>$15,378.32</div>
-            </div>
+            <img src="/images/app-showcase.svg" alt="Navinext App" style={{maxHeight:500,margin:"0 auto"}} />
           )}
         </div>
       </div>
@@ -225,11 +222,11 @@ function ImageTextBlock({ blok }) {
     <section className={`section${bgClass}`}>
       <div className="container">
         <div className={`img-text${isRight ? " reversed" : ""}`}>
-          <div style={{background:"linear-gradient(135deg,#2C2C2C,#C74A1B)",borderRadius:24,minHeight:380,display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden"}}>
+          <div style={{borderRadius:24,minHeight:380,display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden"}}>
             {blok.image?.filename ? (
               <img src={blok.image.filename} alt={blok.image.alt || blok.heading || ""} style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:24}} />
             ) : (
-              <div style={{width:200,height:360,background:"rgba(255,255,255,0.2)",borderRadius:24}} />
+              <img src={isRight ? "/images/sign-translation.svg" : "/images/narrow-road-avoid.svg"} alt={blok.heading || ""} style={{width:"100%",borderRadius:24}} />
             )}
           </div>
           <div>
@@ -253,11 +250,7 @@ function AppShowcase({ blok }) {
         {blok.image?.filename ? (
           <img src={blok.image.filename} alt={blok.image.alt || "App showcase"} style={{maxHeight:440,borderRadius:28,margin:"0 auto",objectFit:"contain"}} />
         ) : (
-          <div style={{width:260,height:440,background:"rgba(255,255,255,0.2)",borderRadius:28,margin:"0 auto",padding:24}}>
-            <div style={{color:"#fff",fontSize:12,marginBottom:8}}>← My Wallet</div>
-            <div style={{color:"#fff",fontSize:13,opacity:0.7}}>Available Balance</div>
-            <div style={{color:"#fff",fontSize:32,fontWeight:800}}>$23,215.57</div>
-          </div>
+          <img src="/images/app-showcase.svg" alt="Navinext App" style={{maxHeight:480,margin:"0 auto",objectFit:"contain"}} />
         )}
       </div>
     </section>
@@ -348,10 +341,7 @@ function AppDownloadCta({ blok }) {
           {blok.image?.filename ? (
             <img src={blok.image.filename} alt={blok.image.alt || "App"} style={{maxHeight:420,borderRadius:28,margin:"0 auto",objectFit:"contain"}} />
           ) : (
-            <div style={{width:240,height:420,background:"rgba(255,255,255,0.3)",borderRadius:28,margin:"0 auto",padding:24}}>
-              <div style={{fontSize:12,marginBottom:8,color:"#fff"}}>Balance</div>
-              <div style={{fontSize:24,fontWeight:800,color:"#fff"}}>$15,378.32</div>
-            </div>
+            <img src="/images/download-cta.svg" alt="Navinext App" style={{maxHeight:460,margin:"0 auto",objectFit:"contain"}} />
           )}
         </div>
       </div>
