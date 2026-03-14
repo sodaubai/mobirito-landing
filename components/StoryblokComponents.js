@@ -25,7 +25,7 @@ function FeatureCard({ blok }) {
   return (
     <div className="card">
       <div className={`icon ${colorClass}`}>
-        {blok.icon_color === "orange" ? "🔒" : blok.icon_color === "blue" ? "📱" : "🔄"}
+        {blok.icon_color === "orange" ? <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> : blok.icon_color === "blue" ? <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg> : <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>}
       </div>
       <h3>{blok.title}</h3>
       <p>{blok.description}</p>
@@ -97,8 +97,14 @@ function FaqItem({ blok }) {
 }
 
 function SocialLink({ blok }) {
-  const icons = { facebook: "f", twitter: "𝕏", discord: "D", linkedin: "in", instagram: "📷" };
-  return <a href={blok.url?.url || "#"} className="social-icon">{icons[blok.platform] || blok.platform?.[0]}</a>;
+  const svgIcons = {
+    facebook: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>,
+    twitter: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>,
+    discord: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>,
+    linkedin: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>,
+    instagram: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>,
+  };
+  return <a href={blok.url?.url || "#"} className="social-icon">{svgIcons[blok.platform] || blok.platform?.[0]}</a>;
 }
 
 function FooterColumn({ blok }) {
@@ -211,7 +217,7 @@ function ImageTextBlock({ blok }) {
     <section className={`section${bgClass}`}>
       <div className="container">
         <div className={`img-text${isRight ? " reversed" : ""}`}>
-          <div style={{background:"linear-gradient(135deg,#c4b5fd,#f9a8d4)",borderRadius:24,height:380,display:"flex",alignItems:"center",justifyContent:"center"}}>
+          <div style={{background:"linear-gradient(135deg,#2C2C2C,#C74A1B)",borderRadius:24,height:380,display:"flex",alignItems:"center",justifyContent:"center"}}>
             <div style={{width:200,height:360,background:"rgba(255,255,255,0.2)",borderRadius:24}} />
           </div>
           <div>
@@ -315,10 +321,10 @@ function AppDownloadCta({ blok }) {
           <div className="label">{blok.download_label}</div>
           <div className="stores">
             <a href={blok.app_store_url?.url || "#"} className="store-badge">
-              <span>🍎</span><div><div className="small">Available on the</div><div className="name">App Store</div></div>
+              <svg width="20" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83"/><path d="M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11"/></svg><div><div className="small">Available on the</div><div className="name">App Store</div></div>
             </a>
             <a href={blok.play_store_url?.url || "#"} className="store-badge">
-              <span>▶</span><div><div className="small">Available on</div><div className="name">Play Store</div></div>
+              <svg width="20" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.144 1.24a1 1 0 0 1 0 1.732l-2.144 1.24-2.53-2.53 2.53-2.682zM5.864 3.458L16.8 9.79l-2.302 2.302-8.634-8.634z"/></svg><div><div className="small">Available on</div><div className="name">Play Store</div></div>
             </a>
           </div>
         </div>
@@ -340,7 +346,7 @@ function SiteFooter({ blok }) {
         <div className="footer-grid">
           <div className="brand-col">
             <div className="logo" style={{display:"flex",alignItems:"center",gap:8}}>
-              <div style={{width:32,height:32,background:"linear-gradient(135deg,#6c5ce7,#a855f7)",borderRadius:"50%"}} />
+              <div style={{width:32,height:32,background:"linear-gradient(135deg,var(--orange),var(--orange-dark))",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center"}} />
               <strong>{blok.brand_name}</strong>
             </div>
             <p className="tagline">{blok.tagline}</p>
@@ -372,7 +378,7 @@ function PageHeroBanner({ blok }) {
 }
 
 function StatsBar({ blok }) {
-  const bg = blok.background === "gradient_warm" ? {background:"linear-gradient(135deg,#fecaca,#fed7aa)",borderRadius:16,padding:"40px 32px"} : {};
+  const bg = blok.background === "gradient_warm" ? {background:"linear-gradient(135deg,#1E1E1E,#C74A1B)",borderRadius:16,padding:"40px 32px"} : {};
   return (
     <section className="section"><div className="container">
       <div style={{display:"grid",gridTemplateColumns:`repeat(${blok.stats?.length||4},1fr)`,gap:24,textAlign:"center",...bg}}>
@@ -414,7 +420,7 @@ function ServicesGrid({ blok }) {
       <h2 className="section-heading" style={{textAlign:"center"}}>{blok.heading}</h2>
       <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24,marginTop:32}}>
         {blok.services?.map(s=>(
-          <div key={s._uid} style={{background:s.is_highlighted?"linear-gradient(135deg,#f472b6,#fbbf24)":"#fff",color:s.is_highlighted?"#fff":"inherit",borderRadius:16,padding:32,border:s.is_highlighted?"none":"1px solid #eee"}}>
+          <div key={s._uid} style={{background:s.is_highlighted?"linear-gradient(135deg,#1E1E1E,#C74A1B)":"#fff",color:s.is_highlighted?"#fff":"inherit",borderRadius:16,padding:32,border:s.is_highlighted?"none":"1px solid #eee"}}>
             <h3 style={{fontSize:18,fontWeight:700,marginBottom:8}}>{s.title}</h3>
             <p style={{fontSize:14,color:s.is_highlighted?"rgba(255,255,255,0.8)":"var(--gray-400)",marginBottom:12}}>{s.description}</p>
             <a href={s.link_url?.url||"#"} style={{fontSize:14,fontWeight:600}}>{s.link_text}</a>
@@ -427,7 +433,7 @@ function ServicesGrid({ blok }) {
 
 function NewsletterSection({ blok }) {
   return (
-    <section className="section" style={{background:"linear-gradient(135deg,#c4e0f9,#e8b8f0,#c9a0f5)",padding:"60px 0"}}>
+    <section className="section" style={{background:"linear-gradient(135deg,#0D0D0D,#1E1E1E,#C74A1B)",padding:"60px 0",color:"#fff"}}>
       <div className="container" style={{textAlign:"center",maxWidth:600}}>
         <h2 className="section-heading">{blok.heading}</h2>
         <div className="section-desc" style={{margin:"0 auto 24px"}}>{renderText(blok.description)}</div>
@@ -450,7 +456,7 @@ function PortfolioGrid({ blok }) {
       </div>
       <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16}}>
         {blok.items?.map(p=>(
-          <div key={p._uid} style={{gridColumn:p.column_span==="2"?"span 2":"span 1",background:"linear-gradient(135deg,#c4b5fd,#e9d5ff)",borderRadius:12,height:p.column_span==="2"?280:200}}/>
+          <div key={p._uid} style={{gridColumn:p.column_span==="2"?"span 2":"span 1",background:"linear-gradient(135deg,#1E1E1E,#C74A1B)",borderRadius:12,height:p.column_span==="2"?280:200}}/>
         ))}
       </div>
     </div></section>
@@ -460,7 +466,7 @@ function PortfolioGrid({ blok }) {
 function PortfolioCaseStudy({ blok }) {
   return (
     <section className="section"><div className="container">
-      <div style={{background:"linear-gradient(135deg,#c4b5fd,#ddd6fe)",borderRadius:24,height:300,marginBottom:32}}/>
+      <div style={{background:"linear-gradient(135deg,#0D0D0D,#C74A1B)",borderRadius:24,height:300,marginBottom:32}}/>
       <div style={{display:"grid",gridTemplateColumns:"2fr 1fr",gap:40}}>
         <div>
           <h2 style={{fontSize:28,fontWeight:800,marginBottom:8}}>{blok.title}</h2>
@@ -488,7 +494,7 @@ function ClientFeedback({ blok }) {
     <section className="section bg-light"><div className="container" style={{maxWidth:800}}>
       <h2 className="section-heading" style={{textAlign:"center"}}>{blok.heading}</h2>
       <div style={{display:"grid",gridTemplateColumns:"1fr 2fr",gap:32,marginTop:32,background:"#fff",borderRadius:16,overflow:"hidden"}}>
-        <div style={{background:"linear-gradient(135deg,#fecaca,#fed7aa,#fef08a)",padding:32,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
+        <div style={{background:"linear-gradient(135deg,#F15A22,#C74A1B)",padding:32,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
           <div style={{width:80,height:80,borderRadius:"50%",background:"#e0e0e0",marginBottom:12}}/>
           <div style={{fontWeight:700}}>{blok.name}</div>
           <div style={{fontSize:13,color:"var(--gray-400)"}}>{blok.role}</div>
@@ -507,7 +513,7 @@ function ProjectsGrid({ blok }) {
         <a href={blok.link_url?.url||"#"} style={{fontSize:14,fontWeight:600,color:"var(--purple)"}}>{blok.link_label}</a>
       </div>
       <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16}}>
-        {blok.items?.map(p=><div key={p._uid} style={{background:"linear-gradient(135deg,#c4b5fd,#e9d5ff)",borderRadius:12,height:200}}/>)}
+        {blok.items?.map(p=><div key={p._uid} style={{background:"linear-gradient(135deg,#1E1E1E,#C74A1B)",borderRadius:12,height:200}}/>)}
       </div>
     </div></section>
   );
@@ -548,9 +554,9 @@ function ContactHero({ blok }) {
             <h1 style={{color:"#fff",fontSize:36}}>{blok.heading}</h1>
           </div>
           <div style={{display:"flex",gap:16}}>
-            {[{icon:"📞",label:blok.phone_label,value:blok.phone_number},{icon:"✉️",label:blok.email_label,value:blok.email_address}].map((c,i)=>(
+            {[{icon:"phone",label:blok.phone_label,value:blok.phone_number},{icon:"email",label:blok.email_label,value:blok.email_address}].map((c,i)=>(
               <div key={i} style={{background:"#fff",borderRadius:16,padding:24,flex:1}}>
-                <div style={{fontSize:24,marginBottom:8}}>{c.icon}</div>
+                <div style={{marginBottom:8}}>{c.icon==="phone" ? <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F15A22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> : <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F15A22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>}</div>
                 <div style={{fontWeight:600,marginBottom:4}}>{c.label}</div>
                 <div style={{fontSize:14,color:"var(--gray-400)"}}>{c.value}</div>
               </div>
@@ -572,7 +578,7 @@ function ContactForm({ blok }) {
           <div style={{display:"flex",flexDirection:"column",gap:16}}>
             {blok.social_links?.map(s=>(
               <div key={s._uid} style={{display:"flex",alignItems:"center",gap:12}}>
-                <div style={{width:36,height:36,borderRadius:"50%",background:s.platform==="instagram"?"#e4405f":s.platform==="facebook"?"#1877f2":"#1da1f2",display:"flex",alignItems:"center",justifyContent:"center",color:"#fff",fontSize:12}}>{s.platform?.[0]?.toUpperCase()}</div>
+                <div style={{width:36,height:36,borderRadius:"50%",background:"var(--orange)",display:"flex",alignItems:"center",justifyContent:"center",color:"#fff",fontSize:12}}>{s.platform==="facebook"?<svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>:s.platform==="instagram"?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg>:<svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>}</div>
                 <span style={{fontSize:14}}>{s.handle||s.platform}</span>
               </div>
             ))}
@@ -600,7 +606,7 @@ function ContactForm({ blok }) {
 function CtaBanner({ blok }) {
   return (
     <section className="section"><div className="container">
-      <div style={{background:"linear-gradient(135deg,#c4e0f9,#e8b8f0,#c9a0f5)",borderRadius:24,padding:60,textAlign:"center"}}>
+      <div style={{background:"linear-gradient(135deg,#0D0D0D,#1E1E1E,#C74A1B)",borderRadius:24,padding:60,textAlign:"center"}}>
         <h2 className="section-heading">{blok.heading}</h2>
         <div style={{color:"var(--gray-600)",maxWidth:500,margin:"0 auto 24px"}}>{renderText(blok.body)}</div>
         <a className="btn btn-dark" href={blok.cta_link?.url||"#"}>{blok.cta_label}</a>
