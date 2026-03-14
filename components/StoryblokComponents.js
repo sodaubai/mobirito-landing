@@ -20,13 +20,27 @@ function BulletItem({ blok }) {
   return <li>{blok.text}</li>;
 }
 
-function FeatureCard({ blok }) {
+const painPointImages = {
+  "Rào Cản Ngôn Ngữ": "/images/pain-language-barrier.svg",
+  "Ma Trận Cao Tốc": "/images/pain-highway-maze.svg",
+  '"Bẫy" Ngõ Hẹp': "/images/pain-narrow-trap.svg",
+  "GPS Lỗi Thời": "/images/pain-outdated-gps.svg",
+};
+
+function FeatureCard({ blok, showImage }) {
   const colorClass = `icon-${blok.icon_color || "orange"}`;
+  const imgSrc = blok.image?.filename || painPointImages[blok.title];
   return (
     <div className="card">
-      <div className={`icon ${colorClass}`}>
-        {blok.icon_color === "orange" ? <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> : blok.icon_color === "blue" ? <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg> : <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>}
-      </div>
+      {showImage && imgSrc ? (
+        <div className="card-img">
+          <img src={imgSrc} alt={blok.title} style={{width:"100%",height:160,objectFit:"cover",borderRadius:12,marginBottom:12}} />
+        </div>
+      ) : (
+        <div className={`icon ${colorClass}`}>
+          {blok.icon_color === "orange" ? <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> : blok.icon_color === "blue" ? <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg> : <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>}
+        </div>
+      )}
       <h3>{blok.title}</h3>
       <p>{blok.description}</p>
     </div>
@@ -209,7 +223,7 @@ function FeaturesGrid({ blok }) {
       <div className="container" style={{textAlign:"center"}}>
         <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center",color:isDark?"#fff":undefined}}>{blok.heading}</h2>
         {blok.description && <p className="section-desc" style={{margin:"0 auto",color:isDark?"rgba(255,255,255,0.7)":undefined}}>{blok.description}</p>}
-        <div className="cards">{blok.features?.map((f) => <FeatureCard key={f._uid} blok={f} />)}</div>
+        <div className="cards">{blok.features?.map((f) => <FeatureCard showImage={isDark} key={f._uid} blok={f} />)}</div>
       </div>
     </section>
   );
@@ -329,9 +343,7 @@ function AppDownloadCta({ blok }) {
           <p>{blok.body}</p>
           <div className="label">{blok.download_label}</div>
           <div className="stores">
-            <a href={blok.app_store_url?.url || "#"} className="store-badge">
-              <svg width="20" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83"/><path d="M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11"/></svg><div><div className="small">Available on the</div><div className="name">App Store</div></div>
-            </a>
+
             <a href={blok.play_store_url?.url || "#"} className="store-badge">
               <svg width="20" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.144 1.24a1 1 0 0 1 0 1.732l-2.144 1.24-2.53-2.53 2.53-2.682zM5.864 3.458L16.8 9.79l-2.302 2.302-8.634-8.634z"/></svg><div><div className="small">Available on</div><div className="name">Play Store</div></div>
             </a>
