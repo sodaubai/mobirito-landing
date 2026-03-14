@@ -143,10 +143,9 @@ function SiteNavbar({ blok }) {
     <header style={{position:"absolute",width:"100%",zIndex:10}}>
       <div className="container">
         <div className="navbar">
-          <div className="logo">
-            <div className="logo-icon" />
-            <span style={{color:"#fff"}}>{blok.logo_text}</span>
-          </div>
+          <a className="logo" href="/">
+            <img src="/navinext-logo.svg" alt="Navinext" className="logo-img" />
+          </a>
           <nav>{blok.nav_items?.map((i) => <NavItem key={i._uid} blok={i} />)}</nav>
           <div className="nav-actions">
             <a className="login" href={blok.login_link?.url || "#"}>{blok.login_label}</a>
@@ -163,7 +162,7 @@ function HeroSection({ blok }) {
     <section className="hero">
       <div className="container">
         <div>
-          <h1>{blok.headline}</h1>
+          <h1 style={{fontSize:blok.headline_size||undefined}}>{blok.headline}</h1>
           <p>{blok.subtext}</p>
           <div className="ctas">
             <a className="btn btn-primary" href={blok.primary_cta_link?.url || "#"}>{blok.primary_cta_label}</a>
@@ -202,7 +201,7 @@ function FeaturesGrid({ blok }) {
   return (
     <section className="section features-grid">
       <div className="container" style={{textAlign:"center"}}>
-        <h2 className="section-heading">{blok.heading}</h2>
+        <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center"}}>{blok.heading}</h2>
         {blok.description && <p className="section-desc" style={{margin:"0 auto"}}>{blok.description}</p>}
         <div className="cards">{blok.features?.map((f) => <FeatureCard key={f._uid} blok={f} />)}</div>
       </div>
@@ -221,7 +220,7 @@ function ImageTextBlock({ blok }) {
             <div style={{width:200,height:360,background:"rgba(255,255,255,0.2)",borderRadius:24}} />
           </div>
           <div>
-            <h2>{blok.heading}</h2>
+            <h2 style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||undefined}}>{blok.heading}</h2>
             <div className="body-text">{typeof blok.body === "object" ? renderRichText(blok.body) : blok.body}</div>
             {blok.bullet_items?.length > 0 && (
               <ul className="bullets">{blok.bullet_items.map((b) => <BulletItem key={b._uid} blok={b} />)}</ul>
@@ -252,7 +251,7 @@ function StepsSection({ blok }) {
   return (
     <section className="section steps-section">
       <div className="container">
-        <h2 className="section-heading">{blok.heading}</h2>
+        <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center"}}>{blok.heading}</h2>
         <div className="steps-grid">{blok.steps?.map((s) => <StepItem key={s._uid} blok={s} />)}</div>
       </div>
     </section>
@@ -265,7 +264,7 @@ function TestimonialsSection({ blok }) {
       <div className="container">
         <div className="testimonials-section">
           <div className="header">
-            <h2 className="section-heading">{blok.heading}</h2>
+            <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined}}>{blok.heading}</h2>
             <div className="trustpilot">
               <span className="stars">★★★★★</span> {blok.trustpilot_rating} ({blok.trustpilot_reviews})
             </div>
@@ -284,7 +283,7 @@ function PricingSection({ blok }) {
     <section className="section">
       <div className="pricing-section">
         <div style={{textAlign:"center"}}>
-          <h2 className="section-heading" style={{color:"#fff"}}>{blok.heading}</h2>
+          <h2 className="section-heading" style={{color:"#fff",fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center"}}>{blok.heading}</h2>
           {blok.show_billing_toggle && (
             <div className="toggle">
               <span className="active">{blok.monthly_label}</span>
@@ -303,7 +302,7 @@ function FaqSection({ blok }) {
     <section className="section">
       <div className="container">
         <div className="faq-section">
-          <h2 className="section-heading" style={{textAlign:"center",marginBottom:32}}>{blok.heading}</h2>
+          <h2 className="section-heading" style={{textAlign:blok.heading_align||"center",marginBottom:32,fontSize:blok.heading_size||undefined}}>{blok.heading}</h2>
           {blok.items?.map((i) => <FaqItem key={i._uid} blok={i} />)}
         </div>
       </div>
@@ -346,8 +345,7 @@ function SiteFooter({ blok }) {
         <div className="footer-grid">
           <div className="brand-col">
             <div className="logo" style={{display:"flex",alignItems:"center",gap:8}}>
-              <div style={{width:32,height:32,background:"linear-gradient(135deg,var(--orange),var(--orange-dark))",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center"}} />
-              <strong>{blok.brand_name}</strong>
+              <img src="/navinext-logo.svg" alt="Navinext" style={{height:28,filter:"brightness(0)"}} />
             </div>
             <p className="tagline">{blok.tagline}</p>
           </div>

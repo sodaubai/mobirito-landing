@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Mobirito — Simple & Safe Crypto App",
-  description: "Buy, sell, and trade cryptocurrency with the fastest growing crypto app.",
+  title: "Navinext — AI Car Navigation in Japan",
+  description: "AI Car Navigation in Japan — Giải pháp dẫn đường thông minh cho người lái xe tại Nhật.",
 };
 
 export default function RootLayout({ children }) {
