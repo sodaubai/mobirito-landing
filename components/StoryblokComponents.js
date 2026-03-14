@@ -206,11 +206,12 @@ function LogoBar({ blok }) {
 }
 
 function FeaturesGrid({ blok }) {
+  const isDark = blok.background === "dark";
   return (
-    <section className="section features-grid">
+    <section className={`section features-grid${isDark ? " bg-dark" : ""}`}>
       <div className="container" style={{textAlign:"center"}}>
-        <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center"}}>{blok.heading}</h2>
-        {blok.description && <p className="section-desc" style={{margin:"0 auto"}}>{blok.description}</p>}
+        <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center",color:isDark?"#fff":undefined}}>{blok.heading}</h2>
+        {blok.description && <p className="section-desc" style={{margin:"0 auto",color:isDark?"rgba(255,255,255,0.7)":undefined}}>{blok.description}</p>}
         <div className="cards">{blok.features?.map((f) => <FeatureCard key={f._uid} blok={f} />)}</div>
       </div>
     </section>
