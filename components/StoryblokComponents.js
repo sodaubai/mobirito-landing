@@ -144,7 +144,7 @@ function SiteNavbar({ blok }) {
       <div className="container">
         <div className="navbar">
           <a className="logo" href="/">
-            <img src="/navinext-logo.svg" alt="Navinext" className="logo-img" />
+            <img src={blok.logo?.filename || "/navinext-logo.svg"} alt={blok.logo_text || "Navinext"} className="logo-img" />
           </a>
           <nav>{blok.nav_items?.map((i) => <NavItem key={i._uid} blok={i} />)}</nav>
           <div className="nav-actions">
@@ -169,17 +169,25 @@ function HeroSection({ blok }) {
             <a className="btn btn-secondary" href={blok.secondary_cta_link?.url || "#"}>{blok.secondary_cta_label}</a>
           </div>
           <div className="social-proof">
-            <div style={{display:"flex"}}>
-              {[1,2,3].map(i=><div key={i} style={{width:32,height:32,borderRadius:"50%",background:"#ccc",marginLeft:i>1?-8:0,border:"2px solid #fff"}}/>)}
-            </div>
+            {blok.social_proof_avatars?.filename ? (
+              <img src={blok.social_proof_avatars.filename} alt="Social proof" style={{height:40,borderRadius:8,objectFit:"contain"}} />
+            ) : (
+              <div style={{display:"flex"}}>
+                {[1,2,3].map(i=><div key={i} style={{width:32,height:32,borderRadius:"50%",background:"#ccc",marginLeft:i>1?-8:0,border:"2px solid #fff"}}/>)}
+              </div>
+            )}
             <span>{blok.social_proof_text}</span>
           </div>
         </div>
         <div className="phone-mockup">
-          <div style={{width:280,height:480,background:"rgba(255,255,255,0.15)",borderRadius:32,margin:"0 auto",backdropFilter:"blur(10px)",padding:24}}>
-            <div style={{color:"#fff",fontSize:14,opacity:0.7,marginBottom:8}}>Balance</div>
-            <div style={{color:"#fff",fontSize:28,fontWeight:800}}>$15,378.32</div>
-          </div>
+          {blok.hero_image?.filename ? (
+            <img src={blok.hero_image.filename} alt={blok.hero_image.alt || "Hero"} style={{maxHeight:500,borderRadius:16,objectFit:"contain",width:"100%"}} />
+          ) : (
+            <div style={{width:280,height:480,background:"rgba(255,255,255,0.15)",borderRadius:32,margin:"0 auto",backdropFilter:"blur(10px)",padding:24}}>
+              <div style={{color:"#fff",fontSize:14,opacity:0.7,marginBottom:8}}>Balance</div>
+              <div style={{color:"#fff",fontSize:28,fontWeight:800}}>$15,378.32</div>
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -216,8 +224,12 @@ function ImageTextBlock({ blok }) {
     <section className={`section${bgClass}`}>
       <div className="container">
         <div className={`img-text${isRight ? " reversed" : ""}`}>
-          <div style={{background:"linear-gradient(135deg,#2C2C2C,#C74A1B)",borderRadius:24,height:380,display:"flex",alignItems:"center",justifyContent:"center"}}>
-            <div style={{width:200,height:360,background:"rgba(255,255,255,0.2)",borderRadius:24}} />
+          <div style={{background:"linear-gradient(135deg,#2C2C2C,#C74A1B)",borderRadius:24,minHeight:380,display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden"}}>
+            {blok.image?.filename ? (
+              <img src={blok.image.filename} alt={blok.image.alt || blok.heading || ""} style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:24}} />
+            ) : (
+              <div style={{width:200,height:360,background:"rgba(255,255,255,0.2)",borderRadius:24}} />
+            )}
           </div>
           <div>
             <h2 style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||undefined}}>{blok.heading}</h2>
@@ -237,11 +249,15 @@ function AppShowcase({ blok }) {
   return (
     <section className="section">
       <div className="app-showcase">
-        <div style={{width:260,height:440,background:"rgba(255,255,255,0.2)",borderRadius:28,margin:"0 auto",padding:24}}>
-          <div style={{color:"#fff",fontSize:12,marginBottom:8}}>← My Wallet</div>
-          <div style={{color:"#fff",fontSize:13,opacity:0.7}}>Available Balance</div>
-          <div style={{color:"#fff",fontSize:32,fontWeight:800}}>$23,215.57</div>
-        </div>
+        {blok.image?.filename ? (
+          <img src={blok.image.filename} alt={blok.image.alt || "App showcase"} style={{maxHeight:440,borderRadius:28,margin:"0 auto",objectFit:"contain"}} />
+        ) : (
+          <div style={{width:260,height:440,background:"rgba(255,255,255,0.2)",borderRadius:28,margin:"0 auto",padding:24}}>
+            <div style={{color:"#fff",fontSize:12,marginBottom:8}}>← My Wallet</div>
+            <div style={{color:"#fff",fontSize:13,opacity:0.7}}>Available Balance</div>
+            <div style={{color:"#fff",fontSize:32,fontWeight:800}}>$23,215.57</div>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -328,10 +344,14 @@ function AppDownloadCta({ blok }) {
           </div>
         </div>
         <div style={{textAlign:"center"}}>
-          <div style={{width:240,height:420,background:"rgba(255,255,255,0.3)",borderRadius:28,margin:"0 auto",padding:24}}>
-            <div style={{fontSize:12,marginBottom:8}}>Balance</div>
-            <div style={{fontSize:24,fontWeight:800}}>$15,378.32</div>
-          </div>
+          {blok.image?.filename ? (
+            <img src={blok.image.filename} alt={blok.image.alt || "App"} style={{maxHeight:420,borderRadius:28,margin:"0 auto",objectFit:"contain"}} />
+          ) : (
+            <div style={{width:240,height:420,background:"rgba(255,255,255,0.3)",borderRadius:28,margin:"0 auto",padding:24}}>
+              <div style={{fontSize:12,marginBottom:8,color:"#fff"}}>Balance</div>
+              <div style={{fontSize:24,fontWeight:800,color:"#fff"}}>$15,378.32</div>
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -345,7 +365,8 @@ function SiteFooter({ blok }) {
         <div className="footer-grid">
           <div className="brand-col">
             <div className="logo" style={{display:"flex",alignItems:"center",gap:8}}>
-              <img src="/navinext-logo.svg" alt="Navinext" style={{height:28,filter:"brightness(0)"}} />
+              <img src="/navinext-logo.svg" alt={blok.brand_name || "Navinext"} style={{height:28,filter:"brightness(0)"}} />
+              <strong>{blok.brand_name}</strong>
             </div>
             <p className="tagline">{blok.tagline}</p>
           </div>
