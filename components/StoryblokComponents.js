@@ -2,6 +2,14 @@
 import FaqDetails from "./FaqDetails";
 import { renderRichText } from "../lib/richtext";
 
+
+function renderText(val) {
+  if (!val) return null;
+  if (typeof val === "string") return val;
+  if (typeof val === "object" && val.type === "doc") return renderRichText(val);
+  return String(val);
+}
+
 // =================== ATOMS ===================
 
 function NavItem({ blok }) {
@@ -422,7 +430,7 @@ function NewsletterSection({ blok }) {
     <section className="section" style={{background:"linear-gradient(135deg,#c4e0f9,#e8b8f0,#c9a0f5)",padding:"60px 0"}}>
       <div className="container" style={{textAlign:"center",maxWidth:600}}>
         <h2 className="section-heading">{blok.heading}</h2>
-        <p className="section-desc" style={{margin:"0 auto 24px"}}>{blok.description}</p>
+        <div className="section-desc" style={{margin:"0 auto 24px"}}>{renderText(blok.description)}</div>
         <div style={{display:"flex",gap:8}}>
           <input style={{flex:1,padding:"14px 20px",borderRadius:50,border:"1px solid #ddd",fontSize:15}} placeholder={blok.input_placeholder}/>
           <button className="btn btn-dark">{blok.button_label}</button>
@@ -560,7 +568,7 @@ function ContactForm({ blok }) {
       <div style={{display:"grid",gridTemplateColumns:"1fr 2fr",gap:60}}>
         <div>
           <h2 style={{fontSize:28,fontWeight:800,marginBottom:12}}>{blok.heading}</h2>
-          <p style={{color:"var(--gray-400)",marginBottom:24}}>{blok.description}</p>
+          <div style={{color:"var(--gray-400)",marginBottom:24}}>{renderText(blok.description)}</div>
           <div style={{display:"flex",flexDirection:"column",gap:16}}>
             {blok.social_links?.map(s=>(
               <div key={s._uid} style={{display:"flex",alignItems:"center",gap:12}}>
@@ -594,7 +602,7 @@ function CtaBanner({ blok }) {
     <section className="section"><div className="container">
       <div style={{background:"linear-gradient(135deg,#c4e0f9,#e8b8f0,#c9a0f5)",borderRadius:24,padding:60,textAlign:"center"}}>
         <h2 className="section-heading">{blok.heading}</h2>
-        <p style={{color:"var(--gray-600)",maxWidth:500,margin:"0 auto 24px"}}>{blok.body}</p>
+        <div style={{color:"var(--gray-600)",maxWidth:500,margin:"0 auto 24px"}}>{renderText(blok.body)}</div>
         <a className="btn btn-dark" href={blok.cta_link?.url||"#"}>{blok.cta_label}</a>
       </div>
     </div></section>
