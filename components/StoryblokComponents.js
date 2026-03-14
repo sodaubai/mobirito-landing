@@ -1,5 +1,6 @@
-"use client";
-import { render } from "storyblok-rich-text-react-renderer";
+
+import FaqDetails from "./FaqDetails";
+import { renderRichText } from "../lib/richtext";
 
 // =================== ATOMS ===================
 
@@ -81,10 +82,9 @@ function PricingCard({ blok }) {
 
 function FaqItem({ blok }) {
   return (
-    <details className="faq-item" open={blok.default_open || false}>
-      <summary>{blok.question}</summary>
-      <div className="answer">{typeof blok.answer === "object" ? render(blok.answer) : blok.answer}</div>
-    </details>
+    <FaqDetails question={blok.question} defaultOpen={blok.default_open || false}>
+      {typeof blok.answer === "object" ? renderRichText(blok.answer) : blok.answer}
+    </FaqDetails>
   );
 }
 
@@ -208,7 +208,7 @@ function ImageTextBlock({ blok }) {
           </div>
           <div>
             <h2>{blok.heading}</h2>
-            <div className="body-text">{typeof blok.body === "object" ? render(blok.body) : blok.body}</div>
+            <div className="body-text">{typeof blok.body === "object" ? renderRichText(blok.body) : blok.body}</div>
             {blok.bullet_items?.length > 0 && (
               <ul className="bullets">{blok.bullet_items.map((b) => <BulletItem key={b._uid} blok={b} />)}</ul>
             )}
@@ -378,7 +378,7 @@ function AboutSection({ blok }) {
   return (
     <section className="section"><div className="container">
       <h2 className="section-heading">{blok.heading}</h2>
-      <div className="body-text" style={{color:"var(--gray-400)"}}>{typeof blok.body==="object"?render(blok.body):blok.body}</div>
+      <div className="body-text" style={{color:"var(--gray-400)"}}>{typeof blok.body==="object"?renderRichText(blok.body):blok.body}</div>
     </div></section>
   );
 }
@@ -457,7 +457,7 @@ function PortfolioCaseStudy({ blok }) {
         <div>
           <h2 style={{fontSize:28,fontWeight:800,marginBottom:8}}>{blok.title}</h2>
           <h3 style={{fontSize:16,fontWeight:600,marginBottom:12}}>{blok.brief_heading}</h3>
-          <div style={{color:"var(--gray-400)"}}>{typeof blok.brief_body==="object"?render(blok.brief_body):blok.brief_body}</div>
+          <div style={{color:"var(--gray-400)"}}>{typeof blok.brief_body==="object"?renderRichText(blok.brief_body):blok.brief_body}</div>
         </div>
         <div style={{fontSize:14}}>
           <a className="btn btn-primary btn-sm" style={{marginBottom:24,display:"inline-block"}} href={blok.visit_url?.url||"#"}>Visit Website</a>
@@ -468,7 +468,7 @@ function PortfolioCaseStudy({ blok }) {
       </div>
       {blok.info_heading && <div style={{marginTop:40}}>
         <h3 style={{fontSize:20,fontWeight:700,marginBottom:12}}>{blok.info_heading}</h3>
-        <div style={{color:"var(--gray-400)",marginBottom:16}}>{typeof blok.info_body==="object"?render(blok.info_body):blok.info_body}</div>
+        <div style={{color:"var(--gray-400)",marginBottom:16}}>{typeof blok.info_body==="object"?renderRichText(blok.info_body):blok.info_body}</div>
         {blok.info_bullets?.length>0 && <ul className="bullets">{blok.info_bullets.map(b=><BulletItem key={b._uid} blok={b}/>)}</ul>}
       </div>}
     </div></section>

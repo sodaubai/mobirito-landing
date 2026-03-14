@@ -10,8 +10,6 @@
   "dependencies": {
     "next": "^15.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "@storyblok/react": "^4.1.0",
-    "storyblok-rich-text-react-renderer": "^2.9.2"
+    "react-dom": "^19.0.0"
   }
 }
