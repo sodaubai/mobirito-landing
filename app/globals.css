@@ -26,7 +26,7 @@ img { max-width: 100%; height: auto; }
 .section-desc { font-size: 16px; color: var(--gray-400); max-width: 600px; }
 .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 15px; border: none; cursor: pointer; transition: transform .2s; }
 .btn:hover { transform: translateY(-2px); }
-.btn-primary { background: linear-gradient(135deg, var(--orange), #f7c948); color: var(--navy); }
+.btn-primary { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: var(--navy); }
 .btn-secondary { background: var(--white); color: var(--navy); border: 1px solid #ddd; }
 .btn-dark { background: var(--navy); color: var(--white); }
 .btn-sm { padding: 10px 20px; font-size: 14px; }
@@ -34,7 +34,7 @@ img { max-width: 100%; height: auto; }
 /* Navbar */
 .navbar { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
 .navbar .logo { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 700; }
-.navbar .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, #6c5ce7, #a855f7); border-radius: 50%; }
+.navbar .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--orange), var(--orange-dark)); border-radius: 50%; }
 .navbar nav { display: flex; gap: 32px; }
 .navbar nav a { font-size: 15px; color: var(--white); opacity: 0.85; }
 .navbar nav a:hover { opacity: 1; }
@@ -79,7 +79,7 @@ img { max-width: 100%; height: auto; }
 .bg-light { background: var(--gray-200); }
 
 /* App Showcase */
-.app-showcase { background: linear-gradient(135deg, #3b82f6, #06b6d4, #a7f3d0); border-radius: 24px; padding: 60px; text-align: center; margin: 0 24px; }
+.app-showcase { background: linear-gradient(135deg, #0D0D0D, #1E1E1E, #C74A1B); border-radius: 24px; padding: 60px; text-align: center; margin: 0 24px; color: var(--white); }
 .app-showcase img { max-height: 400px; }
 
 /* Steps */
@@ -104,7 +104,7 @@ img { max-width: 100%; height: auto; }
 .testimonial-card .text { font-size: 14px; color: var(--gray-600); }
 
 /* Pricing */
-.pricing-section { background: linear-gradient(135deg, #f472b6, #fbbf24); border-radius: 24px; padding: 60px 40px; margin: 0 24px; }
+.pricing-section { background: linear-gradient(135deg, #1E1E1E, #C74A1B); border-radius: 24px; padding: 60px 40px; margin: 0 24px; color: var(--white); }
 .pricing-section .toggle { display: flex; justify-content: center; gap: 4px; margin: 24px 0 40px; background: rgba(255,255,255,0.3); border-radius: 50px; padding: 4px; width: fit-content; margin-left: auto; margin-right: auto; }
 .pricing-section .toggle span { padding: 10px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; cursor: pointer; }
 .pricing-section .toggle .active { background: var(--white); }
@@ -130,10 +130,10 @@ img { max-width: 100%; height: auto; }
 .faq-item .answer { padding: 0 0 20px; font-size: 15px; color: var(--gray-400); line-height: 1.7; }
 
 /* App Download CTA */
-.download-cta { background: linear-gradient(135deg, #c084fc, #f9a8d4, #93c5fd); border-radius: 24px; padding: 60px; margin: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-.download-cta h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
-.download-cta p { color: var(--gray-600); margin-bottom: 20px; }
-.download-cta .label { font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
+.download-cta { background: linear-gradient(135deg, #0D0D0D, #2C2C2C, #F15A22); border-radius: 24px; padding: 60px; margin: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.download-cta h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; color: var(--white); }
+.download-cta p { color: rgba(255,255,255,0.7); margin-bottom: 20px; }
+.download-cta .label { font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; color: var(--white); }
 .download-cta .stores { display: flex; gap: 12px; }
 .store-badge { background: var(--navy); color: var(--white); padding: 10px 20px; border-radius: 10px; display: flex; align-items: center; gap: 8px; font-size: 13px; }
 .store-badge .small { font-size: 10px; opacity: 0.7; }
