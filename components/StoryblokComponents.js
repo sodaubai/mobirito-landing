@@ -21,7 +21,7 @@ function BulletItem({ blok }) {
 }
 
 const painPointImages = {
-  "Rào Cản Ngôn Ngữ": "/images/pain-language-barrier.svg",
+  "Rào Cản Ngôn Ngữ": "/images/pain-language-barrier.jpg",
   "Ma Trận Cao Tốc": "/images/pain-highway-maze.svg",
   '"Bẫy" Ngõ Hẹp': "/images/pain-narrow-trap.svg",
   "GPS Lỗi Thời": "/images/pain-outdated-gps.svg",
