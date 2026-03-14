@@ -20,29 +20,29 @@ function BulletItem({ blok }) {
   return <li>{blok.text}</li>;
 }
 
-const painPointImages = {
-  "Rào Cản Ngôn Ngữ": "/images/pain-language-barrier.jpg",
-  "Ma Trận Cao Tốc": "/images/pain-highway-maze.svg",
-  '"Bẫy" Ngõ Hẹp': "/images/pain-narrow-trap.svg",
-  "GPS Lỗi Thời": "/images/pain-outdated-gps.svg",
-};
-
 function FeatureCard({ blok, showImage }) {
   const colorClass = `icon-${blok.icon_color || "orange"}`;
-  const imgSrc = blok.image?.filename || painPointImages[blok.title];
+  const imgSrc = blok.image?.filename;
+  const hasImage = showImage && imgSrc;
   return (
-    <div className="card">
-      {showImage && imgSrc ? (
-        <div className="card-img">
-          <img src={imgSrc} alt={blok.title} style={{width:"100%",height:160,objectFit:"cover",borderRadius:12,marginBottom:12}} />
-        </div>
+    <div className={`card${hasImage ? " card-overlay" : ""}`}>
+      {hasImage ? (
+        <>
+          <div className="card-bg" style={{backgroundImage:`url(${imgSrc})`}} />
+          <div className="card-overlay-content">
+            <h3>{blok.title}</h3>
+            <p>{blok.description}</p>
+          </div>
+        </>
       ) : (
-        <div className={`icon ${colorClass}`}>
-          {blok.icon_color === "orange" ? <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> : blok.icon_color === "blue" ? <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg> : <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>}
-        </div>
+        <>
+          <div className={`icon ${colorClass}`}>
+            {blok.icon_color === "orange" ? <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> : blok.icon_color === "blue" ? <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg> : <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>}
+          </div>
+          <h3>{blok.title}</h3>
+          <p>{blok.description}</p>
+        </>
       )}
-      <h3>{blok.title}</h3>
-      <p>{blok.description}</p>
     </div>
   );
 }
