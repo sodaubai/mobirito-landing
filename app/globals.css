@@ -123,7 +123,7 @@ img { max-width: 100%; height: auto; }
 .pricing-section .toggle { display: flex; justify-content: center; gap: 4px; margin: 24px 0 40px; background: rgba(255,255,255,0.3); border-radius: 50px; padding: 4px; width: fit-content; margin-left: auto; margin-right: auto; }
 .pricing-section .toggle span { padding: 10px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; cursor: pointer; }
 .pricing-section .toggle .active { background: var(--white); color: var(--navy); }
-.pricing-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.pricing-cards { display: grid; margin-top: 32px; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .price-card { background: var(--white); border-radius: 16px; padding: 32px; color: var(--navy); }
 .price-card.featured { background: var(--navy); color: var(--white); transform: scale(1.05); }
 .price-card.featured .plan-name, .price-card.featured .price { color: var(--white); }
