@@ -333,10 +333,11 @@ img { max-width: 100%; height: auto; }
 
 /* ===== Pain Point Cards - Image Overlay Style ===== */
 .card.card-overlay {
+  aspect-ratio: 16 / 9;
   position: relative;
   overflow: hidden;
   padding: 0;
-  min-height: 280px;
+
   border: none;
   cursor: default;
 }
@@ -357,7 +358,7 @@ img { max-width: 100%; height: auto; }
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
-  min-height: 280px;
+
   padding: 24px;
   background: linear-gradient(
     to bottom,
@@ -395,5 +396,5 @@ img { max-width: 100%; height: auto; }
   transform: scaleX(1);
 }
 @media (max-width: 768px) {
-  .card.card-overlay, .card.card-overlay .card-overlay-content { min-height: 220px; }
+  .card.card-overlay { aspect-ratio: 4 / 3; }
 }
