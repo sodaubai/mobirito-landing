@@ -406,25 +406,29 @@ function AppDownloadCta({ blok }) {
 }
 
 function SiteFooter({ blok }) {
+  const socialIcons = blok.social_links || [];
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-grid">
           <div className="brand-col">
             <div className="footer-logo">
-              <img src="/navinext-logo-dark.png" alt="Navinext" />
+              <img src="https://a.storyblok.com/f/290479562535549/36895/9ccc2f396f/navinext_full_white_v3.png" alt="Navinext" />
             </div>
             <p className="tagline">{blok.tagline}</p>
+            <p className="company-info">NVIT (New Vision & Innovation Technology)<br/>Tokyo, Japan</p>
           </div>
           {blok.nav_columns?.map((c) => <FooterColumn key={c._uid} blok={c} />)}
+          <div>
+            <h4>Cộng đồng</h4>
+            <div className="social-icons">
+              {socialIcons.map((s) => <SocialLink key={s._uid} blok={s} />)}
+            </div>
+            <p className="copyright">© 2026 NVIT. All rights reserved.</p>
+          </div>
         </div>
         <div className="footer-bottom">
-          <div className="socials">
-            {blok.social_links?.map((s) => <SocialLink key={s._uid} blok={s} />)}
-          </div>
-          <div className="legal">
-            {blok.legal_links?.map((l) => <LegalLink key={l._uid} blok={l} />)}
-          </div>
+          <p>Made with ❤️ for Vietnamese community in Japan • #NavinextAI #VietnameseInJapan #AIDriving</p>
         </div>
       </div>
     </footer>
