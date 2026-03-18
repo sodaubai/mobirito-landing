@@ -233,6 +233,17 @@ function LogoBar({ blok }) {
   );
 }
 
+
+function SectionHeader({ blok }) {
+  return (
+    <section className="section" style={{paddingBottom:0}}>
+      <div className="container" style={{textAlign:"center"}}>
+        <h2 className="section-heading">{blok.heading}</h2>
+        {blok.subtitle && <p className="section-desc" style={{margin:"0 auto"}}>{blok.subtitle}</p>}
+      </div>
+    </section>
+  );
+}
 function FeaturesGrid({ blok }) {
   const isDark = blok.background === "dark";
   return (
@@ -670,6 +681,7 @@ const componentMap = {
   hero_section: ({blok}) => <HeroSection blok={blok} />,
   logo_bar: ({blok}) => <LogoBar blok={blok} />,
   features_grid: ({blok}) => <FeaturesGrid blok={blok} />,
+  section_header: ({blok}) => <SectionHeader blok={blok} />,
   image_text_block: ({blok}) => <ImageTextBlock blok={blok} />,
   app_showcase: ({blok}) => <AppShowcase blok={blok} />,
   steps_section: ({blok}) => <StepsSection blok={blok} />,
