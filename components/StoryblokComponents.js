@@ -71,11 +71,22 @@ function StatItem({ blok }) {
 
 function StepItem({ blok }) {
   const paragraphs = blok.description?.split("\n\n") || [];
+  const hasNumbered = paragraphs.some(p => /^\d+\./.test(p));
   return (
     <div className="step-card">
       <div className="step-num">{blok.step_number}</div>
       <h3>{blok.title}</h3>
-      {paragraphs.map((p, i) => <p key={i} style={p.startsWith("Lưu ý:") ? {fontStyle:"italic",color:"var(--orange)",fontSize:13} : undefined}>{p}</p>)}
+      {hasNumbered ? (
+        <ol className="step-list">
+          {paragraphs.map((p, i) => {
+            if (p.startsWith("Lưu ý:")) return <p key={i} style={{fontStyle:"italic",color:"var(--orange)",fontSize:13,marginTop:8}}>{p}</p>;
+            const text = p.replace(/^\d+\.\s*/, "");
+            return <li key={i}>{text}</li>;
+          })}
+        </ol>
+      ) : (
+        paragraphs.map((p, i) => <p key={i} style={p.startsWith("Lưu ý:") ? {fontStyle:"italic",color:"var(--orange)",fontSize:13} : undefined}>{p}</p>)
+      )}
     </div>
   );
 }

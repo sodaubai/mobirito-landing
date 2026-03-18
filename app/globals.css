@@ -122,6 +122,12 @@ img { max-width: 100%; height: auto; }
 .step-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
 .step-card p { font-size: 14px; color: var(--gray-400); line-height: 1.7; margin-bottom: 8px; }
 .step-card p:last-child { margin-bottom: 0; }
+.step-list { list-style: none; counter-reset: step-item; padding: 0; margin: 0; }
+.step-list li { counter-increment: step-item; position: relative; padding-left: 28px; font-size: 14px; color: var(--gray-400); line-height: 1.7; margin-bottom: 10px; }
+.step-list li::before { content: counter(step-item) "."; position: absolute; left: 0; font-weight: 700; color: var(--orange); font-size: 14px; }
+.step-list li:last-child { margin-bottom: 0; }
+.steps-dark .step-list li { color: rgba(255,255,255,0.7); }
+.steps-dark .step-list li::before { color: var(--orange); }
 
 /* Steps Dark Theme */
 .steps-dark { background: linear-gradient(135deg, #0D0D0D 0%, #1E1E1E 60%, #2C2C2C 100%); }
