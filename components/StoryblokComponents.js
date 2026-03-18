@@ -240,7 +240,7 @@ function FeaturesGrid({ blok }) {
       <div className="container" style={{textAlign:"center"}}>
         <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center",color:isDark?"#fff":undefined}}>{blok.heading}</h2>
         {blok.description && <p className="section-desc" style={{margin:"0 auto",color:isDark?"rgba(255,255,255,0.7)":undefined}}>{blok.description}</p>}
-        <div className="cards">{blok.features?.map((f) => <FeatureCard showImage={isDark} key={f._uid} blok={f} />)}</div>
+        <div className="cards" style={blok.columns ? {gridTemplateColumns:`repeat(${blok.columns}, 1fr)`} : undefined}>{blok.features?.map((f) => <FeatureCard showImage={isDark} key={f._uid} blok={f} />)}</div>
       </div>
     </section>
   );
