@@ -79,11 +79,16 @@ function StepItem({ blok }) {
 }
 
 function TestimonialCard({ blok }) {
+  const avatarSrc = blok.avatar?.filename;
   return (
     <div className="testimonial-card">
-      <div className="quote-icon">"</div>
+      <div className="quote-icon">“</div>
       <div className="author">
-        <div className="avatar" />
+        {avatarSrc ? (
+          <img className="avatar" src={avatarSrc} alt={blok.name || ""} />
+        ) : (
+          <div className="avatar" />
+        )}
         <div>
           <div className="name">{blok.name}</div>
           <div className="role">{blok.role}</div>
