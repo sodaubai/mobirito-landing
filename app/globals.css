@@ -178,17 +178,13 @@ img { max-width: 100%; height: auto; }
 .footer-bottom .socials a { width: 36px; height: 36px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 14px; }
 .footer-bottom .legal { display: flex; gap: 16px; font-size: 13px; color: var(--gray-400); }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .features-grid .cards, .steps-grid, .testimonials-grid, .pricing-cards { grid-template-columns: repeat(2, 1fr); }
+
   .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
   .img-text { gap: 32px; }
   .download-cta { padding: 40px; }
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .container { padding: 0 16px; }
+
   .section { padding: 48px 0; }
 
   /* Navbar */
@@ -244,9 +240,7 @@ img { max-width: 100%; height: auto; }
   .logo-bar .logos { flex-wrap: wrap; gap: 24px; }
 }
 
-/* Small mobile */
-@media (max-width: 480px) {
-  .hero h1 { font-size: 24px; }
+
   .section-heading { font-size: 22px; }
   .hero .ctas { flex-direction: column; align-items: center; }
   .hero .ctas .btn { width: 100%; }
@@ -325,14 +319,8 @@ img { max-width: 100%; height: auto; }
 .stat-card:nth-child(3) { animation-delay: 0.3s; }
 .stat-card:nth-child(4) { animation-delay: 0.4s; }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 480px) {
-  .stats-grid { grid-template-columns: 1fr; gap: 16px; }
-  .stat-card-value { font-size: 28px; }
-}
+
+
 
 /* ===== Pain Point Cards - Image Overlay Style ===== */
 /* Pain point cards with image on top */
@@ -380,8 +368,136 @@ img { max-width: 100%; height: auto; }
 .lang-option { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 14px; border: none; background: none; color: rgba(255,255,255,0.8); cursor: pointer; font-size: 13px; text-align: left; transition: background 0.15s; }
 .lang-option:hover { background: rgba(255,255,255,0.1); }
 .lang-option.active { color: #F15A22; font-weight: 600; }
+
+  .lang-btn { padding: 4px 8px; }
+  .lang-code { display: none; }
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Large tablet / small desktop (iPad Pro landscape, etc) */
+@media (max-width: 1024px) {
+  .hero .container { gap: 24px; }
+  .hero h1 { font-size: 36px; }
+  .features-grid .cards { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: repeat(3, 1fr); }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-cards { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .img-text { gap: 32px; }
+  .img-text h2 { font-size: 26px; }
+  .download-cta { padding: 40px; gap: 24px; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+  .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .stat-card { padding: 24px 16px; }
+  .stat-card-value { font-size: 28px; }
+}
+
+/* Tablet / iPad portrait (768px - 1024px) */
+@media (max-width: 900px) {
+  .hero .container { grid-template-columns: 1fr; text-align: center; }
+  .hero .phone-mockup { text-align: center; }
+  .hero .phone-mockup img { max-height: 360px; }
+  .hero .ctas { justify-content: center; }
+  .hero .social-proof { justify-content: center; }
+  .navbar nav { gap: 20px; }
+  .navbar nav a { font-size: 13px; }
+  .img-text { grid-template-columns: 1fr; gap: 24px; }
+  .img-text.reversed { direction: ltr; }
+  .img-text h2 { font-size: 24px; }
+  .download-cta { grid-template-columns: 1fr; text-align: center; }
+  .download-cta .stores { justify-content: center; }
+  .pricing-cards { grid-template-columns: 1fr 1fr; }
+  .price-card.featured { transform: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .section { padding: 48px 0; }
+
+  /* Navbar */
+  .navbar nav { display: none; }
+  .navbar .nav-actions .login { display: none; }
+  .navbar .logo-img { height: 36px; }
   .lang-selector { order: 3; }
   .lang-btn { padding: 4px 8px; }
   .lang-code { display: none; }
+
+  /* Hero */
+  .hero { padding: 80px 0 40px; }
+  .hero .container { grid-template-columns: 1fr; text-align: center; }
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 15px; }
+  .hero .ctas { justify-content: center; flex-wrap: wrap; }
+  .hero .social-proof { justify-content: center; flex-wrap: wrap; white-space: normal; text-align: center; }
+  .hero .phone-mockup { text-align: center; }
+  .hero .phone-mockup img { max-height: 300px; }
+
+  /* Grids → stacked */
+  .img-text, .download-cta, .footer-grid { grid-template-columns: 1fr; }
+  .features-grid .cards, .steps-grid, .testimonials-grid, .pricing-cards { grid-template-columns: 1fr; }
+
+  /* Typography */
+  .section-heading { font-size: 24px; }
+  .section-desc { font-size: 15px; }
+  .img-text h2 { font-size: 22px; }
+
+  /* Cards */
+  .price-card.featured { transform: none; }
+  .features-grid .card { padding: 24px; }
+  .step-card { padding: 24px; }
+  .testimonial-card { padding: 20px; }
+
+  /* Reverse layout fix */
+  .img-text.reversed { direction: ltr; }
+
+  /* App showcase */
+  .app-showcase { padding: 32px 16px; margin: 0 16px; border-radius: 16px; }
+
+  /* Download CTA */
+  .download-cta { padding: 32px 20px; margin: 0 16px; border-radius: 16px; text-align: center; }
+  .download-cta .stores { justify-content: center; flex-wrap: wrap; }
+
+  /* Pricing */
+  .pricing-section { padding: 40px 20px; margin: 0 16px; border-radius: 16px; }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .stat-card { padding: 20px 12px; }
+  .stat-card-value { font-size: 24px; }
+  .stat-card-icon { width: 44px; height: 44px; }
+
+  /* Footer */
+  .footer { padding: 40px 0 20px; }
+  .footer-grid { gap: 24px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+
+  /* Buttons */
+  .btn { padding: 12px 24px; font-size: 14px; }
+
+  /* Logo bar */
+  .logo-bar .logos { flex-wrap: wrap; gap: 24px; }
+
+  /* Testimonials header */
+  .testimonials-section .header { flex-direction: column; gap: 12px; }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 22px; }
+  .section-heading { font-size: 20px; }
+  .hero .ctas { flex-direction: column; align-items: center; }
+  .hero .ctas .btn { width: 100%; }
+  .store-badge { padding: 8px 14px; font-size: 12px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat-card-value { font-size: 22px; }
+  .stat-card-label { font-size: 12px; }
+  .pricing-section { padding: 32px 16px; margin: 0 8px; }
+  .download-cta { padding: 24px 16px; margin: 0 8px; }
+  .app-showcase { padding: 24px 12px; margin: 0 8px; }
+  .img-text h2 { font-size: 20px; }
+  .navbar .nav-actions { gap: 8px; }
+  .btn-sm { padding: 8px 14px; font-size: 12px; }
 }
