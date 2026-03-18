@@ -1,3 +1,4 @@
+import LanguageSelector from "./LanguageSelector";
 
 import FaqDetails from "./FaqDetails";
 import { renderRichText } from "../lib/richtext";
@@ -181,6 +182,7 @@ function SiteNavbar({ blok }) {
           <div className="nav-actions">
             <a className="login" href={blok.login_link?.url || "#"}>{blok.login_label}</a>
             <a className="btn btn-dark btn-sm" href={blok.cta_link?.url || "#"}>{blok.cta_label}</a>
+            <LanguageSelector />
           </div>
         </div>
       </div>
