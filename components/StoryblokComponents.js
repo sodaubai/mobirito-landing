@@ -200,13 +200,11 @@ function HeroSection({ blok }) {
             <a className="btn btn-secondary" href={blok.secondary_cta_link?.url || "#"}>{blok.secondary_cta_label}</a>
           </div>
           <div className="social-proof">
-            {blok.social_proof_avatars?.filename ? (
-              <img src={blok.social_proof_avatars.filename} alt="Social proof" style={{height:40,borderRadius:8,objectFit:"contain"}} />
-            ) : (
-              <div style={{display:"flex"}}>
-                {[1,2,3].map(i=><div key={i} style={{width:32,height:32,borderRadius:"50%",background:"#ccc",marginLeft:i>1?-8:0,border:"2px solid #fff"}}/>)}
-              </div>
-            )}
+            <div className="avatar-stack">
+              {[1,2,3,4,5].map(i=>(
+                <img key={i} className="avatar-stack-item" src={`https://api.dicebear.com/9.x/notionists/svg?seed=user${i}&backgroundColor=f5f5f5`} alt="" />
+              ))}
+            </div>
             <span>{blok.social_proof_text}</span>
           </div>
         </div>
