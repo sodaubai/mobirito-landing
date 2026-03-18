@@ -49,8 +49,8 @@ img { max-width: 100%; height: auto; }
 .hero p { color: rgba(255,255,255,0.8); font-size: 16px; margin-bottom: 24px; }
 .hero .ctas { display: flex; gap: 12px; margin-bottom: 24px; }
 .hero .social-proof { display: flex; align-items: center; gap: 16px; color: var(--white); font-size: 14px; white-space: nowrap; }
-.hero .avatar-stack { display: flex; }
-.hero .avatar-stack-item { width: 32px; height: 32px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.8); margin-left: -8px; object-fit: cover; background: #e0e0e0; }
+.hero .avatar-stack { display: flex; flex-shrink: 0; }
+.hero .avatar-stack-item { width: 32px; height: 32px; min-width: 32px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.8); margin-left: -8px; object-fit: cover; background: #e0e0e0; }
 .hero .avatar-stack-item:first-child { margin-left: 0; }
 .hero .phone-mockup { text-align: right; }
 .hero .phone-mockup img { max-height: 500px; }
