@@ -411,8 +411,8 @@ function SiteFooter({ blok }) {
       <div className="container">
         <div className="footer-grid">
           <div className="brand-col">
-            <div className="logo">
-              <img src="/navinext-logo-dark.svg" alt="Navinext" style={{height:32}} />
+            <div className="footer-logo">
+              <img src="https://a.storyblok.com/f/290479562535549/36895/9ccc2f396f/navinext_full_white_v3.png" alt="Navinext" />
             </div>
             <p className="tagline">{blok.tagline}</p>
           </div>

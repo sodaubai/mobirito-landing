@@ -202,6 +202,8 @@ img { max-width: 100%; height: auto; }
 .footer ul li { margin-bottom: 8px; }
 .footer ul li a { font-size: 14px; color: var(--gray-400); }
 .footer ul li a:hover { color: var(--navy); }
+.footer-logo { background: #0D0D0D; display: inline-block; padding: 10px 16px; border-radius: 8px; }
+.footer-logo img { height: 24px; display: block; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid #eee; }
 .footer-bottom .socials { display: flex; gap: 16px; }
 .footer-bottom .socials a { width: 36px; height: 36px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 14px; }
