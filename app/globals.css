@@ -63,8 +63,8 @@ img { max-width: 100%; height: auto; }
 .features-grid .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 40px; }
 .features-grid .card { background: var(--white); border-radius: 16px; padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); text-align: center; display: flex; flex-direction: column; align-items: center; }
 .features-grid .card .icon { width: 56px; height: 56px; border-radius: 14px; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
-.features-grid .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; min-height: 44px; display: flex; align-items: center; }
-.features-grid .card p { font-size: 13px; color: var(--gray-400); line-height: 1.6; }
+.features-grid .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; min-height: 44px; display: flex; align-items: center; justify-content: center; text-align: center; }
+.features-grid .card p { font-size: 13px; color: var(--gray-400); line-height: 1.6; text-align: center; }
 .icon-orange { background: #fff3e0; color: #f5a623; }
 .icon-blue { background: #e8eaf6; color: #5c6bc0; }
 .icon-purple { background: #f3e5f5; color: #7c4dff; }
@@ -353,10 +353,10 @@ img { max-width: 100%; height: auto; }
 .card.card-has-image:hover .card-image img {
   transform: scale(1.05);
 }
-.card.card-has-image .card-text {
+.card.card-has-image .card-text { text-align: center;
   padding: 20px 24px;
 }
-.card.card-has-image h3 {
+.card.card-has-image h3 { justify-content: center;
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 8px;
