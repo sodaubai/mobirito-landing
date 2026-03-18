@@ -181,8 +181,8 @@ function SiteNavbar({ blok }) {
           <nav>{blok.nav_items?.map((i) => <NavItem key={i._uid} blok={i} />)}</nav>
           <div className="nav-actions">
             <a className="login" href={blok.login_link?.url || "#"}>{blok.login_label}</a>
-            <a className="btn btn-dark btn-sm" href={blok.cta_link?.url || "#"}>{blok.cta_label}</a>
             <LanguageSelector />
+            <a className="btn btn-dark btn-sm" href={blok.cta_link?.url || "#"}>{blok.cta_label}</a>
           </div>
         </div>
       </div>
