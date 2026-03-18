@@ -2,9 +2,9 @@
 import { useState, useRef, useEffect } from "react";
 
 const languages = [
-  { code: "vi", label: "VI", name: "Tiếng Việt", flag: "🇻🇳" },
-  { code: "en", label: "EN", name: "English", flag: "🇬🇧" },
-  { code: "ja", label: "JP", name: "日本語", flag: "🇯🇵" },
+  { code: "vi", label: "VI", name: "Tiếng Việt" },
+  { code: "en", label: "EN", name: "English" },
+  { code: "ja", label: "JP", name: "日本語" },
 ];
 
 export default function LanguageSelector() {
@@ -20,24 +20,29 @@ export default function LanguageSelector() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
+  const chevron = (
+    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{marginLeft:2}}>
+      <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+
   return (
     <div className="lang-selector" ref={ref}>
-      <button className="lang-btn" onClick={() => setOpen(!open)} aria-label="Select language">
-        <span className="lang-flag">{current.flag}</span>
+      <button className="lang-btn" onClick={() => setOpen(!open)} type="button" aria-label="Select language">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         <span className="lang-code">{current.label}</span>
-        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{marginLeft:4}}>
-          <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
+        {chevron}
       </button>
       {open && (
         <div className="lang-dropdown">
           {languages.map((lang) => (
             <button
               key={lang.code}
-              className={`lang-option${lang.code === current.code ? " active" : ""}`}
+              type="button"
+              className={"lang-option" + (lang.code === current.code ? " active" : "")}
               onClick={() => { setCurrent(lang); setOpen(false); }}
             >
-              <span className="lang-flag">{lang.flag}</span>
+              <span className="lang-code">{lang.label}</span>
               <span>{lang.name}</span>
             </button>
           ))}
