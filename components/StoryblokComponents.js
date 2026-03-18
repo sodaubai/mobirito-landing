@@ -24,6 +24,7 @@ function FeatureCard({ blok, showImage }) {
   const colorClass = `icon-${blok.icon_color || "orange"}`;
   const imgSrc = blok.image?.filename;
   const hasImage = showImage && imgSrc;
+  if (typeof window === "undefined") console.log("[FeatureCard]", blok.title, "showImage=", showImage, "imgSrc=", imgSrc, "hasImage=", hasImage, "image=", JSON.stringify(blok.image));
   return (
     <div className={`card${hasImage ? " card-overlay" : ""}`}>
       {hasImage ? (
