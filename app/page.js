@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { fetchStory } from "../lib/api";
 import { DynamicComponent } from "../components/StoryblokComponents";
 
