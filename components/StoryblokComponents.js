@@ -25,11 +25,13 @@ function FeatureCard({ blok, showImage }) {
   const imgSrc = blok.image?.filename;
   const hasImage = showImage && imgSrc;
   return (
-    <div className={`card${hasImage ? " card-overlay" : ""}`}>
+    <div className={`card${hasImage ? " card-has-image" : ""}`}>
       {hasImage ? (
         <>
-          <div className="card-bg" style={{backgroundImage:`url(${imgSrc})`}} />
-          <div className="card-overlay-content">
+          <div className="card-image">
+            <img src={imgSrc} alt={blok.title || ""} />
+          </div>
+          <div className="card-text">
             <h3>{blok.title}</h3>
             <p>{blok.description}</p>
           </div>

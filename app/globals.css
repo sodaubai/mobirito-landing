@@ -332,69 +332,37 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ===== Pain Point Cards - Image Overlay Style ===== */
-.card.card-overlay {
-  aspect-ratio: 16 / 9;
-  position: relative;
-  overflow: hidden;
+/* Pain point cards with image on top */
+.card.card-has-image {
   padding: 0;
-
-  border: none;
-  cursor: default;
-}
-.card.card-overlay .card-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.5s ease;
-}
-.card.card-overlay:hover .card-bg {
-  transform: scale(1.08);
-}
-.card.card-overlay .card-overlay-content {
-  position: relative;
-  z-index: 2;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
-
-  padding: 24px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0) 20%,
-    rgba(0,0,0,0.3) 45%,
-    rgba(0,0,0,0.85) 100%
-  );
 }
-.card.card-overlay h3 {
-  color: #fff;
+.card.card-has-image .card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.card.card-has-image .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.card.card-has-image:hover .card-image img {
+  transform: scale(1.05);
+}
+.card.card-has-image .card-text {
+  padding: 20px 24px;
+}
+.card.card-has-image h3 {
   font-size: 18px;
   font-weight: 700;
-  margin-bottom: 6px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  margin-bottom: 8px;
 }
-.card.card-overlay p {
-  color: rgba(255,255,255,0.85);
+.card.card-has-image p {
   font-size: 13px;
-  line-height: 1.5;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
-}
-/* Orange accent line on hover */
-.card.card-overlay::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--orange), var(--orange-dark));
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-  transform-origin: left;
-  z-index: 3;
-}
-.card.card-overlay:hover::after {
-  transform: scaleX(1);
-}
-@media (max-width: 768px) {
-  .card.card-overlay { aspect-ratio: 4 / 3; }
+  line-height: 1.6;
+  opacity: 0.8;
 }
