@@ -70,11 +70,12 @@ function StatItem({ blok }) {
 }
 
 function StepItem({ blok }) {
+  const paragraphs = blok.description?.split("\n\n") || [];
   return (
     <div className="step-card">
       <div className="step-num">{blok.step_number}</div>
       <h3>{blok.title}</h3>
-      <p>{blok.description}</p>
+      {paragraphs.map((p, i) => <p key={i} style={p.startsWith("Lưu ý:") ? {fontStyle:"italic",color:"var(--orange)",fontSize:13} : undefined}>{p}</p>)}
     </div>
   );
 }
@@ -306,6 +307,7 @@ function StepsSection({ blok }) {
     <section className="section steps-section">
       <div className="container">
         <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center"}}>{blok.heading}</h2>
+        {blok.description && <p className="section-desc" style={{margin:"0 auto 32px",textAlign:"center"}}>{blok.description}</p>}
         <div className="steps-grid">{blok.steps?.map((s) => <StepItem key={s._uid} blok={s} />)}</div>
       </div>
     </section>

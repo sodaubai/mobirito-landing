@@ -119,8 +119,9 @@ img { max-width: 100%; height: auto; }
 .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
 .step-card { background: var(--white); border-radius: 16px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
 .step-num { width: 40px; height: 40px; background: var(--navy); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 12px; }
-.step-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-.step-card p { font-size: 14px; color: var(--gray-400); }
+.step-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+.step-card p { font-size: 14px; color: var(--gray-400); line-height: 1.7; margin-bottom: 8px; }
+.step-card p:last-child { margin-bottom: 0; }
 
 /* Testimonials */
 .testimonials-section .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
