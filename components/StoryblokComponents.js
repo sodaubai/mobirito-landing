@@ -201,9 +201,11 @@ function HeroSection({ blok }) {
           </div>
           <div className="social-proof">
             <div className="avatar-stack">
-              {[1,2,3,4,5].map(i=>(
-                <img key={i} className="avatar-stack-item" src={`https://api.dicebear.com/9.x/notionists/svg?seed=user${i}&backgroundColor=f5f5f5`} alt="" />
-              ))}
+              <img className="avatar-stack-item" src="https://randomuser.me/api/portraits/men/32.jpg" alt="" />
+              <img className="avatar-stack-item" src="https://randomuser.me/api/portraits/women/44.jpg" alt="" />
+              <img className="avatar-stack-item" src="https://randomuser.me/api/portraits/men/67.jpg" alt="" />
+              <img className="avatar-stack-item" src="https://randomuser.me/api/portraits/women/17.jpg" alt="" />
+              <img className="avatar-stack-item" src="https://randomuser.me/api/portraits/men/85.jpg" alt="" />
             </div>
             <span>{blok.social_proof_text}</span>
           </div>
