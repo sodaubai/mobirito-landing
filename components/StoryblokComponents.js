@@ -195,7 +195,7 @@ function HeroSection({ blok }) {
     <section className="hero">
       <div className="container">
         <div>
-          <h1 style={{fontSize:blok.headline_size||undefined}}>{blok.headline?.includes("\n") ? blok.headline.split("\n").map((line, i, arr) => <span key={i}>{line}{i < arr.length - 1 && <br/>}</span>) : blok.headline}</h1>
+          <h1 style={{fontSize:blok.headline_size||undefined,whiteSpace:"pre-line"}}>{blok.headline}</h1>
           <p>{blok.subtext}</p>
           <div className="ctas">
             <a className="btn btn-primary" href={blok.primary_cta_link?.url || "#"}>{blok.primary_cta_label}</a>
