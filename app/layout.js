@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Navinext — AI Car Navigation in Japan",
+  title: "Navinext: Giải Pháp Dẫn Đường Thông Minh Cho Người Lái Xe Tại Nhật",
   description: "AI Car Navigation in Japan — Giải pháp dẫn đường thông minh cho người lái xe tại Nhật.",
 };
 
