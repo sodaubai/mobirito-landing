@@ -18,19 +18,17 @@ export default function LanguageSelector() {
     return () => document.removeEventListener("mousedown", h);
   }, []);
 
-  function pick(i) { setIdx(i); setOpen(false); }
-
   return (
     <div className="lang-selector" ref={ref}>
-      <button className="lang-btn" onClick={() => setOpen(!open)} type="button">
+      <span className="lang-toggle" onClick={() => setOpen(!open)}>
         {LANGS[idx][1]}
-        <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-      </button>
+        <svg width="8" height="5" viewBox="0 0 8 5" fill="none"><path d="M1 1l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+      </span>
       {open && (
-        <div className="lang-dropdown">
+        <div className="lang-menu">
           {LANGS.map((lang, i) => (
-            <div key={lang[0]} className={"lang-option" + (i === idx ? " active" : "")} onClick={() => pick(i)} role="button" tabIndex={0}>
-              {lang[2]}
+            <div key={lang[0]} className={"lang-item" + (i === idx ? " selected" : "")} onClick={() => { setIdx(i); setOpen(false); }}>
+              {lang[1]} <span className="lang-name">{lang[2]}</span>
             </div>
           ))}
         </div>
