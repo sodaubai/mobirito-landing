@@ -412,7 +412,7 @@ function SiteFooter({ blok }) {
         <div className="footer-grid">
           <div className="brand-col">
             <div className="logo" style={{display:"flex",alignItems:"center",gap:8}}>
-              <img src="/navinext-logo.svg" alt={blok.brand_name || "Navinext"} style={{height:28,filter:"brightness(0)"}} />
+              <img src="/navinext-logo.svg" alt={blok.brand_name || "Navinext"} style={{height:28}} />
               <strong>{blok.brand_name}</strong>
             </div>
             <p className="tagline">{blok.tagline}</p>
