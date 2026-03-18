@@ -303,11 +303,12 @@ function AppShowcase({ blok }) {
 }
 
 function StepsSection({ blok }) {
+  const isDark = blok.background === "dark";
   return (
-    <section className="section steps-section">
+    <section className={`section steps-section${isDark ? " steps-dark" : ""}`}>
       <div className="container">
-        <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center"}}>{blok.heading}</h2>
-        {blok.description && <p className="section-desc" style={{margin:"0 auto 32px",textAlign:"center"}}>{blok.description}</p>}
+        <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center",color:isDark?"#fff":undefined}}>{blok.heading}</h2>
+        {blok.description && <p className="section-desc" style={{margin:"0 auto 32px",textAlign:"center",color:isDark?"rgba(255,255,255,0.7)":undefined}}>{blok.description}</p>}
         <div className="steps-grid">{blok.steps?.map((s) => <StepItem key={s._uid} blok={s} />)}</div>
       </div>
     </section>

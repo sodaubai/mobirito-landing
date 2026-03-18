@@ -123,6 +123,13 @@ img { max-width: 100%; height: auto; }
 .step-card p { font-size: 14px; color: var(--gray-400); line-height: 1.7; margin-bottom: 8px; }
 .step-card p:last-child { margin-bottom: 0; }
 
+/* Steps Dark Theme */
+.steps-dark { background: linear-gradient(135deg, #0D0D0D 0%, #1E1E1E 60%, #2C2C2C 100%); }
+.steps-dark .step-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
+.steps-dark .step-num { background: var(--orange); }
+.steps-dark .step-card h3 { color: #fff; }
+.steps-dark .step-card p { color: rgba(255,255,255,0.7); }
+
 /* Testimonials */
 .testimonials-section .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
 .trustpilot { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--gray-600); }
