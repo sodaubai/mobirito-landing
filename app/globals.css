@@ -176,12 +176,12 @@ img { max-width: 100%; height: auto; }
 .download-cta .section-heading { color: var(--white); }
 
 /* FAQ */
-.faq-section { max-width: 800px; margin: 0 auto; }
+.faq-section { max-width: 640px; margin: 0 auto; }
 .faq-item { border-bottom: 1px solid #eee; }
-.faq-item summary { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; font-size: 16px; font-weight: 600; cursor: pointer; list-style: none; }
-.faq-item summary::after { content: "+"; font-size: 24px; color: var(--gray-400); }
+.faq-item summary { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; font-size: 14px; font-weight: 600; cursor: pointer; list-style: none; }
+.faq-item summary::after { content: "+"; font-size: 20px; color: var(--gray-400); }
 .faq-item[open] summary::after { content: "−"; }
-.faq-item .answer { padding: 0 0 20px; font-size: 15px; color: var(--gray-400); line-height: 1.7; }
+.faq-item .answer { padding: 0 0 12px; font-size: 13px; color: var(--gray-400); line-height: 1.6; }
 
 /* App Download CTA */
 .download-cta { background: linear-gradient(135deg, #0D0D0D, #2C2C2C, #F15A22); border-radius: 24px; padding: 60px; margin: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
