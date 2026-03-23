@@ -185,7 +185,7 @@ img { max-width: 100%; height: auto; }
 .faq-item .answer { padding: 0 20px 16px; font-size: 13px; color: var(--gray-400); line-height: 1.6; }
 
 /* App Download CTA */
-.download-cta-section { overflow: visible; }
+.download-cta-section { overflow: visible; padding-top: 20px; }
 .download-cta { background: linear-gradient(135deg, #0D0D0D, #2C2C2C, #F15A22); border-radius: 24px; padding: 60px; margin: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; position: relative; overflow: visible; min-height: 340px; }
 .download-cta h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; color: var(--white); }
 .download-cta p, .download-cta .section-desc { color: rgba(255,255,255,0.7); margin-bottom: 20px; }
