@@ -370,7 +370,7 @@ function FaqSection({ blok }) {
     <section className="section">
       <div className="container">
         <div className="faq-section">
-          <h2 className="section-heading" style={{textAlign:blok.heading_align||"center",marginBottom:32,fontSize:blok.heading_size||undefined}}>{blok.heading}</h2>
+          <h2 className="section-heading" style={{textAlign:blok.heading_align||"center",marginBottom:20,fontSize:blok.heading_size||"24px"}}>{blok.heading}</h2>
           {blok.items?.map((i) => <FaqItem key={i._uid} blok={i} />)}
         </div>
       </div>

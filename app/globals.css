@@ -176,12 +176,12 @@ img { max-width: 100%; height: auto; }
 .download-cta .section-heading { color: var(--white); }
 
 /* FAQ */
-.faq-section { max-width: 640px; margin: 0 auto; }
-.faq-item { border-bottom: 1px solid #eee; }
-.faq-item summary { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; font-size: 14px; font-weight: 600; cursor: pointer; list-style: none; }
-.faq-item summary::after { content: "+"; font-size: 20px; color: var(--gray-400); }
+.faq-section { max-width: 520px; margin: 0 auto; }
+.faq-item { background: #f8f8f8; border-radius: 10px; margin-bottom: 8px; border: none; }
+.faq-item summary { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 13px; font-weight: 600; cursor: pointer; list-style: none; }
+.faq-item summary::after { content: "+"; font-size: 16px; color: var(--gray-400); font-weight: 400; }
 .faq-item[open] summary::after { content: "−"; }
-.faq-item .answer { padding: 0 0 12px; font-size: 13px; color: var(--gray-400); line-height: 1.6; }
+.faq-item .answer { padding: 0 16px 12px; font-size: 12px; color: var(--gray-400); line-height: 1.6; }
 
 /* App Download CTA */
 .download-cta-section { overflow: visible; }
