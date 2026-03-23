@@ -184,11 +184,14 @@ img { max-width: 100%; height: auto; }
 .faq-item .answer { padding: 0 0 12px; font-size: 13px; color: var(--gray-400); line-height: 1.6; }
 
 /* App Download CTA */
-.download-cta { background: linear-gradient(135deg, #0D0D0D, #2C2C2C, #F15A22); border-radius: 24px; padding: 60px; margin: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.download-cta-section { overflow: visible; }
+.download-cta { background: linear-gradient(135deg, #0D0D0D, #2C2C2C, #F15A22); border-radius: 24px; padding: 60px; margin: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; position: relative; overflow: visible; min-height: 340px; }
 .download-cta h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; color: var(--white); }
 .download-cta p, .download-cta .section-desc { color: rgba(255,255,255,0.7); margin-bottom: 20px; }
 .download-cta .label { font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; color: var(--white); }
 .download-cta .stores { display: flex; gap: 12px; }
+.download-cta-phone { display: flex; justify-content: center; align-items: flex-end; position: relative; }
+.download-cta-phone img { max-height: 520px; border-radius: 28px; object-fit: contain; margin-bottom: -60px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4)); }
 .store-badge { background: var(--navy); color: var(--white); padding: 10px 20px; border-radius: 10px; display: flex; align-items: center; gap: 8px; font-size: 13px; }
 .store-badge .small { font-size: 10px; opacity: 0.7; }
 .store-badge .name { font-weight: 700; }

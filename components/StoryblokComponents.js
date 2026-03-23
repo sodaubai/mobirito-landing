@@ -379,26 +379,22 @@ function FaqSection({ blok }) {
 }
 
 function AppDownloadCta({ blok }) {
+  const imgSrc = blok.image?.filename || "/images/download-cta.svg";
   return (
-    <section className="section">
+    <section className="section download-cta-section">
       <div className="download-cta">
-        <div>
+        <div className="download-cta-content">
           <h2>{blok.heading}</h2>
           <p>{blok.body}</p>
           <div className="label">{blok.download_label}</div>
           <div className="stores">
-
             <a href={blok.play_store_url?.url || "#"} className="store-badge">
               <svg width="20" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.144 1.24a1 1 0 0 1 0 1.732l-2.144 1.24-2.53-2.53 2.53-2.682zM5.864 3.458L16.8 9.79l-2.302 2.302-8.634-8.634z"/></svg><div><div className="small">Available on</div><div className="name">Play Store</div></div>
             </a>
           </div>
         </div>
-        <div style={{textAlign:"center"}}>
-          {blok.image?.filename ? (
-            <img src={blok.image.filename} alt={blok.image.alt || "App"} style={{maxHeight:420,borderRadius:28,margin:"0 auto",objectFit:"contain"}} />
-          ) : (
-            <img src="/images/download-cta.svg" alt="Navinext App" style={{maxHeight:460,margin:"0 auto",objectFit:"contain"}} />
-          )}
+        <div className="download-cta-phone">
+          <img src={imgSrc} alt={blok.image?.alt || "Navinext App"} />
         </div>
       </div>
     </section>
