@@ -427,9 +427,7 @@ function SiteFooter({ blok }) {
             <p className="copyright">© 2026 NVIT. All rights reserved.</p>
           </div>
         </div>
-        <div className="footer-bottom">
-          <p>Made with ❤️ for Vietnamese community in Japan • #NavinextAI #VietnameseInJapan #AIDriving</p>
-        </div>
+
       </div>
     </footer>
   );
