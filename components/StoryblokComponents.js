@@ -420,10 +420,11 @@ function SiteFooter({ blok }) {
             <div className="social-icons">
               {socialIcons.map((s) => <SocialLink key={s._uid} blok={s} />)}
             </div>
-            <p className="copyright">© 2026 NVIT. All rights reserved.</p>
           </div>
         </div>
-
+        <div className="footer-bottom">
+          <p>© 2026 NVIT. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   );
