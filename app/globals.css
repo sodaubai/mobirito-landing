@@ -623,3 +623,87 @@ header { background: rgba(13,13,13,0.85); backdrop-filter: blur(12px); -webkit-b
   .about-nvit-info { flex-direction: column; gap: 16px; }
   .counter-value { font-size: 32px; }
 }
+
+/* ===== Contact Page ===== */
+.contact-page { background: var(--white); }
+
+/* Hero */
+.ct-hero { background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #8B3A15 85%, #C74A1B 100%); padding: 160px 0 80px; text-align: center; }
+.ct-hero-tag { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--orange); margin-bottom: 16px; }
+.ct-hero-title { font-size: 42px; font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+.ct-hero-desc { font-size: 17px; color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+/* Split layout */
+.ct-main { padding: 60px 0 80px; }
+.ct-split { display: grid; grid-template-columns: 2fr 3fr; gap: 48px; align-items: start; }
+
+/* Left info */
+.ct-info-title { font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 24px; }
+.ct-info-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+.ct-info-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: var(--gray-100); border-radius: 12px; transition: transform 0.2s, box-shadow 0.2s; }
+.ct-info-item:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+.ct-info-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(241,90,34,0.08); border-radius: 10px; color: var(--orange); flex-shrink: 0; }
+.ct-info-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-400); margin-bottom: 2px; }
+.ct-info-value { font-size: 14px; font-weight: 600; color: var(--navy); }
+
+/* Community */
+.ct-community { margin-bottom: 32px; }
+.ct-community-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+.ct-community-links { display: flex; gap: 10px; }
+.ct-social-btn { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 10px; font-size: 13px; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+.ct-social-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.ct-social-btn--fb { background: #1877F2; color: var(--white); }
+.ct-social-btn--zalo { background: #0068FF; color: var(--white); }
+
+/* Map */
+.ct-map { margin-bottom: 16px; }
+.ct-map-embed { border-radius: 12px; overflow: hidden; margin-bottom: 8px; }
+.ct-map-address { font-size: 13px; color: var(--gray-400); }
+
+/* Right form */
+.ct-form-wrap { background: var(--white); border: 1px solid var(--gray-200); border-radius: 20px; padding: 36px; position: relative; overflow: hidden; }
+.ct-form-title { font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.ct-form-desc { font-size: 14px; color: var(--gray-400); margin-bottom: 28px; }
+
+/* Floating label fields */
+.ct-field { position: relative; margin-bottom: 20px; }
+.ct-label { position: absolute; left: 14px; top: 16px; font-size: 14px; color: var(--gray-400); pointer-events: none; transition: all 0.2s ease; background: var(--white); padding: 0 4px; }
+.ct-field--active .ct-label { top: -8px; font-size: 11px; color: var(--orange); font-weight: 600; }
+.ct-input { width: 100%; padding: 14px; font-size: 14px; border: 1.5px solid var(--gray-200); border-radius: 10px; outline: none; transition: border-color 0.2s; background: var(--white); font-family: inherit; color: var(--navy); }
+.ct-input:focus { border-color: var(--orange); }
+.ct-select { appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23959cb1' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+.ct-textarea { resize: vertical; min-height: 100px; }
+.ct-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* Submit button */
+.ct-submit { width: 100%; padding: 16px; background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: var(--white); border: none; border-radius: 12px; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s; font-family: inherit; }
+.ct-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(241,90,34,0.3); }
+.ct-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+.ct-submit-sending { display: flex; align-items: center; gap: 8px; }
+
+/* Paper plane animation */
+.ct-plane-anim { position: absolute; bottom: 80px; right: 40px; animation: flyAway 1.5s ease-in forwards; z-index: 10; }
+@keyframes flyAway {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate(200px, -200px) rotate(-20deg); opacity: 0; }
+}
+
+/* Toast notification */
+.ct-toast { position: fixed; bottom: 24px; right: 24px; z-index: 1000; animation: toastIn 0.4s ease; }
+.ct-toast-content { display: flex; align-items: center; gap: 10px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 14px 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); font-size: 14px; color: var(--navy); font-weight: 500; }
+.ct-toast-close { background: none; border: none; font-size: 18px; color: var(--gray-400); cursor: pointer; padding: 0 0 0 8px; }
+@keyframes toastIn { 0% { transform: translateY(20px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+
+/* Contact responsive */
+@media (max-width: 900px) {
+  .ct-split { grid-template-columns: 1fr; }
+  .ct-hero-title { font-size: 30px; }
+}
+@media (max-width: 600px) {
+  .ct-hero { padding: 120px 0 48px; }
+  .ct-hero-title { font-size: 24px; }
+  .ct-form-wrap { padding: 24px 20px; }
+  .ct-form-row { grid-template-columns: 1fr; }
+  .ct-community-links { flex-direction: column; }
+  .ct-toast { bottom: 12px; right: 12px; left: 12px; }
+}

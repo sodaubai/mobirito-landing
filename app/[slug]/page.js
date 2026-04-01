@@ -4,6 +4,7 @@ import { DynamicComponent } from "../../components/StoryblokComponents";
 import FeaturesPageContent from "../../components/FeaturesPageContent";
 import RoadmapPageContent from "../../components/RoadmapPageContent";
 import AboutPageContent from "../../components/AboutPageContent";
+import ContactPageContent from "../../components/ContactPageContent";
 
 export async function generateStaticParams() {
   return [
@@ -20,6 +21,7 @@ const CUSTOM_PAGES = {
   service: FeaturesPageContent,
   portfolio: RoadmapPageContent,
   about: AboutPageContent,
+  contact: ContactPageContent,
 };
 
 export default async function Page({ params }) {
