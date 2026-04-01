@@ -42,6 +42,15 @@ img { max-width: 100%; height: auto; }
 .navbar nav a:hover { opacity: 1; }
 .navbar .nav-actions { display: flex; align-items: center; gap: 16px; }
 .navbar .nav-actions .login { color: var(--white); font-size: 15px; }
+.lang-selector { position: relative; }
+.lang-toggle { display: flex; align-items: center; gap: 4px; color: var(--white); font-size: 14px; font-weight: 600; cursor: pointer; opacity: 0.85; transition: opacity 0.2s; }
+.lang-toggle:hover { opacity: 1; }
+.lang-toggle svg { opacity: 0.6; }
+.lang-menu { position: absolute; top: calc(100% + 8px); right: 0; background: rgba(13,13,13,0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 6px 0; min-width: 130px; z-index: 100; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.lang-item { display: flex; align-items: center; gap: 8px; padding: 8px 14px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7); cursor: pointer; transition: background 0.15s, color 0.15s; }
+.lang-item:hover { background: rgba(255,255,255,0.08); color: var(--white); }
+.lang-item.selected { color: var(--orange); }
+.lang-name { font-weight: 400; opacity: 0.6; font-size: 12px; }
 
 /* Hero */
 .hero { background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #8B3A15 85%, #C74A1B 100%); padding: 140px 0 80px; min-height: 100vh; box-sizing: border-box; position: relative; overflow: clip; display: flex; align-items: center; }
