@@ -64,7 +64,7 @@ header { background: rgba(13,13,13,0.85); backdrop-filter: blur(12px); -webkit-b
 .hero .avatar-stack-item { width: 32px; height: 32px; min-width: 32px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.8); margin-left: -8px; object-fit: cover; background: #e0e0e0; }
 .hero .avatar-stack-item:first-child { margin-left: 0; }
 .hero .phone-mockup { position: absolute; right: 0; bottom: 0; width: 50%; height: 100%; display: flex; align-items: flex-end; justify-content: flex-end; pointer-events: none; }
-.hero .phone-mockup img { height: 95%; max-width: none; object-fit: contain; object-position: right bottom; mix-blend-mode: lighten; filter: drop-shadow(0 0 40px rgba(241,90,34,0.2)); margin: 0; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%), linear-gradient(to bottom, black 70%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%), linear-gradient(to bottom, black 70%, transparent 100%); mask-composite: intersect; }
+.hero .phone-mockup img { height: 95%; max-width: none; object-fit: contain; object-position: right bottom; mix-blend-mode: lighten; filter: drop-shadow(0 0 40px rgba(241,90,34,0.2)); margin: 0; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%); mask-composite: intersect; }
 
 /* Logo Bar */
 .logo-bar { padding: 40px 0; text-align: center; }
