@@ -554,3 +554,71 @@ header { background: rgba(13,13,13,0.85); backdrop-filter: blur(12px); -webkit-b
   .rm-hero-title { font-size: 24px; }
   .rm-card { padding: 20px; }
 }
+
+/* ===== About Page ===== */
+.about-page { background: var(--white); }
+
+/* Hero parallax */
+.about-hero { position: relative; min-height: 480px; display: flex; align-items: center; overflow: hidden; }
+.about-hero-bg { position: absolute; inset: -60px 0 0 0; background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #8B3A15 85%, #C74A1B 100%); z-index: 0; will-change: transform; }
+.about-hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.3); z-index: 1; }
+.about-hero-content { position: relative; z-index: 2; text-align: center; padding: 160px 0 80px; }
+.about-hero-tag { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--orange); margin-bottom: 16px; }
+.about-hero-title { font-size: 42px; font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+.about-hero-desc { font-size: 17px; color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+/* Story split 50/50 */
+.about-story { padding: 80px 0; }
+.about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.about-split-image { aspect-ratio: 4/3; border-radius: 20px; overflow: hidden; }
+.about-image-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #1E1E1E, #3a2010); display: flex; flex-direction: column; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); border-radius: 20px; gap: 12px; }
+.about-image-placeholder span { font-size: 48px; }
+.about-image-placeholder p { font-size: 14px; }
+.about-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--orange); display: block; margin-bottom: 8px; }
+.about-heading { font-size: 32px; font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 20px; }
+.about-text { font-size: 15px; color: var(--gray-600); line-height: 1.8; margin-bottom: 16px; }
+
+/* NVIT section */
+.about-nvit { padding: 0 0 80px; }
+.about-nvit-card { background: linear-gradient(135deg, #0D0D0D, #1E1E1E, #3a1a0a); border-radius: 24px; padding: 48px; color: var(--white); }
+.about-nvit-card .about-heading { color: var(--white); }
+.about-nvit-card .about-text { color: rgba(255,255,255,0.7); }
+.about-nvit-info { display: flex; gap: 32px; margin-top: 24px; flex-wrap: wrap; }
+.about-nvit-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: rgba(255,255,255,0.8); }
+.about-nvit-icon { font-size: 20px; }
+
+/* Stats parallax section */
+.about-stats { position: relative; overflow: hidden; padding: 60px 0; }
+.about-stats-bg { position: absolute; inset: -80px 0 0 0; background: linear-gradient(135deg, #0D0D0D, #2C2C2C, #C74A1B); will-change: transform; z-index: 0; }
+.about-stats-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); z-index: 1; }
+.about-stats-content { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+.about-stat-item { padding: 24px 16px; }
+.counter-value { font-size: 40px; font-weight: 800; color: var(--white); display: block; margin-bottom: 8px; }
+.counter-label { font-size: 14px; color: rgba(255,255,255,0.7); }
+
+/* Mission & Values */
+.about-mission { padding: 80px 0; }
+.about-mission-header { text-align: center; margin-bottom: 48px; }
+.about-values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.about-value-card { background: var(--gray-100); border-radius: 16px; padding: 28px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; cursor: default; border: 1px solid transparent; }
+.about-value-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(241,90,34,0.12); border-color: rgba(241,90,34,0.2); }
+.about-value-icon { font-size: 36px; display: block; margin-bottom: 16px; }
+.about-value-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.about-value-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+
+/* About responsive */
+@media (max-width: 900px) {
+  .about-split { grid-template-columns: 1fr; }
+  .about-stats-content { grid-template-columns: repeat(2, 1fr); }
+  .about-values-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-hero-title { font-size: 30px; }
+}
+@media (max-width: 600px) {
+  .about-hero-content { padding: 120px 0 48px; }
+  .about-hero-title { font-size: 24px; }
+  .about-stats-content { grid-template-columns: 1fr 1fr; }
+  .about-values-grid { grid-template-columns: 1fr; }
+  .about-nvit-card { padding: 32px 20px; }
+  .about-nvit-info { flex-direction: column; gap: 16px; }
+  .counter-value { font-size: 32px; }
+}

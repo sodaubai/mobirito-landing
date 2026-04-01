@@ -3,6 +3,7 @@ import { fetchStory } from "../../lib/api";
 import { DynamicComponent } from "../../components/StoryblokComponents";
 import FeaturesPageContent from "../../components/FeaturesPageContent";
 import RoadmapPageContent from "../../components/RoadmapPageContent";
+import AboutPageContent from "../../components/AboutPageContent";
 
 export async function generateStaticParams() {
   return [
@@ -18,6 +19,7 @@ export async function generateStaticParams() {
 const CUSTOM_PAGES = {
   service: FeaturesPageContent,
   portfolio: RoadmapPageContent,
+  about: AboutPageContent,
 };
 
 export default async function Page({ params }) {
