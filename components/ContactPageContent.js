@@ -125,18 +125,37 @@ export default function ContactPageContent() {
   const [showPlane, setShowPlane] = useState(false);
   const [showToast, setShowToast] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
     setShowPlane(true);
 
-    setTimeout(() => {
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setShowPlane(false);
+        setSending(false);
+        setShowToast(true);
+        e.target.reset();
+        setTimeout(() => setShowToast(false), 5000);
+      } else {
+        setShowPlane(false);
+        setSending(false);
+        alert("Gửi thất bại, vui lòng thử lại.");
+      }
+    } catch {
       setShowPlane(false);
       setSending(false);
-      setShowToast(true);
-      e.target.reset();
-      setTimeout(() => setShowToast(false), 5000);
-    }, 1500);
+      alert("Lỗi kết nối, vui lòng thử lại.");
+    }
   };
 
   return (
