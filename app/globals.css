@@ -33,7 +33,7 @@ img { max-width: 100%; height: auto; }
 .btn-sm { padding: 10px 20px; font-size: 14px; }
 
 /* Navbar */
-header { background: transparent; }
+header { background: transparent; position: absolute; top: 0; left: 0; right: 0; z-index: 50; }
 .navbar { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
 .navbar .logo { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 700; }
 .navbar .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--orange), var(--orange-dark)); border-radius: 50%; }
