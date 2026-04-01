@@ -54,8 +54,7 @@ header { background: transparent; position: relative; z-index: 50; }
 .lang-name { font-weight: 400; opacity: 0.6; font-size: 12px; }
 
 /* Hero */
-.hero { background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #8B3A15 85%, #C74A1B 100%); padding: 140px 0 80px; min-height: 100vh; box-sizing: border-box; position: relative; overflow: visible; display: flex; align-items: center; margin-top: -90px; padding-top: 200px; }
-.hero::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(to bottom, transparent, #fff); pointer-events: none; z-index: 2; }
+.hero { background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #8B3A15 85%, #C74A1B 100%); padding: 140px 0 80px; min-height: 100vh; box-sizing: border-box; position: relative; overflow: clip; display: flex; align-items: center; margin-top: -90px; padding-top: 200px; }
 .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; width: 100%; position: relative; }
 .hero h1 { font-size: 56px; font-weight: 800; color: var(--white); line-height: 1.15; margin-bottom: 20px; }
 .hero p { color: rgba(255,255,255,0.8); font-size: 16px; margin-bottom: 24px; }
