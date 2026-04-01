@@ -5,63 +5,48 @@ import ScrollReveal from "./ScrollReveal";
 const PHASES = [
   {
     phase: "Phase 1",
-    label: "Hiện tại",
-    title: "Nền tảng Navinext AI",
+    label: "Beta & MVP",
+    title: "Chinh phục 1.000 Early Adopters",
     status: "active",
     color: "#F15A22",
     icon: "🚀",
-    desc: "App dẫn đường AI, tránh ngõ hẹp và cộng đồng 5.000+ người dùng tại Tokyo & Osaka.",
+    desc: "Xây dựng nền tảng cốt lõi — từ cảnh báo hạn chế giao thông đến trợ lý AI giọng nói, tối ưu thuật toán tránh đường hẹp đặc thù Nhật Bản.",
     highlights: [
-      "Dẫn đường AI tránh ngõ hẹp 2.5m",
-      "Companion App đồng bộ Headunit",
-      "Cộng đồng 5.000+ người dùng",
-      "Hỗ trợ Tokyo, Osaka và vùng lân cận",
+      "Restriction Alert: cảnh báo biển cấm, làn xe buýt, khu vực tốc độ thấp",
+      "Trợ lý AI một chiều: chỉ dẫn lộ trình & cảnh báo chủ động qua giọng nói",
+      "Thuật toán tránh bẫy đường hẹp/đường ruộng đặc thù Nhật",
     ],
+    goal: "Lấy feedback từ 1.000 người dùng đầu tiên để xác thực giá trị và mô hình trả phí.",
   },
   {
     phase: "Phase 2",
-    label: "Sắp ra mắt",
-    title: "Đột phá AI Vision",
+    label: "Đột phá AI Vision",
+    title: "Nâng cấp phần cứng & tương tác",
     status: "upcoming",
     color: "#F15A22",
     icon: "👁️",
-    desc: "Ra mắt phần cứng AI Dashcam chuyên dụng. Tích hợp ADAS và tương tác giọng nói AI 2 chiều.",
+    desc: "Tích hợp AI Dashcam thông minh với Computer Vision, ADAS và giọng nói hai chiều — nâng tầm trải nghiệm lái xe an toàn.",
     highlights: [
-      "Phần cứng AI Dashcam chuyên dụng",
-      "ADAS: Cảnh báo va chạm, lệch làn",
-      "Giọng nói AI 2 chiều (Việt/Anh)",
-      "Dịch biển báo real-time qua camera",
+      "Computer Vision: nhận diện biển báo, vạch kẻ đường qua AI Dashcam",
+      "ADAS: cảnh báo lệch làn, va chạm sớm, khoảng cách an toàn real-time",
+      "Giọng nói hai chiều: ra lệnh & đối thoại rảnh tay (Hands-free)",
     ],
+    goal: "Nâng cấp linh hoạt dựa trên sự đón nhận của người dùng ở Phase 1.",
   },
   {
     phase: "Phase 3",
-    label: "Tầm nhìn 2027",
-    title: "Hệ sinh thái B2B",
+    label: "Hệ sinh thái B2B",
+    title: "Số hóa doanh nghiệp vận tải",
     status: "future",
     color: "#C74A1B",
     icon: "🏢",
-    desc: "Giải pháp quản lý đội xe cho Gara và công ty vận tải. Chấm điểm lái xe an toàn để tối ưu bảo hiểm.",
+    desc: "Mở rộng sang B2B với Fleet Management, chấm điểm lái xe an toàn và kết nối đối tác hạ tầng.",
     highlights: [
-      "Fleet Management cho doanh nghiệp",
-      "Safety Score — chấm điểm lái xe",
-      "Tối ưu chi phí bảo hiểm đội xe",
-      "Dashboard quản lý cho Gara/vận tải",
+      "Fleet Management: Dashboard AI quản lý đội xe, theo dõi hành trình, nhắc bảo trì",
+      "Safety Score: đánh giá hành vi tài xế, giảm rủi ro bảo hiểm",
+      "Partnership: tích hợp bãi đỗ xe, trạm sạc EV, dịch vụ cứu hộ ưu tiên",
     ],
-  },
-  {
-    phase: "Phase 4",
-    label: "Tương lai",
-    title: "Kết nối đô thị thông minh",
-    status: "future",
-    color: "#0D0D0D",
-    icon: "🌐",
-    desc: "Tích hợp dữ liệu bãi đỗ xe trống và trạm sạc xe điện (EV) thời gian thực trên toàn Nhật Bản.",
-    highlights: [
-      "Bãi đỗ xe trống real-time",
-      "Bản đồ trạm sạc EV toàn Nhật",
-      "Dữ liệu giao thông thông minh",
-      "Tích hợp hạ tầng đô thị",
-    ],
+    goal: null,
   },
 ];
 
@@ -148,6 +133,11 @@ export default function RoadmapPageContent() {
                         <li key={j} style={{ "--dot-color": phase.color }}>{h}</li>
                       ))}
                     </ul>
+                    {phase.goal && (
+                      <div className="rm-card-goal">
+                        <strong>Mục tiêu:</strong> {phase.goal}
+                      </div>
+                    )}
                   </div>
                 </div>
               </ScrollReveal>
