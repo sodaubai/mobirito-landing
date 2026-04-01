@@ -26,17 +26,21 @@ const CUSTOM_PAGES = {
 
 export default async function Page({ params }) {
   const { slug } = await params;
-  const story = await fetchStory(slug);
+  const [story, homeStory] = await Promise.all([
+    fetchStory(slug),
+    fetchStory("home"),
+  ]);
   if (!story) return <div>Page not found</div>;
 
   const CustomContent = CUSTOM_PAGES[slug];
   if (CustomContent) {
     const c = story.content;
+    const footerData = c.footer?.length ? c.footer : homeStory?.content?.footer || [];
     return (
       <>
         {c.navbar?.map(b => <DynamicComponent key={b._uid} blok={b} />)}
         <CustomContent />
-        {c.footer?.map(b => <DynamicComponent key={b._uid} blok={b} />)}
+        {footerData.map(b => <DynamicComponent key={b._uid} blok={b} />)}
       </>
     );
   }
