@@ -71,7 +71,7 @@ export default function BlogPageContent({ posts = [] }) {
                     <div
                       className="blog-card__image"
                       style={thumbUrl
-                        ? { backgroundImage: \`url(\${thumbUrl}/m/600x400)\`, backgroundSize: "cover", backgroundPosition: "center" }
+                        ? { backgroundImage: `url(${thumbUrl}/m/600x400)`, backgroundSize: "cover", backgroundPosition: "center" }
                         : { background: bg }
                       }
                     >
