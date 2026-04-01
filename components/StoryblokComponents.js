@@ -184,7 +184,7 @@ function BlogPostCard({ blok }) {
 
 function SiteNavbar({ blok }) {
   return (
-    <header style={{position:"absolute",width:"100%",zIndex:10}}>
+    <header style={{position:"fixed",width:"100%",zIndex:50,top:0}}>
       <div className="container">
         <div className="navbar">
           <a className="logo" href="/">
