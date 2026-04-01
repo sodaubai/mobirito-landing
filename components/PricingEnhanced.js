@@ -74,7 +74,7 @@ export default function PricingEnhanced({ blok }) {
                   <button className={`btn ${isFeatured ? "btn-primary" : "btn-dark"} btn-sm`} style={{ width: "100%" }}>
                     {p.cta_label}
                   </button>
-                  {isEarlyBird && <ProgressBar current={125} total={1000} />}
+
                 </div>
               </div>
             );
