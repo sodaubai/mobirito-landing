@@ -363,6 +363,7 @@ header { background: transparent; position: relative; z-index: 50; }
 }
 
 /* ===== Features Page ===== */
+.features-page { background: #fff; }
 .features-hero { background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #8B3A15 85%, #C74A1B 100%); padding: 170px 0 80px; margin-top: -90px; text-align: center; }
 .features-hero-tag { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--orange); margin-bottom: 16px; }
 .features-hero-title { font-size: 42px; font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
@@ -709,7 +710,7 @@ header { background: transparent; position: relative; z-index: 50; }
 }
 
 /* ===== BLOG PAGE ===== */
-.blog-page { padding-top: 0; }
+.blog-page { padding-top: 0; background: var(--white); }
 
 .blog-hero {
   margin-top: -90px;
