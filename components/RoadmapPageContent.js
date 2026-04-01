@@ -91,8 +91,7 @@ export default function RoadmapPageContent() {
               Từ nền tảng AI<br />đến hệ sinh thái đô thị thông minh
             </h1>
             <p className="rm-hero-desc">
-              Cam kết phát triển lâu dài. Mỗi giai đoạn là một bước tiến
-              vững chắc trong sứ mệnh đồng hành cùng cộng đồng người Việt tại Nhật.
+              Cam kết phát triển lâu dài, đồng hành cùng cộng đồng người Việt tại Nhật.
             </p>
           </ScrollReveal>
         </div>

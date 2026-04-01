@@ -196,8 +196,7 @@ export default function FeaturesPageContent() {
               Công nghệ AI giải quyết<br />mọi nỗi đau lái xe tại Nhật
             </h1>
             <p className="features-hero-desc">
-              Khám phá cách Navinext sử dụng AI, thị giác máy tính và dữ liệu cộng đồng
-              để biến việc lái xe tại Nhật Bản trở nên an toàn và dễ dàng hơn bao giờ hết.
+              Khám phá cách Navinext sử dụng AI và dữ liệu cộng đồng để biến việc lái xe tại Nhật Bản trở nên an toàn hơn.
             </p>
           </ScrollReveal>
         </div>

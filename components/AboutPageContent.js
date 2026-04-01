@@ -103,8 +103,7 @@ export default function AboutPageContent() {
               Đồng hành cùng bạn<br />trên mọi cung đường Nhật Bản
             </h1>
             <p className="about-hero-desc">
-              Navinext ra đời từ chính trải nghiệm thực tế của những người
-              nước ngoài lần đầu cầm lái tại xứ sở mặt trời mọc.
+              Navinext ra đời từ trải nghiệm thực tế của người nước ngoài lần đầu cầm lái tại Nhật.
             </p>
           </ScrollReveal>
         </div>
