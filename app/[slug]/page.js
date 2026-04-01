@@ -7,6 +7,8 @@ import RoadmapPageContent from "../../components/RoadmapPageContent";
 import AboutPageContent from "../../components/AboutPageContent";
 import ContactPageContent from "../../components/ContactPageContent";
 import BlogPageContent from "../../components/BlogPageContent";
+import PrivacyPolicyPage from "../../components/PrivacyPolicyPage";
+import TermsOfServicePage from "../../components/TermsOfServicePage";
 
 export async function generateStaticParams() {
   return [
@@ -16,6 +18,8 @@ export async function generateStaticParams() {
     { slug: "portfolio-details" },
     { slug: "blog" },
     { slug: "contact" },
+    { slug: "privacy-policy" },
+    { slug: "terms-of-service" },
   ];
 }
 
@@ -25,6 +29,8 @@ const CUSTOM_PAGES = {
   about: AboutPageContent,
   contact: ContactPageContent,
   blog: BlogPageContent,
+  "privacy-policy": PrivacyPolicyPage,
+  "terms-of-service": TermsOfServicePage,
 };
 
 export default async function Page({ params }) {
