@@ -92,7 +92,7 @@ function Toast({ visible, onClose }) {
     <div className="ct-toast">
       <div className="ct-toast-content">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-        <span>Cam on ban, chung toi se lien he lai trong 24h!</span>
+        <span>Cảm ơn bạn, chúng tôi sẽ liên hệ lại trong 24h!</span>
         <button onClick={onClose} className="ct-toast-close">&times;</button>
       </div>
     </div>
@@ -102,7 +102,7 @@ function Toast({ visible, onClose }) {
 const CONTACT_INFO = [
   {
     icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>,
-    label: "Email ho tro",
+    label: "Email hỗ trợ",
     value: "support@navinext.com",
     href: "mailto:support@navinext.com",
   },
@@ -114,7 +114,7 @@ const CONTACT_INFO = [
   },
   {
     icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>,
-    label: "Group cong dong",
+    label: "Group cộng đồng",
     value: "Tham gia Zalo / Facebook",
     href: "#",
   },
@@ -145,11 +145,11 @@ export default function ContactPageContent() {
       <section className="ct-hero">
         <div className="container">
           <ScrollReveal>
-            <p className="ct-hero-tag">LIEN HE</p>
-            <h1 className="ct-hero-title">Ket noi voi chung toi</h1>
+            <p className="ct-hero-tag">LIÊN HỆ</p>
+            <h1 className="ct-hero-title">Kết nối với chúng tôi</h1>
             <p className="ct-hero-desc">
-              Ban can ho tro cai dat, mua thiet bi, hoac muon hop tac?
-              Hay lien he, doi ngu NVIT luon san sang giup ban.
+              Bạn cần hỗ trợ cài đặt, mua thiết bị, hoặc muốn hợp tác?
+              Hãy liên hệ, đội ngũ NVIT luôn sẵn sàng giúp bạn.
             </p>
           </ScrollReveal>
         </div>
@@ -162,7 +162,7 @@ export default function ContactPageContent() {
             {/* Left - Info 40% */}
             <ScrollReveal direction="left">
               <div className="ct-info">
-                <h2 className="ct-info-title">Thong tin lien he</h2>
+                <h2 className="ct-info-title">Thông tin liên hệ</h2>
 
                 <div className="ct-info-list">
                   {CONTACT_INFO.map((item, i) => (
@@ -178,7 +178,7 @@ export default function ContactPageContent() {
 
                 {/* Community links */}
                 <div className="ct-community">
-                  <h3 className="ct-community-title">Cong dong nguoi dung</h3>
+                  <h3 className="ct-community-title">Cộng đồng người dùng</h3>
                   <div className="ct-community-links">
                     <a href="#" className="ct-social-btn ct-social-btn--fb">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
@@ -193,7 +193,7 @@ export default function ContactPageContent() {
 
                 {/* Google Maps */}
                 <div className="ct-map">
-                  <h3 className="ct-community-title">Van phong NVIT</h3>
+                  <h3 className="ct-community-title">Văn phòng NVIT</h3>
                   <div className="ct-map-embed">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.828!2d139.7671!3d35.6812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQwJzUyLjMiTiAxMznCsDQ2JzAxLjYiRQ!5e0!3m2!1svi!2sjp!4v1"
@@ -214,39 +214,39 @@ export default function ContactPageContent() {
             {/* Right - Form 60% */}
             <ScrollReveal direction="right">
               <div className="ct-form-wrap">
-                <h2 className="ct-form-title">Gui yeu cau lien he</h2>
-                <p className="ct-form-desc">Dien thong tin ben duoi, chung toi se phan hoi trong 24h.</p>
+                <h2 className="ct-form-title">Gửi yêu cầu liên hệ</h2>
+                <p className="ct-form-desc">Điền thông tin bên dưới, chúng tôi sẽ phản hồi trong 24h.</p>
 
                 <form onSubmit={handleSubmit} className="ct-form">
-                  <FloatingInput label="Ho va ten *" name="name" required />
+                  <FloatingInput label="Họ và tên *" name="name" required />
                   <div className="ct-form-row">
                     <FloatingInput label="Email *" name="email" type="email" required />
-                    <FloatingInput label="So dien thoai" name="phone" type="tel" />
+                    <FloatingInput label="Số điện thoại" name="phone" type="tel" />
                   </div>
                   <FloatingSelect
-                    label="Loai phuong tien"
+                    label="Loại phương tiện"
                     name="vehicle_type"
-                    options={["Ca nhan", "Doanh nghiep"]}
+                    options={["Cá nhân", "Doanh nghiệp"]}
                   />
                   <FloatingSelect
-                    label="Van de can ho tro"
+                    label="Vấn đề cần hỗ trợ"
                     name="issue"
                     options={[
-                      "Cai dat ung dung",
-                      "Mua thiet bi OBD-II",
-                      "Hop tac dai ly",
-                      "Ho tro ky thuat",
-                      "Khac",
+                      "Cài đặt ứng dụng",
+                      "Mua thiết bị OBD-II",
+                      "Hợp tác đại lý",
+                      "Hỗ trợ kỹ thuật",
+                      "Khác",
                     ]}
                   />
-                  <FloatingTextarea label="Noi dung tin nhan" name="message" />
+                  <FloatingTextarea label="Nội dung tin nhắn" name="message" />
 
                   <button type="submit" className="ct-submit" disabled={sending}>
                     {sending ? (
-                      <span className="ct-submit-sending">Dang gui...</span>
+                      <span className="ct-submit-sending">Đang gửi...</span>
                     ) : (
                       <>
-                        Gui lien he
+                        Gửi liên hệ
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
                       </>
                     )}
