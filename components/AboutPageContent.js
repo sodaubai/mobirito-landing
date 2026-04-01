@@ -57,22 +57,22 @@ const STATS = [
 
 const VALUES = [
   {
-    icon: "🔒",
+    icon: <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor"/><path d="M8 11V7a4 4 0 118 0v4" stroke="currentColor"/><circle cx="12" cy="16" r="1.5" stroke="currentColor"/></svg>,
     title: "Bảo mật dữ liệu",
     desc: "Mã hóa end-to-end, không chia sẻ dữ liệu cá nhân với bên thứ ba.",
   },
   {
-    icon: "🔄",
+    icon: <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 12a9 9 0 11-6.22-8.56" stroke="currentColor"/><path d="M21 3v6h-6" stroke="currentColor" strokeLinejoin="round"/></svg>,
     title: "Cập nhật liên tục",
     desc: "Bản đồ và thuật toán được cải tiến hàng tuần dựa trên dữ liệu thực.",
   },
   {
-    icon: "👂",
+    icon: <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21c4.97-3.26 8-6.8 8-10a4 4 0 00-8-1 4 4 0 00-8 1c0 3.2 3.03 6.74 8 10z" stroke="currentColor"/></svg>,
     title: "Lắng nghe cộng đồng",
     desc: "Mỗi phản hồi đều được đọc, phân tích và đưa vào roadmap phát triển.",
   },
   {
-    icon: "🎯",
+    icon: <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor"/><circle cx="12" cy="12" r="6" stroke="currentColor"/><circle cx="12" cy="12" r="2" stroke="currentColor"/></svg>,
     title: "Giải quyết vấn đề thực",
     desc: "Xuất phát từ nỗi đau thực tế, không phải lý thuyết công nghệ.",
   },
@@ -209,7 +209,7 @@ export default function AboutPageContent() {
             {VALUES.map((v, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="about-value-card">
-                  <span className="about-value-icon">{v.icon}</span>
+                  <div className="about-value-icon">{v.icon}</div>
                   <h3 className="about-value-title">{v.title}</h3>
                   <p className="about-value-desc">{v.desc}</p>
                 </div>
