@@ -14,7 +14,7 @@ function renderText(val) {
 // =================== ATOMS ===================
 
 function NavItem({ blok }) {
-  return <a href={blok.link?.url || "#"}>{blok.label}</a>;
+  return <a href={blok.link?.url || blok.url || "#"}>{blok.label}</a>;
 }
 
 function BulletItem({ blok }) {
@@ -190,7 +190,7 @@ function SiteNavbar({ blok }) {
           <a className="logo" href="/">
             <img src={blok.logo?.filename || "/navinext-logo.svg"} alt={blok.logo_text || "Navinext"} className="logo-img" />
           </a>
-          <nav>{blok.nav_items?.map((i) => <NavItem key={i._uid} blok={i} />)}</nav>
+          <nav>{(blok.nav_items || blok.nav_links)?.map((i) => <NavItem key={i._uid} blok={i} />)}</nav>
           <div className="nav-actions">
             <a className="login" href={blok.login_link?.url || "#"}>{blok.login_label}</a>
             <LanguageSelector />
