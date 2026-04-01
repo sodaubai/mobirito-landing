@@ -479,3 +479,74 @@ img { max-width: 100%; height: auto; }
   .feature-block { padding: 40px 0; }
   .feature-visual--signs { grid-template-columns: 1fr; }
 }
+
+/* ===== Roadmap Page ===== */
+.roadmap-page { background: var(--white); }
+.rm-hero { background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 40%, #3a1dba 80%, #8b5cf6 100%); padding: 160px 0 80px; text-align: center; }
+.rm-hero-tag { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: #a78bfa; margin-bottom: 16px; }
+.rm-hero-title { font-size: 42px; font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+.rm-hero-desc { font-size: 17px; color: rgba(255,255,255,0.7); max-width: 580px; margin: 0 auto; line-height: 1.7; }
+
+/* Timeline */
+.rm-timeline-section { padding: 80px 0 100px; }
+.rm-timeline { position: relative; max-width: 720px; margin: 0 auto; padding-left: 48px; }
+
+/* Progress track */
+.rm-progress-track { position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: var(--gray-200); border-radius: 2px; z-index: 0; }
+.rm-progress-fill { width: 100%; background: linear-gradient(to bottom, #22c55e, #F15A22, #8b5cf6, #06b6d4); border-radius: 2px; transition: height 0.1s linear; }
+
+/* Phase items */
+.rm-phase { position: relative; margin-bottom: 48px; }
+.rm-phase:last-child { margin-bottom: 0; }
+
+/* Dot */
+.rm-dot-wrap { position: absolute; left: -48px; top: 24px; width: 33px; display: flex; justify-content: center; z-index: 2; }
+.rm-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--white); border: 3px solid var(--gray-200); }
+.rm-dot--pulse { border-color: #22c55e; background: #22c55e; animation: rmPulse 2s infinite; }
+@keyframes rmPulse {
+  0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+
+/* Cards */
+.rm-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 20px; padding: 32px; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+.rm-card::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--phase-color); }
+.rm-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+
+/* Active card */
+.rm-phase--active .rm-card { background: linear-gradient(135deg, #0D0D0D, #1a1a1a); border-color: rgba(34,197,94,0.3); color: var(--white); box-shadow: 0 8px 32px rgba(34,197,94,0.12); }
+.rm-phase--active .rm-card-desc { color: rgba(255,255,255,0.7); }
+
+/* Glass cards for future phases */
+.rm-card--glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.5); }
+.rm-phase--future .rm-card--glass { opacity: 0.85; }
+
+/* Card content */
+.rm-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.rm-card-icon { font-size: 32px; }
+.rm-card-phase { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-400); display: block; margin-bottom: 4px; }
+.rm-phase--active .rm-card-phase { color: rgba(255,255,255,0.5); }
+.rm-card-label { font-size: 11px; font-weight: 700; color: var(--white); padding: 3px 10px; border-radius: 12px; display: inline-block; }
+.rm-card-title { font-size: 24px; font-weight: 800; margin-bottom: 10px; line-height: 1.3; }
+.rm-card-desc { font-size: 15px; color: var(--gray-600); line-height: 1.7; margin-bottom: 20px; }
+.rm-card-highlights { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.rm-card-highlights li { font-size: 13px; color: var(--gray-600); padding-left: 20px; position: relative; line-height: 1.5; }
+.rm-card-highlights li::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: var(--dot-color); opacity: 0.7; }
+.rm-phase--active .rm-card-highlights li { color: rgba(255,255,255,0.8); }
+
+/* Roadmap responsive */
+@media (max-width: 768px) {
+  .rm-hero-title { font-size: 30px; }
+  .rm-timeline { padding-left: 36px; }
+  .rm-dot-wrap { left: -36px; width: 24px; }
+  .rm-progress-track { left: 10px; }
+  .rm-card { padding: 24px; }
+  .rm-card-highlights { grid-template-columns: 1fr; }
+  .rm-card-title { font-size: 20px; }
+}
+@media (max-width: 480px) {
+  .rm-hero { padding: 120px 0 48px; }
+  .rm-hero-title { font-size: 24px; }
+  .rm-card { padding: 20px; }
+}

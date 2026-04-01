@@ -7,7 +7,6 @@ const SECTIONS = [
   { id: "vision", label: "Dịch biển báo" },
   { id: "cost", label: "Quản lý chi phí" },
   { id: "obd", label: "Kết nối OBD-II" },
-  { id: "roadmap", label: "Lộ trình phát triển" },
 ];
 
 export default function FeaturesSidebar() {

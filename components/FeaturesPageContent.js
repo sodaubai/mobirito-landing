@@ -82,34 +82,7 @@ const FEATURES = [
   },
 ];
 
-const ROADMAP = [
-  {
-    phase: "Hiện tại",
-    title: "Nền tảng Navinext AI",
-    desc: "App dẫn đường, tránh ngõ hẹp và cộng đồng 5.000+ người dùng tại Tokyo & Osaka.",
-    status: "active",
-  },
-  {
-    phase: "Giai đoạn 2",
-    title: "Đột phá AI Vision",
-    badge: "Sắp ra mắt",
-    desc: "Ra mắt phần cứng AI Dashcam chuyên dụng. Tích hợp ADAS (cảnh báo va chạm, lệch làn). Tương tác giọng nói AI 2 chiều hoàn toàn bằng tiếng Việt/Anh.",
-    status: "upcoming",
-  },
-  {
-    phase: "Giai đoạn 3",
-    title: "Hệ sinh thái B2B",
-    badge: "Tầm nhìn 2027",
-    desc: "Giải pháp quản lý đội xe (Fleet Management) cho các Gara và công ty vận tải. Hệ thống chấm điểm lái xe an toàn (Safety Score) để tối ưu chi phí bảo hiểm.",
-    status: "future",
-  },
-  {
-    phase: "Tương lai",
-    title: "Kết nối đô thị thông minh",
-    desc: "Tích hợp dữ liệu bãi đỗ xe trống và trạm sạc xe điện (EV) thời gian thực trên toàn Nhật Bản.",
-    status: "future",
-  },
-];
+
 
 function FeatureVisual({ feature }) {
   if (feature.id === "narrow") {
@@ -262,35 +235,6 @@ export default function FeaturesPageContent() {
             </section>
           ))}
 
-          {/* Roadmap */}
-          <section id="roadmap" className="roadmap-section">
-            <ScrollReveal>
-              <h2 className="section-heading" style={{ textAlign: "center", marginBottom: 12 }}>
-                Lộ Trình Phát Triển
-              </h2>
-              <p className="section-desc" style={{ textAlign: "center", margin: "0 auto 48px" }}>
-                Cam kết phát triển lâu dài — từ nền tảng AI đến hệ sinh thái đô thị thông minh
-              </p>
-            </ScrollReveal>
-
-            <div className="roadmap-timeline">
-              {ROADMAP.map((item, i) => (
-                <ScrollReveal key={i} delay={i * 150}>
-                  <div className={`roadmap-item roadmap-item--${item.status}`}>
-                    <div className="roadmap-dot"></div>
-                    <div className="roadmap-card">
-                      <div className="roadmap-phase">
-                        {item.phase}
-                        {item.badge && <span className="roadmap-badge">{item.badge}</span>}
-                      </div>
-                      <h3 className="roadmap-title">{item.title}</h3>
-                      <p className="roadmap-desc">{item.desc}</p>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </section>
         </div>
       </div>
     </div>
