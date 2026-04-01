@@ -38,7 +38,7 @@ export default async function Page({ params }) {
   const CustomContent = CUSTOM_PAGES[slug];
   if (CustomContent) {
     const c = story.content;
-    const footerData = c.footer?.length ? c.footer : homeStory?.content?.footer || [];
+    const footerData = homeStory?.content?.footer || [];
 
     let extraProps = {};
     if (slug === "blog") {
