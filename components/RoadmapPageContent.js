@@ -10,7 +10,7 @@ const PHASES = [
     status: "active",
     color: "#F15A22",
     icon: "🚀",
-    desc: "Xây dựng nền tảng cốt lõi — từ cảnh báo hạn chế giao thông đến trợ lý AI giọng nói, tối ưu thuật toán tránh đường hẹp đặc thù Nhật Bản.",
+    desc: "Xây dựng nền tảng cốt lõi: từ cảnh báo hạn chế giao thông đến trợ lý AI giọng nói, tối ưu thuật toán tránh đường hẹp đặc thù Nhật Bản.",
     highlights: [
       "Restriction Alert: cảnh báo biển cấm, làn xe buýt, khu vực tốc độ thấp",
       "Trợ lý AI một chiều: chỉ dẫn lộ trình & cảnh báo chủ động qua giọng nói",
@@ -25,7 +25,7 @@ const PHASES = [
     status: "upcoming",
     color: "#F15A22",
     icon: "👁️",
-    desc: "Tích hợp AI Dashcam thông minh với Computer Vision, ADAS và giọng nói hai chiều — nâng tầm trải nghiệm lái xe an toàn.",
+    desc: "Tích hợp AI Dashcam thông minh với Computer Vision, ADAS và giọng nói hai chiều, nâng tầm trải nghiệm lái xe an toàn.",
     highlights: [
       "Computer Vision: nhận diện biển báo, vạch kẻ đường qua AI Dashcam",
       "ADAS: cảnh báo lệch làn, va chạm sớm, khoảng cách an toàn real-time",
@@ -91,7 +91,7 @@ export default function RoadmapPageContent() {
               Từ nền tảng AI<br />đến hệ sinh thái đô thị thông minh
             </h1>
             <p className="rm-hero-desc">
-              Cam kết phát triển lâu dài — mỗi giai đoạn là một bước tiến
+              Cam kết phát triển lâu dài. Mỗi giai đoạn là một bước tiến
               vững chắc trong sứ mệnh đồng hành cùng cộng đồng người Việt tại Nhật.
             </p>
           </ScrollReveal>

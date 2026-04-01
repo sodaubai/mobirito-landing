@@ -134,7 +134,7 @@ export default function AboutPageContent() {
                 </p>
                 <p className="about-text">
                   Chúng tôi hiểu rằng việc lái xe ở một đất nước xa lạ không chỉ là
-                  thách thức về giao thông — mà còn là rào cản ngôn ngữ, văn hóa và
+                  thách thức về giao thông, mà còn là rào cản ngôn ngữ, văn hóa và
                   sự tự tin. Navinext sinh ra để xóa bỏ những rào cản đó.
                 </p>
               </div>
@@ -149,7 +149,7 @@ export default function AboutPageContent() {
           <ScrollReveal>
             <div className="about-nvit-card">
               <span className="about-label">Công ty chủ quản</span>
-              <h2 className="about-heading">NVIT — New Vision & Innovation Technology</h2>
+              <h2 className="about-heading">NVIT - New Vision & Innovation Technology</h2>
               <p className="about-text">
                 NVIT là đơn vị tiên phong trong giải pháp AI và Automotive tại Nhật Bản.
                 Chúng tôi sở hữu đội ngũ kỹ sư giàu kinh nghiệm, thấu hiểu sâu sắc
@@ -197,7 +197,7 @@ export default function AboutPageContent() {
           <ScrollReveal>
             <div className="about-mission-header">
               <span className="about-label">Sứ mệnh</span>
-              <h2 className="about-heading">Navinext — Hơn cả một ứng dụng</h2>
+              <h2 className="about-heading">Navinext - Hơn cả một ứng dụng</h2>
               <p className="about-text" style={{ maxWidth: 640, margin: "0 auto" }}>
                 Navinext là &ldquo;người bạn đồng hành&rdquo; đáng tin cậy nhất cho cộng đồng
                 Expat, giúp xóa bỏ rào cản ngôn ngữ và sự lạ lẫm về địa lý.

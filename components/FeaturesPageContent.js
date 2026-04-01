@@ -23,7 +23,7 @@ const FEATURES = [
     tag: "02",
     title: "Thuật toán tránh ngõ hẹp 2.5m",
     subtitle: "Không còn kẹt trong ngõ cụt",
-    desc: "AI phân tích và lọc dữ liệu bản đồ để loại bỏ các tuyến đường hẹp dưới 2.5m — vấn đề phổ biến khi lái xe tại Nhật Bản. Luôn dẫn bạn qua đường lớn, an toàn hơn.",
+    desc: "AI phân tích và lọc dữ liệu bản đồ để loại bỏ các tuyến đường hẹp dưới 2.5m, vấn đề phổ biến khi lái xe tại Nhật Bản. Luôn dẫn bạn qua đường lớn, an toàn hơn.",
     points: [
       "Lọc tự động đường hẹp < 2.5m",
       "So sánh: Google Maps vào ngõ cụt vs Navinext đi đường lớn",
@@ -42,7 +42,7 @@ const FEATURES = [
     desc: "Công nghệ nhận diện biển báo qua Camera/Dashcam, tự động dịch và cảnh báo bằng tiếng Việt. Không cần biết tiếng Nhật để hiểu luật giao thông.",
     points: [
       "Biển cấm theo giờ (時間制限)",
-      "Biển dừng tạm thời — Tomare (止まれ)",
+      "Biển dừng tạm thời - Tomare (止まれ)",
       "Làn xe buýt chuyên dụng",
       "Khu vực giới hạn tốc độ",
       "Biển cấm rẽ, cấm đỗ",
