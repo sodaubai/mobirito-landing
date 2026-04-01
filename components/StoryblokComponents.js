@@ -1,3 +1,4 @@
+import PricingEnhanced from "./PricingEnhanced";
 import LanguageSelector from "./LanguageSelector";
 
 import FaqDetails from "./FaqDetails";
@@ -702,7 +703,7 @@ const componentMap = {
   app_showcase: ({blok}) => <AppShowcase blok={blok} />,
   steps_section: ({blok}) => <StepsSection blok={blok} />,
   testimonials_section: ({blok}) => <TestimonialsSection blok={blok} />,
-  pricing_section: ({blok}) => <PricingSection blok={blok} />,
+  pricing_section: ({blok}) => <PricingEnhanced blok={blok} />,
   faq_section: ({blok}) => <FaqSection blok={blok} />,
   app_download_cta: ({blok}) => <AppDownloadCta blok={blok} />,
   site_footer: ({blok}) => <SiteFooter blok={blok} />,
