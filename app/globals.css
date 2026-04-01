@@ -483,8 +483,8 @@ header { background: rgba(13,13,13,0.85); backdrop-filter: blur(12px); -webkit-b
 
 /* ===== Roadmap Page ===== */
 .roadmap-page { background: var(--white); }
-.rm-hero { background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 40%, #3a1dba 80%, #8b5cf6 100%); padding: 160px 0 80px; text-align: center; }
-.rm-hero-tag { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: #a78bfa; margin-bottom: 16px; }
+.rm-hero { background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #8B3A15 85%, #C74A1B 100%); padding: 160px 0 80px; text-align: center; }
+.rm-hero-tag { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--orange); margin-bottom: 16px; }
 .rm-hero-title { font-size: 42px; font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
 .rm-hero-desc { font-size: 17px; color: rgba(255,255,255,0.7); max-width: 580px; margin: 0 auto; line-height: 1.7; }
 
@@ -494,7 +494,7 @@ header { background: rgba(13,13,13,0.85); backdrop-filter: blur(12px); -webkit-b
 
 /* Progress track */
 .rm-progress-track { position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: var(--gray-200); border-radius: 2px; z-index: 0; }
-.rm-progress-fill { width: 100%; background: linear-gradient(to bottom, #22c55e, #F15A22, #8b5cf6, #06b6d4); border-radius: 2px; transition: height 0.1s linear; }
+.rm-progress-fill { width: 100%; background: linear-gradient(to bottom, var(--orange), var(--orange-dark), #0D0D0D); border-radius: 2px; transition: height 0.1s linear; }
 
 /* Phase items */
 .rm-phase { position: relative; margin-bottom: 48px; }
@@ -503,24 +503,24 @@ header { background: rgba(13,13,13,0.85); backdrop-filter: blur(12px); -webkit-b
 /* Dot */
 .rm-dot-wrap { position: absolute; left: -48px; top: 24px; width: 33px; display: flex; justify-content: center; z-index: 2; }
 .rm-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--white); border: 3px solid var(--gray-200); }
-.rm-dot--pulse { border-color: #22c55e; background: #22c55e; animation: rmPulse 2s infinite; }
+.rm-dot--pulse { border-color: var(--orange); background: var(--orange); animation: rmPulse 2s infinite; }
 @keyframes rmPulse {
-  0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
-  70% { box-shadow: 0 0 0 12px rgba(34,197,94,0); }
-  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+  0% { box-shadow: 0 0 0 0 rgba(241,90,34,0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(241,90,34,0); }
+  100% { box-shadow: 0 0 0 0 rgba(241,90,34,0); }
 }
 
 /* Cards */
 .rm-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 20px; padding: 32px; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
 .rm-card::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--phase-color); }
-.rm-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+.rm-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(241,90,34,0.15); border-color: rgba(241,90,34,0.3); }
 
 /* Active card */
-.rm-phase--active .rm-card { background: linear-gradient(135deg, #0D0D0D, #1a1a1a); border-color: rgba(34,197,94,0.3); color: var(--white); box-shadow: 0 8px 32px rgba(34,197,94,0.12); }
+.rm-phase--active .rm-card { background: linear-gradient(135deg, #0D0D0D, #1E1E1E, #3a1a0a); border-color: rgba(241,90,34,0.4); color: var(--white); box-shadow: 0 8px 32px rgba(241,90,34,0.2); }
 .rm-phase--active .rm-card-desc { color: rgba(255,255,255,0.7); }
 
 /* Glass cards for future phases */
-.rm-card--glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.5); }
+.rm-card--glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(241,90,34,0.08); }
 .rm-phase--future .rm-card--glass { opacity: 0.85; }
 
 /* Card content */

@@ -8,7 +8,7 @@ const PHASES = [
     label: "Hiện tại",
     title: "Nền tảng Navinext AI",
     status: "active",
-    color: "#22c55e",
+    color: "#F15A22",
     icon: "🚀",
     desc: "App dẫn đường AI, tránh ngõ hẹp và cộng đồng 5.000+ người dùng tại Tokyo & Osaka.",
     highlights: [
@@ -38,7 +38,7 @@ const PHASES = [
     label: "Tầm nhìn 2027",
     title: "Hệ sinh thái B2B",
     status: "future",
-    color: "#8b5cf6",
+    color: "#C74A1B",
     icon: "🏢",
     desc: "Giải pháp quản lý đội xe cho Gara và công ty vận tải. Chấm điểm lái xe an toàn để tối ưu bảo hiểm.",
     highlights: [
@@ -53,7 +53,7 @@ const PHASES = [
     label: "Tương lai",
     title: "Kết nối đô thị thông minh",
     status: "future",
-    color: "#06b6d4",
+    color: "#0D0D0D",
     icon: "🌐",
     desc: "Tích hợp dữ liệu bãi đỗ xe trống và trạm sạc xe điện (EV) thời gian thực trên toàn Nhật Bản.",
     highlights: [
