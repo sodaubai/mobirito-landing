@@ -1,5 +1,6 @@
 export const dynamic = "force-dynamic";
 import { fetchStory } from "../../lib/api";
+import { fetchBlogPosts } from "../../lib/api";
 import { DynamicComponent } from "../../components/StoryblokComponents";
 import FeaturesPageContent from "../../components/FeaturesPageContent";
 import RoadmapPageContent from "../../components/RoadmapPageContent";
@@ -38,10 +39,17 @@ export default async function Page({ params }) {
   if (CustomContent) {
     const c = story.content;
     const footerData = c.footer?.length ? c.footer : homeStory?.content?.footer || [];
+
+    let extraProps = {};
+    if (slug === "blog") {
+      const blogPosts = await fetchBlogPosts();
+      extraProps.posts = blogPosts;
+    }
+
     return (
       <>
         {c.navbar?.map(b => <DynamicComponent key={b._uid} blok={b} />)}
-        <CustomContent />
+        <CustomContent {...extraProps} />
         {footerData.map(b => <DynamicComponent key={b._uid} blok={b} />)}
       </>
     );
