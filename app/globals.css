@@ -713,7 +713,7 @@ header { background: transparent; position: relative; z-index: 50; }
 
 .blog-hero {
   margin-top: -90px;
-  background: linear-gradient(135deg, #0D0D0D 0%, #1E1E1E 100%);
+  background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #8B3A15 85%, #C74A1B 100%);
   padding: 170px 0 60px;
   text-align: center;
 }
