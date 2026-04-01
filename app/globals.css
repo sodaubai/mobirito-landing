@@ -28,7 +28,8 @@ img { max-width: 100%; height: auto; }
 .btn:hover { transform: translateY(-2px); }
 .btn-primary { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: var(--white); }
 .btn-secondary { background: var(--white); color: var(--navy); border: 1px solid #ddd; }
-.btn-dark { background: var(--navy); color: var(--white); }
+.btn-dark { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: var(--white); box-shadow: 0 0 0 0 rgba(241,90,34,0.5); animation: pulse-cta 2s infinite; }
+@keyframes pulse-cta { 0% { box-shadow: 0 0 0 0 rgba(241,90,34,0.5); } 70% { box-shadow: 0 0 0 10px rgba(241,90,34,0); } 100% { box-shadow: 0 0 0 0 rgba(241,90,34,0); } }
 .btn-sm { padding: 10px 20px; font-size: 14px; }
 
 /* Navbar */
