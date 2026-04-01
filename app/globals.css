@@ -360,3 +360,122 @@ img { max-width: 100%; height: auto; }
   .navbar .nav-actions { gap: 8px; }
   .btn-sm { padding: 8px 14px; font-size: 12px; }
 }
+
+/* ===== Features Page ===== */
+.features-hero { background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #8B3A15 85%, #C74A1B 100%); padding: 160px 0 80px; text-align: center; }
+.features-hero-tag { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--orange); margin-bottom: 16px; }
+.features-hero-title { font-size: 42px; font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+.features-hero-desc { font-size: 17px; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+/* Layout with sidebar */
+.features-layout { display: grid; grid-template-columns: 200px 1fr; gap: 48px; padding-top: 60px; padding-bottom: 80px; }
+
+/* Sticky sidebar */
+.features-sidebar { position: sticky; top: 100px; align-self: start; }
+.features-sidebar-inner { display: flex; flex-direction: column; gap: 4px; }
+.features-sidebar-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-bottom: 12px; }
+.features-sidebar-link { font-size: 13px; color: var(--gray-400); padding: 8px 12px; border-left: 2px solid transparent; transition: all 0.2s; border-radius: 0 6px 6px 0; }
+.features-sidebar-link:hover { color: var(--navy); background: var(--gray-200); }
+.features-sidebar-link.active { color: var(--orange); border-left-color: var(--orange); font-weight: 600; background: rgba(241,90,34,0.06); }
+
+/* Feature blocks - Z pattern */
+.feature-block { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 60px 0; border-bottom: 1px solid var(--gray-200); }
+.feature-block--reverse { direction: rtl; }
+.feature-block--reverse > * { direction: ltr; }
+
+.feature-tag { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--orange); margin-bottom: 8px; display: inline-block; }
+.feature-title { font-size: 28px; font-weight: 800; line-height: 1.2; margin-bottom: 8px; color: var(--navy); }
+.feature-subtitle { font-size: 15px; color: var(--orange); font-weight: 600; margin-bottom: 16px; }
+.feature-desc { font-size: 15px; color: var(--gray-600); line-height: 1.7; margin-bottom: 20px; }
+.feature-points { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.feature-points li { font-size: 14px; color: var(--gray-600); padding-left: 24px; position: relative; line-height: 1.5; }
+.feature-points li::before { content: "✓"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+
+/* Feature visuals */
+.feature-visual { background: var(--gray-100); border-radius: 16px; padding: 32px; min-height: 280px; display: flex; flex-direction: column; justify-content: center; }
+
+/* Comparison visual */
+.feature-visual--comparison { gap: 16px; align-items: center; }
+.comparison-card { background: var(--white); border-radius: 12px; padding: 20px; width: 100%; border: 2px solid transparent; }
+.comparison-card--bad { border-color: #ef4444; }
+.comparison-card--good { border-color: #22c55e; }
+.comparison-label { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+.comparison-route { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--gray-600); }
+.route-line { width: 40px; height: 4px; border-radius: 2px; }
+.route-line--bad { background: #ef4444; }
+.route-line--good { background: #22c55e; }
+.comparison-vs { font-size: 14px; font-weight: 800; color: var(--gray-400); text-align: center; }
+
+/* Signs visual */
+.feature-visual--signs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sign-card { background: var(--white); border-radius: 12px; padding: 16px; text-align: center; border: 1px solid var(--gray-200); }
+.sign-jp { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.sign-arrow { color: var(--orange); font-size: 18px; margin: 4px 0; }
+.sign-vi { font-size: 13px; font-weight: 600; color: var(--orange); }
+
+/* Dashboard visual */
+.feature-visual--dashboard { gap: 12px; }
+.dashboard-stat { display: flex; justify-content: space-between; align-items: center; background: var(--white); border-radius: 10px; padding: 14px 18px; }
+.dashboard-label { font-size: 13px; color: var(--gray-600); }
+.dashboard-value { font-size: 15px; font-weight: 700; color: var(--navy); }
+.dashboard-total { display: flex; justify-content: space-between; align-items: center; background: var(--navy); color: var(--white); border-radius: 10px; padding: 16px 18px; margin-top: 4px; font-weight: 600; font-size: 14px; }
+.dashboard-value-lg { font-size: 20px; font-weight: 800; color: var(--orange); }
+
+/* OBD visual */
+.feature-visual--obd { gap: 12px; }
+.obd-metric { display: flex; align-items: center; gap: 12px; background: var(--white); border-radius: 10px; padding: 14px 18px; }
+.obd-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.obd-label { font-size: 13px; color: var(--gray-600); flex: 1; }
+.obd-value { font-size: 14px; font-weight: 700; color: var(--navy); }
+
+/* Hybrid visual */
+.feature-visual--hybrid { flex-direction: row; align-items: center; gap: 16px; }
+.hybrid-device { background: var(--white); border-radius: 12px; padding: 20px; text-align: center; flex: 1; border: 1px solid var(--gray-200); }
+.hybrid-screen { font-size: 24px; margin-bottom: 8px; }
+.hybrid-status { font-size: 12px; color: var(--gray-600); }
+.hybrid-sync { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.hybrid-sync-arrow { font-size: 24px; color: var(--orange); animation: syncPulse 2s infinite; }
+.hybrid-sync span { font-size: 10px; color: var(--gray-400); white-space: nowrap; }
+@keyframes syncPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* Roadmap */
+.roadmap-section { padding: 80px 0 40px; }
+.roadmap-timeline { position: relative; padding-left: 32px; }
+.roadmap-timeline::before { content: ""; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: var(--gray-200); }
+.roadmap-item { position: relative; margin-bottom: 32px; }
+.roadmap-dot { position: absolute; left: -32px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--gray-200); border: 3px solid var(--white); z-index: 1; }
+.roadmap-item--active .roadmap-dot { background: var(--orange); box-shadow: 0 0 0 4px rgba(241,90,34,0.2); }
+.roadmap-item--upcoming .roadmap-dot { background: var(--orange); opacity: 0.6; }
+.roadmap-card { background: var(--gray-100); border-radius: 14px; padding: 24px; }
+.roadmap-item--active .roadmap-card { background: linear-gradient(135deg, #0D0D0D, #2C2C2C); color: var(--white); }
+.roadmap-phase { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--orange); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.roadmap-badge { font-size: 10px; background: var(--orange); color: var(--white); padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+.roadmap-title { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+.roadmap-item--active .roadmap-title { color: var(--white); }
+.roadmap-desc { font-size: 14px; color: var(--gray-400); line-height: 1.6; }
+.roadmap-item--active .roadmap-desc { color: rgba(255,255,255,0.7); }
+
+/* Scroll reveal animations */
+.scroll-reveal { opacity: 0; transition: opacity 0.7s ease, transform 0.7s ease; }
+.scroll-reveal--up { transform: translateY(40px); }
+.scroll-reveal--down { transform: translateY(-40px); }
+.scroll-reveal--left { transform: translateX(-40px); }
+.scroll-reveal--right { transform: translateX(40px); }
+.scroll-reveal.revealed { opacity: 1; transform: translate(0, 0); }
+
+/* Features responsive */
+@media (max-width: 900px) {
+  .features-layout { grid-template-columns: 1fr; }
+  .features-sidebar { display: none; }
+  .feature-block, .feature-block--reverse { grid-template-columns: 1fr; direction: ltr; gap: 24px; }
+  .features-hero-title { font-size: 30px; }
+  .feature-title { font-size: 24px; }
+  .feature-visual--hybrid { flex-direction: column; }
+}
+@media (max-width: 600px) {
+  .features-hero { padding: 120px 0 48px; }
+  .features-hero-title { font-size: 24px; }
+  .features-hero-desc { font-size: 15px; }
+  .feature-block { padding: 40px 0; }
+  .feature-visual--signs { grid-template-columns: 1fr; }
+}
