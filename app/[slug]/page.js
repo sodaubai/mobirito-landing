@@ -5,6 +5,7 @@ import FeaturesPageContent from "../../components/FeaturesPageContent";
 import RoadmapPageContent from "../../components/RoadmapPageContent";
 import AboutPageContent from "../../components/AboutPageContent";
 import ContactPageContent from "../../components/ContactPageContent";
+import BlogPageContent from "../../components/BlogPageContent";
 
 export async function generateStaticParams() {
   return [
@@ -22,6 +23,7 @@ const CUSTOM_PAGES = {
   portfolio: RoadmapPageContent,
   about: AboutPageContent,
   contact: ContactPageContent,
+  blog: BlogPageContent,
 };
 
 export default async function Page({ params }) {
