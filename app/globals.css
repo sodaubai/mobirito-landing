@@ -185,7 +185,7 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
 .pricing-compact .section-heading { margin-bottom: 4px; }
 /* Sticky billing toggle */
 .pricing-section { position: relative; }
-.billing-toggle-sticky { position: sticky; top: 60px; z-index: 10; background: rgba(30,30,30,0.95); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-radius: 12px; padding: 8px 0; margin: 0 -8px; }
+.billing-toggle-sticky { position: sticky; top: 60px; z-index: 10; }
 
 .pricing-section .section-desc, .pricing-section p { color: rgba(255,255,255,0.8); }
 .pricing-cards { display: grid; margin-top: 10px; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: stretch; }
@@ -1030,44 +1030,24 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
   user-select: none;
 }
 .billing-toggle span.billing-active { color: #fff; background: #FF5722; box-shadow: 0 4px 10px rgba(255,87,34,0.3); }
-.billing-save {
-  display: none;
-}
-.billing-save-inline {
-  position: absolute;
-  top: -28px;
-  right: -8px;
-  background: var(--orange);
+/* Badge inline next to "Nam" */
+.billing-badge {
+  display: inline-block;
+  background: #e64a19;
   color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 10px;
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.3s, transform 0.3s;
-  pointer-events: none;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 8px;
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: 0.3px;
+  line-height: 1;
 }
-.billing-save-inline::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  right: 20px;
-  border: 4px solid transparent;
-  border-top-color: var(--orange);
+.billing-active .billing-badge {
+  background: rgba(255,255,255,0.25);
 }
-.billing-save-show {
-  opacity: 1;
-  transform: translateY(0);
-}
-.billing-switch {
-  display: none;
-}
-.billing-knob {
-  display: none;
-}
-.billing-knob-right { display: none; }
+
 
 .price-card { transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
 .price-card:hover {

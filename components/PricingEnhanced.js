@@ -116,9 +116,7 @@ export default function PricingEnhanced({ blok }) {
             </span>
             <span className={isYearly ? "billing-active" : ""} onClick={() => setIsYearly(true)}>
               {"N\u0103m"}
-            </span>
-            <span className={`billing-save-inline ${isYearly ? "billing-save-show" : ""}`}>
-              {"-17%"}
+              <span className="billing-badge">{"-17%"}</span>
             </span>
           </div>
         </div>
