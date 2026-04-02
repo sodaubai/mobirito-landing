@@ -25,7 +25,7 @@ img { max-width: 100%; height: auto; }
 .section-tag { font-size: 14px; font-weight: 600; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
 .section-heading { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; color: #fff; }
 .section-desc { font-size: 16px; color: rgba(255,255,255,0.6); max-width: 600px; }
-.btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 15px; border: none; cursor: pointer; transition: transform .2s; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 15px; border: none; cursor: pointer; transition: transform .2s; font-family: inherit; }
 .btn:hover { transform: translateY(-2px); }
 .btn-primary { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: var(--white); }
 .btn-secondary { background: var(--white); color: var(--navy); border: 1px solid #ddd; }
@@ -991,7 +991,7 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 12px 0 0;
+  margin: 16px 0 20px;
 }
 .billing-toggle span {
   font-size: 14px;
