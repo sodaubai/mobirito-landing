@@ -181,10 +181,9 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
 .testimonial-card .text { font-size: 14px; color: rgba(255,255,255,0.7); }
 
 /* Pricing */
-.pricing-section { background: #0A0A0A !important; border-radius: 20px; padding: 20px 24px 20px; margin: 0 24px; color: var(--white); border: 1px solid rgba(255,255,255,0.06); }
+.pricing-section { position: relative; background: #121212 !important; border-radius: 20px; padding: 24px 24px 20px; margin: 0 24px; color: var(--white); border: 1px solid rgba(255,255,255,0.08); }
 .pricing-compact .section-heading { margin-bottom: 0; }
 /* Sticky billing toggle */
-.pricing-section { position: relative; }
 .billing-toggle-sticky { position: sticky; top: 60px; z-index: 10; }
 
 .pricing-section .section-desc, .pricing-section p { color: rgba(255,255,255,0.8); }
@@ -266,7 +265,7 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
 /* FAQ */
 .faq-wrapper { background: #1A1A1A; border-radius: 16px; padding: 24px 24px 20px; }
 .section:has(.faq-wrapper) { padding-top: 10px; padding-bottom: 10px; }
-.section:has(.pricing-section) { padding-top: 8px; padding-bottom: 8px; }
+.section:has(.pricing-section) { padding-top: 8px; padding-bottom: 8px; background: #0B0B0B !important; border-bottom: none; }
 .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } }
 .faq-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; margin-bottom: 6px; transition: border-color 0.3s, box-shadow 0.3s; }
@@ -1010,7 +1009,7 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #252525;
+  background: #1A1A1A;
   border-radius: 50px;
   padding: 4px;
   width: fit-content;
@@ -1050,16 +1049,8 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
 
 
 .price-card { position: relative; }
-.price-card:hover {
-  transform: scale(1.05) !important;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25) !important;
-}
-.price-card.featured {
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  overflow: visible;
-  position: relative;
-}
+
+
 .price-card.featured::before {
   content: "";
   position: absolute;
@@ -1075,9 +1066,7 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-.price-card.featured:hover {
-  box-shadow: 0 0 50px rgba(241,90,34,0.3), 0 20px 60px rgba(0,0,0,0.3) !important;
-}
+
 
 /* Recommended Badge */
 
