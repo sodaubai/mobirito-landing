@@ -187,7 +187,7 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
 .pricing-compact .section-heading { margin-bottom: 4px; }
 /* Sticky billing toggle */
 .pricing-section { position: relative; }
-.billing-toggle-sticky { position: sticky; top: 60px; z-index: 10; background: rgba(30,30,30,0.95); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-radius: 12px; padding: 8px 0; margin: 0 -8px; }
+.billing-toggle-sticky { position: sticky; top: 60px; z-index: 10; background: transparent; padding: 8px 0; margin: 0 -8px; }
 
 .pricing-section .section-desc, .pricing-section p { color: rgba(255,255,255,0.8); }
 .pricing-cards { display: grid; margin-top: 10px; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: stretch; }
