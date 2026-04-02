@@ -1258,3 +1258,26 @@ header { background: transparent; position: relative; z-index: 50; }
 @media (max-width: 600px) {
   .journey-ios-header h3 { font-size: 17px; }
 }
+
+/* QR Popover */
+.journey-qr-wrap { position: relative; }
+.journey-qr-popover { position: absolute; bottom: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #1A1A1A; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 20px; text-align: center; z-index: 20; box-shadow: 0 16px 48px rgba(0,0,0,0.6); animation: qrPopIn 0.2s ease-out; }
+.journey-qr-popover::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 8px solid transparent; border-top-color: #1A1A1A; }
+.journey-qr-popover p { font-size: 11px; color: rgba(255,255,255,0.4); margin: 8px 0 0; }
+@keyframes qrPopIn { from { opacity: 0; transform: translateX(-50%) translateY(8px) scale(0.9); } to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); } }
+
+/* Push Animation */
+.journey-push-anim { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 12px 0 16px; padding: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; }
+.journey-push-phone, .journey-push-car { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--orange); }
+.journey-push-phone { background: rgba(241,90,34,0.12); border: 1px solid rgba(241,90,34,0.25); }
+.journey-push-car { background: rgba(76,175,80,0.12); border: 1px solid rgba(76,175,80,0.25); color: #4CAF50; }
+.journey-push-dots { display: flex; gap: 6px; align-items: center; }
+.journey-push-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); opacity: 0.3; animation: pushDot 1.2s ease-in-out infinite; }
+.journey-push-dots span:nth-child(2) { animation-delay: 0.2s; }
+.journey-push-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes pushDot { 0%, 100% { opacity: 0.2; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); } }
+
+@media (max-width: 600px) {
+  .journey-qr-popover { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); bottom: auto; }
+  .journey-qr-popover::after { display: none; }
+}
