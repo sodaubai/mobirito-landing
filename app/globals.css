@@ -248,6 +248,13 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
 .fn-tooltip-bubble { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #222; color: #ddd; font-size: 11px; padding: 6px 10px; border-radius: 6px; white-space: normal; width: 220px; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.3); line-height: 1.4; pointer-events: none; }
 .fn-tooltip-bubble::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: #222; }
 
+/* Mobile tooltip fix */
+@media (max-width: 768px) {
+  .fn-tooltip-bubble { position: fixed; bottom: auto; top: auto; left: 16px !important; right: 16px !important; transform: none; width: auto; z-index: 100; font-size: 12px; padding: 10px 14px; border-radius: 8px; }
+  .fn-tooltip-bubble::after { display: none; }
+  .price-card .features { overflow: visible; }
+}
+
 /* Featured card gradient border */
 .price-card.featured { background: rgba(0,0,0,0.15); color: var(--white); box-shadow: 0 0 30px rgba(241,90,34,0.2); border: 1.5px solid rgba(241,90,34,0.5); transform: translateY(-6px); z-index: 2; }
 

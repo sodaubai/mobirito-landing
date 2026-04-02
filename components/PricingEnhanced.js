@@ -11,7 +11,7 @@ const FOOTNOTES = {
 function Tooltip({ tag }) {
   const [show, setShow] = useState(false);
   return (
-    <span className="fn-tooltip-wrap" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+    <span className="fn-tooltip-wrap" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} onClick={(e) => { e.stopPropagation(); setShow(v => !v); }}>
       <span className="fn-tooltip-icon">{tag}</span>
       {show && <span className="fn-tooltip-bubble">{FOOTNOTES[tag]}</span>}
     </span>
