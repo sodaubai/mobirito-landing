@@ -249,7 +249,7 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
 .fn-tooltip-bubble::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: #222; }
 
 /* Featured card gradient border */
-.price-card.featured { background: linear-gradient(135deg, #1a1a1a, #0D0D0D); color: var(--white); box-shadow: 0 0 30px rgba(241,90,34,0.2); border: 1.5px solid rgba(241,90,34,0.5); transform: translateY(-6px); z-index: 2; }
+.price-card.featured { background: rgba(0,0,0,0.15); color: var(--white); box-shadow: 0 0 30px rgba(241,90,34,0.2); border: 1.5px solid rgba(241,90,34,0.5); transform: translateY(-6px); z-index: 2; }
 
 /* Card hover */
 .price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.15); }
