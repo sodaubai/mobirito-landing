@@ -12,7 +12,7 @@ export function StepCTA({ index }) {
     return (
       <div className="step-cta-group">
         <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" className="step-cta-play" onClick={() => trackEvent("click_install_step1_playstore")}>
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.72.536-.893l.073-.027zm.524-.292L14.5 7.5l-2.9 2.9L4.133 1.522zM15.9 8.9l2.7 1.55a1 1 0 010 1.7l-2.7 1.55L12.6 12l3.3-3.1zM4.133 22.478L11.6 13.6l2.9 2.9-9.843 5.69-.524.288z"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.72.536-.893l.073-.027zm.524-.292L14.5 7.5l-2.9 2.9L4.133 1.522zM15.9 8.9l2.7 1.55a1 1 0 010 1.7l-2.7 1.55L12.6 12l3.3-3.1zM4.133 22.478L11.6 13.6l2.9 2.9-9.843 5.69-.524.288z"/></svg>
           Tải ngay trên Play Store
         </a>
         <button className="step-cta-qr" onClick={() => { trackEvent("click_install_step1_qr"); const m = document.getElementById("qr-modal"); if(m) m.style.display = m.style.display === "flex" ? "none" : "flex"; }}>
