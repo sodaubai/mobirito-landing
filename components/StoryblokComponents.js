@@ -31,8 +31,8 @@ function FeatureCard({ blok, showImage }) {
     <div className={`card${hasImage ? " card-has-image" : ""}`}>
       {hasImage ? (
         <>
-          <div className="card-image">
-            <img src={imgSrc} alt={blok.title || ""} />
+          <div className="card-image" style={{maxHeight:"160px",overflow:"hidden"}}>
+            <img src={imgSrc} alt={blok.title || ""} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} />
           </div>
           <div className="card-text">
             <h3>{blok.title}</h3>
