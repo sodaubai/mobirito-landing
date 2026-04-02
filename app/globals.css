@@ -378,8 +378,6 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
   .features-grid .cards::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 2px; }
   .features-grid .cards::-webkit-scrollbar-thumb { background: rgba(241,90,34,0.3); border-radius: 2px; }
   .testimonials-grid { grid-template-columns: 1fr; }
-  .pricing-cards { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 8px; }
-  .pricing-cards .price-card { min-width: 260px; flex-shrink: 0; scroll-snap-align: start; }
   .pricing-cards::-webkit-scrollbar { height: 4px; }
   .pricing-cards::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 2px; }
   .pricing-cards::-webkit-scrollbar-thumb { background: rgba(241,90,34,0.3); border-radius: 2px; }
@@ -1145,25 +1143,25 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
 /* Mobile Slider */
 @media (max-width: 768px) {
   .pricing-slider {
-    display: flex !important;
+    display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 16px !important;
-    padding-bottom: 16px;
+    gap: 12px;
+    padding-bottom: 12px;
   }
   .pricing-slider > .price-card {
-    min-width: 85vw;
-    scroll-snap-align: center;
+    min-width: 72vw;
+    scroll-snap-align: start;
     flex-shrink: 0;
   }
   .pricing-slider > .price-card.featured {
-    transform: none !important;
+    transform: none;
     order: -1;
   }
 }
 @media (max-width: 480px) {
-  .pricing-slider > .price-card { min-width: 90vw; }
+  .pricing-slider > .price-card { min-width: 78vw; }
 }
 
 /* ===== LEGAL PAGES (Privacy Policy & Terms) ===== */
