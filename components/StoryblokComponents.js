@@ -370,14 +370,23 @@ function PricingSection({ blok }) {
 }
 
 function FaqSection({ blok }) {
+  const items = blok.items || [];
+  const mid = Math.ceil(items.length / 2);
+  const col1 = items.slice(0, mid);
+  const col2 = items.slice(mid);
   return (
     <section className="section">
       <div className="container">
         <div className="faq-wrapper">
-        <div className="faq-section">
-          <h2 className="section-heading" style={{textAlign:blok.heading_align||"center",marginBottom:12,fontSize:"20px"}}>{blok.heading}</h2>
-          {blok.items?.map((i) => <FaqItem key={i._uid} blok={i} />)}
-        </div>
+          <h2 className="section-heading" style={{textAlign:"center",marginBottom:16,fontSize:"20px",color:"#fff"}}>{blok.heading}</h2>
+          <div className="faq-grid">
+            <div className="faq-col">
+              {col1.map((i) => <FaqItem key={i._uid} blok={i} />)}
+            </div>
+            <div className="faq-col">
+              {col2.map((i) => <FaqItem key={i._uid} blok={i} />)}
+            </div>
+          </div>
         </div>
       </div>
     </section>
