@@ -1161,3 +1161,27 @@ header { background: transparent; position: relative; z-index: 50; }
   .legal-section h2 { font-size: 19px; }
   .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
 }
+
+/* Step CTAs */
+.step-cta-group { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; align-items: center; }
+.step-cta-play { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: #fff; color: #0D0D0D; border-radius: 10px; font-size: 13px; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+.step-cta-play:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,255,255,0.15); }
+.step-cta-play svg { flex-shrink: 0; }
+.step-cta-qr { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); border-radius: 8px; font-size: 12px; font-weight: 500; cursor: pointer; transition: border-color 0.2s, color 0.2s; font-family: inherit; }
+.step-cta-qr:hover { border-color: var(--orange); color: var(--orange); }
+.step-cta-apk { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; background: transparent; border: 1px solid rgba(241,90,34,0.4); color: var(--orange); border-radius: 10px; font-size: 13px; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+.step-cta-apk:hover { background: rgba(241,90,34,0.1); transform: translateY(-2px); }
+
+/* QR Modal */
+.qr-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 1000; display: flex; align-items: center; justify-content: center; }
+.qr-modal-content { background: #1A1A1A; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 32px; text-align: center; position: relative; max-width: 320px; width: 90%; }
+.qr-modal-content h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.qr-modal-content p { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+.qr-modal-close { position: absolute; top: 12px; right: 16px; background: none; border: none; color: rgba(255,255,255,0.5); font-size: 24px; cursor: pointer; padding: 4px; line-height: 1; }
+.qr-modal-close:hover { color: #fff; }
+.qr-placeholder { display: flex; justify-content: center; padding: 16px; background: rgba(255,255,255,0.04); border-radius: 12px; }
+@media (max-width: 768px) {
+  .step-cta-group { gap: 6px; }
+  .step-cta-play { font-size: 12px; padding: 8px 16px; }
+  .step-cta-apk { font-size: 12px; padding: 8px 14px; }
+}
