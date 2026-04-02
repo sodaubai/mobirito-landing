@@ -1,54 +1,129 @@
 "use client";
-
-const QR_ICON = <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M0 0h7v7H0zm1 1v5h5V1zm1 1h3v3H2zm7-2h7v7H9zm1 1v5h5V1zm1 1h3v3h-3zM0 9h7v7H0zm1 1v5h5v-5zm1 1h3v3H2zm10-1h1v1h-1zm-2 0h1v1h-1zm4 0h1v1h-1zm-4 2h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm-4 2h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1z"/></svg>;
+import { useState } from "react";
 
 function trackEvent(eventName) {
   if (typeof window !== "undefined" && window.gtag) window.gtag("event", eventName);
   if (typeof window !== "undefined" && window.fbq) window.fbq("trackCustom", eventName);
 }
 
-export function StepCTA({ index, blok }) {
-  if (index === 0) {
-    return (
-      <div className="step-cta-group">
-        <a href={blok?.cta_link?.url || blok?.cta_link || "https://play.google.com/store"} target="_blank" rel="noopener noreferrer" className="step-cta-play" onClick={() => trackEvent("click_install_step1_playstore")}>
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.72.536-.893l.073-.027zm.524-.292L14.5 7.5l-2.9 2.9L4.133 1.522zM15.9 8.9l2.7 1.55a1 1 0 010 1.7l-2.7 1.55L12.6 12l3.3-3.1zM4.133 22.478L11.6 13.6l2.9 2.9-9.843 5.69-.524.288z"/></svg>
-          Tải ngay trên Play Store
-        </a>
-        <button className="step-cta-qr" onClick={() => { trackEvent("click_install_step1_qr"); const m = document.getElementById("qr-modal"); if(m) m.style.display = m.style.display === "flex" ? "none" : "flex"; }}>
-          {QR_ICON} Xem mã QR
-        </button>
-      </div>
-    );
-  }
-  if (index === 1) {
-    return (
-      <div className="step-cta-group">
-        <div className="step-cta-apk-wrap">
-          <a href={blok?.cta_link?.url || blok?.cta_link || "#"} target="_blank" rel="noopener noreferrer" className="step-cta-apk" onClick={() => trackEvent("click_install_step2_apk")}>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Tải tệp APK dự phòng
-          </a>
-          <span className="step-cta-tooltip">Dành cho màn hình không có Google Play</span>
-        </div>
-      </div>
-    );
-  }
-  return null;
+function StepNumber({ n }) {
+  return <span className="journey-step-num">{n}</span>;
 }
 
-export function QRModal() {
+function AndroidTab({ blok }) {
+  const [qrOpen, setQrOpen] = useState(false);
+  const playUrl = blok?.play_store_url || "https://play.google.com/store";
+  const apkUrl = blok?.apk_url || "#";
+
   return (
-    <div id="qr-modal" className="qr-modal" style={{display:"none"}} onClick={(e) => { if (e.target.id === 'qr-modal') e.target.style.display = 'none'; }}>
-      <div className="qr-modal-content">
-        <button className="qr-modal-close" onClick={() => { document.getElementById('qr-modal').style.display = 'none'; }}>×</button>
-        <h3>Quét mã QR</h3>
-        <p>Dùng camera điện thoại để quét và tải Navinext</p>
-        <div className="qr-placeholder">
-          <svg viewBox="0 0 200 200" width="160" height="160"><rect width="200" height="200" fill="#fff" rx="12"/><rect x="20" y="20" width="60" height="60" rx="4" fill="#0D0D0D"/><rect x="30" y="30" width="40" height="40" rx="2" fill="#fff"/><rect x="38" y="38" width="24" height="24" fill="#0D0D0D"/><rect x="120" y="20" width="60" height="60" rx="4" fill="#0D0D0D"/><rect x="130" y="30" width="40" height="40" rx="2" fill="#fff"/><rect x="138" y="38" width="24" height="24" fill="#0D0D0D"/><rect x="20" y="120" width="60" height="60" rx="4" fill="#0D0D0D"/><rect x="30" y="130" width="40" height="40" rx="2" fill="#fff"/><rect x="38" y="138" width="24" height="24" fill="#0D0D0D"/><rect x="90" y="90" width="20" height="20" fill="#F15A22"/><rect x="120" y="120" width="15" height="15" fill="#0D0D0D"/><rect x="140" y="120" width="15" height="15" fill="#0D0D0D"/><rect x="160" y="120" width="15" height="15" fill="#0D0D0D"/><rect x="120" y="140" width="15" height="15" fill="#0D0D0D"/><rect x="160" y="140" width="15" height="15" fill="#0D0D0D"/><rect x="120" y="160" width="15" height="15" fill="#0D0D0D"/><rect x="140" y="160" width="15" height="15" fill="#0D0D0D"/><rect x="160" y="160" width="15" height="15" fill="#0D0D0D"/><rect x="90" y="120" width="20" height="10" fill="#0D0D0D"/><rect x="90" y="150" width="20" height="10" fill="#0D0D0D"/></svg>
+    <div className="journey-steps">
+      <div className="journey-step">
+        <div className="journey-step-left">
+          <StepNumber n={1} />
+          <div className="journey-step-line" />
         </div>
-        <p style={{fontSize:12,color:"rgba(255,255,255,0.4)",marginTop:8}}>navinext.jp/download</p>
+        <div className="journey-step-content">
+          <h3>Cai dat tren dien thoai</h3>
+          <p>Tai Navinext ve smartphone de thiet lap lo trinh va dong bo tai khoan.</p>
+          <div className="journey-cta-row">
+            <a href={playUrl} target="_blank" rel="noopener noreferrer" className="journey-btn-primary" onClick={() => trackEvent("click_install_android_playstore")}>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.72.536-.893l.073-.027zm.524-.292L14.5 7.5l-2.9 2.9L4.133 1.522zM15.9 8.9l2.7 1.55a1 1 0 010 1.7l-2.7 1.55L12.6 12l3.3-3.1zM4.133 22.478L11.6 13.6l2.9 2.9-9.843 5.69-.524.288z"/></svg>
+              Tai tren Google Play
+            </a>
+            <button className="journey-btn-outline" onClick={() => { trackEvent("click_install_android_qr"); setQrOpen(!qrOpen); }}>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M0 0h7v7H0zm1 1v5h5V1zm1 1h3v3H2zm7-2h7v7H9zm1 1v5h5V1zm1 1h3v3h-3zM0 9h7v7H0zm1 1v5h5v-5zm1 1h3v3H2zm10-1h1v1h-1zm-2 0h1v1h-1zm4 0h1v1h-1zm-4 2h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm-4 2h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1z"/></svg>
+              Ma QR
+            </button>
+          </div>
+          {qrOpen && (
+            <div className="journey-qr-inline">
+              <svg viewBox="0 0 200 200" width="120" height="120"><rect width="200" height="200" fill="#fff" rx="12"/><rect x="20" y="20" width="60" height="60" rx="4" fill="#0D0D0D"/><rect x="30" y="30" width="40" height="40" rx="2" fill="#fff"/><rect x="38" y="38" width="24" height="24" fill="#0D0D0D"/><rect x="120" y="20" width="60" height="60" rx="4" fill="#0D0D0D"/><rect x="130" y="30" width="40" height="40" rx="2" fill="#fff"/><rect x="138" y="38" width="24" height="24" fill="#0D0D0D"/><rect x="20" y="120" width="60" height="60" rx="4" fill="#0D0D0D"/><rect x="30" y="130" width="40" height="40" rx="2" fill="#fff"/><rect x="38" y="138" width="24" height="24" fill="#0D0D0D"/><rect x="90" y="90" width="20" height="20" fill="#F15A22"/><rect x="120" y="120" width="15" height="15" fill="#0D0D0D"/><rect x="140" y="120" width="15" height="15" fill="#0D0D0D"/><rect x="160" y="120" width="15" height="15" fill="#0D0D0D"/><rect x="120" y="140" width="15" height="15" fill="#0D0D0D"/><rect x="160" y="140" width="15" height="15" fill="#0D0D0D"/><rect x="120" y="160" width="15" height="15" fill="#0D0D0D"/><rect x="140" y="160" width="15" height="15" fill="#0D0D0D"/><rect x="160" y="160" width="15" height="15" fill="#0D0D0D"/><rect x="90" y="120" width="20" height="10" fill="#0D0D0D"/><rect x="90" y="150" width="20" height="10" fill="#0D0D0D"/></svg>
+              <span>Quet ma de tai Navinext</span>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="journey-step">
+        <div className="journey-step-left">
+          <StepNumber n={2} />
+          <div className="journey-step-line" />
+        </div>
+        <div className="journey-step-content">
+          <h3>Cai dat len man hinh xe</h3>
+          <div className="journey-method">
+            <div className="journey-method-badge">Tien loi</div>
+            <strong>Remote Push</strong>
+            <p>Day app tu Google Play sang man hinh xe chi voi 1 cham. Khong can USB.</p>
+          </div>
+          <div className="journey-method">
+            <div className="journey-method-badge alt">Du phong</div>
+            <strong>Cai bang APK</strong>
+            <p>Danh cho man hinh khong co Google Play Store.</p>
+            <a href={apkUrl} target="_blank" rel="noopener noreferrer" className="journey-btn-outline sm" onClick={() => trackEvent("click_install_android_apk")}>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Tai tep APK
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="journey-step last">
+        <div className="journey-step-left">
+          <StepNumber n={3} />
+        </div>
+        <div className="journey-step-content">
+          <h3>Quet ma Link-Account</h3>
+          <p>Dang nhap mot lan, dong bo mai mai. Diem yeu thich va lich su tu dong xuat hien tren xe.</p>
+          <div className="journey-ready">
+            <span className="journey-ready-dot" />
+            Ready to Drive!
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
+function IOSTab() {
+  return (
+    <div className="journey-ios">
+      <div className="journey-ios-icon">
+        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18.01" strokeWidth="2"/></svg>
+      </div>
+      <h3>Dung iPhone? Ban van co the trai nghiem Navinext tren xe!</h3>
+      <p>Navinext chay doc lap tren <strong>Man hinh Android / Android Box</strong> cua xe. Ban chi can:</p>
+      <ol>
+        <li>Cai Navinext truc tiep tren man hinh xe (qua Play Store hoac APK)</li>
+        <li>Dang ky tai khoan tren man hinh xe</li>
+        <li>Bat dau su dung - khong can ket noi iPhone</li>
+      </ol>
+      <p className="journey-ios-note">Phien ban iOS Companion App se som ra mat de ho tro dong bo lo trinh tu iPhone.</p>
+    </div>
+  );
+}
+
+export function InstallJourney({ blok }) {
+  const [tab, setTab] = useState("android");
+
+  return (
+    <div className="journey-wrapper">
+      <div className="journey-toggle">
+        <button className={`journey-toggle-btn${tab === "android" ? " active" : ""}`} onClick={() => setTab("android")}>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.523 2.226a.75.75 0 011.06-.003.75.75 0 01-.003 1.06l-1.544 1.534A7.472 7.472 0 0120.006 10H3.994a7.472 7.472 0 012.97-5.183L5.42 3.283a.75.75 0 01-.003-1.06.75.75 0 011.06.003l1.717 1.706A7.449 7.449 0 0112 3c1.29 0 2.506.328 3.565.907l1.958-1.681zM10 7.5a1 1 0 11-2 0 1 1 0 012 0zm6 0a1 1 0 11-2 0 1 1 0 012 0zM4 11h16v8a3 3 0 01-3 3H7a3 3 0 01-3-3v-8z"/></svg>
+          Toi dung Android
+        </button>
+        <button className={`journey-toggle-btn${tab === "ios" ? " active" : ""}`} onClick={() => setTab("ios")}>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Toi dung iOS
+        </button>
+      </div>
+
+      {tab === "android" ? <AndroidTab blok={blok} /> : <IOSTab />}
+    </div>
+  );
+}
+
+// Keep backward compat exports
+export function StepCTA({ index, blok }) { return null; }
+export function QRModal() { return null; }

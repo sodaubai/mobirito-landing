@@ -1,4 +1,4 @@
-import { StepCTA, QRModal } from "./StepInteractive";
+import { InstallJourney } from "./StepInteractive";
 import PricingEnhanced from "./PricingEnhanced";
 import LanguageSelector from "./LanguageSelector";
 
@@ -322,11 +322,10 @@ function StepsSection({ blok }) {
   return (
     <section className={`section steps-section${isDark ? " steps-dark" : ""}`}>
       <div className="container">
-        <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center",color:isDark?"#fff":undefined}}>{blok.heading}</h2>
+        <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center",color:isDark?"#fff":undefined}}>{blok.heading || "Bat dau hanh trinh cung Navinext"}</h2>
         {blok.description && <p className="section-desc" style={{margin:"0 auto 32px",textAlign:"center",color:isDark?"rgba(255,255,255,0.7)":undefined}}>{blok.description}</p>}
-        <div className="steps-grid">{blok.steps?.map((s, i) => (<><StepItem key={s._uid} blok={s} index={i} total={blok.steps.length} />{i < blok.steps.length - 1 && <div className="step-connector"><svg viewBox="0 0 40 24"><path d="M0 12h40" stroke="rgba(241,90,34,0.4)" strokeWidth="2" strokeDasharray="6 4"/><path d="M32 6l8 6-8 6" fill="none" stroke="rgba(241,90,34,0.6)" strokeWidth="2"/></svg></div>}</>))}</div>
+        <InstallJourney blok={blok} />
       </div>
-      <QRModal />
     </section>
   );
 }
