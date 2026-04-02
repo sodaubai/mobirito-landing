@@ -104,7 +104,7 @@ export default function PricingEnhanced({ blok }) {
           <p>{"*(1): C\u00e1c c\u1ea3nh b\u00e1o d\u1ef1a tr\u00ean d\u1eef li\u1ec7u b\u1ea3n \u0111\u1ed3 th\u1eddi gian th\u1ef1c gi\u00fap h\u1ea1n ch\u1ebf t\u1ed1i \u0111a vi ph\u1ea1m giao th\u00f4ng t\u1ea1i Nh\u1eadt."}</p>
           <p>{"*(2): Qu\u1ea3ng c\u00e1o \u0111\u01b0\u1ee3c t\u1ed1i \u01b0u \u0111\u1ec3 kh\u00f4ng g\u00e2y xao nh\u00e3n, \u01b0u ti\u00ean tr\u1ea3i nghi\u1ec7m l\u00e1i xe t\u1eadp trung."}</p>
           <p>{"*(3): H\u1ec7 th\u1ed1ng \u0111\u1ec1 xu\u1ea5t th\u00f4ng minh d\u1ef1a tr\u00ean Vehicle Profile \u0111\u00e3 \u0111\u0103ng k\u00fd khi nhi\u00ean li\u1ec7u xu\u1ed1ng m\u1ee9c User-defined."}</p>
-          <p>{"*(4): Thi\u1ebft b\u1ecb h\u1ed7 tr\u1ee3 chu\u1ea9n ELM327. "}<a href="https://navinext.huynguyen.it.com/obd-devices" className="pricing-footnote-link">{"Xem danh s\u00e1ch thi\u1ebft b\u1ecb khuy\u00ean d\u00f9ng \u2192"}</a></p>
+          <p>{"*(4): Thi\u1ebft b\u1ecb h\u1ed7 tr\u1ee3 chu\u1ea9n ELM327."}</p>
         </div>
       </div>
     </section>
