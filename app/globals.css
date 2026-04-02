@@ -21,7 +21,7 @@ body { font-family: 'Montserrat', 'Noto Sans JP', sans-serif; color: var(--navy)
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; }
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-.section { padding: 80px 0; background: #0F0F0F; color: #fff; position: relative; overflow: hidden; }
+.section { padding: 80px 0; background: #0F0F0F !important; color: #fff; position: relative; overflow: hidden; }
 .section-tag { font-size: 14px; font-weight: 600; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
 .section-heading { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; color: #fff; }
 .section-desc { font-size: 16px; color: rgba(255,255,255,0.6); max-width: 600px; }
@@ -95,7 +95,7 @@ header { background: transparent; position: relative; z-index: 50; }
 .img-text .bullets { list-style: none; margin-bottom: 20px; }
 .img-text .bullets li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 15px; color: rgba(255,255,255,0.8); }
 .img-text .bullets li::before { content: "✓"; width: 24px; height: 24px; background: rgba(241,90,34,0.15); color: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 12px; font-weight: 700; }
-.bg-light { background: #141414; }
+.bg-light { background: #141414 !important; }
 .bg-dark { background: linear-gradient(135deg, #0D0D0D 0%, #1E1E1E 60%, #2C2C2C 100%); }
 .bg-dark .card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
 .bg-dark .card h3 { color: #fff; }
