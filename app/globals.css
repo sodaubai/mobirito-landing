@@ -195,6 +195,15 @@ header { background: transparent; position: relative; z-index: 50; }
 .price-card-bottom { margin-top: auto; }
 .pricing-footnotes { max-width: 900px; margin: 24px auto 0; padding: 0 16px; }
 .pricing-footnotes p { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.5; margin: 2px 0; }
+.pricing-footnote-link { color: var(--orange); text-decoration: none; }
+.pricing-footnote-link:hover { text-decoration: underline; }
+.features-toggle { display: none; background: none; border: none; color: var(--orange); font-size: 12px; cursor: pointer; padding: 4px 0; font-family: inherit; width: 100%; text-align: center; }
+@media (max-width: 768px) {
+  .features-collapsed { max-height: 200px; overflow: hidden; position: relative; }
+  .features-collapsed::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, var(--dark-bg, #1a1a1a)); pointer-events: none; }
+  .price-card.featured .features-collapsed::after { background: linear-gradient(transparent, #1a1a1a); }
+  .features-toggle { display: block; }
+}
 
 /* Dark section overrides */
 .pricing-section .section-heading,
