@@ -373,11 +373,16 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
   /* Grids → stacked */
   .img-text, .download-cta, .footer-grid { grid-template-columns: 1fr; }
   .features-grid .cards { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 8px; }
-  .features-grid .card { min-width: 240px; flex-shrink: 0; scroll-snap-align: start; }
+  .features-grid .card { min-width: 200px; flex-shrink: 0; scroll-snap-align: start; padding: 16px 14px; }
   .features-grid .cards::-webkit-scrollbar { height: 4px; }
   .features-grid .cards::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 2px; }
   .features-grid .cards::-webkit-scrollbar-thumb { background: rgba(241,90,34,0.3); border-radius: 2px; }
-  .testimonials-grid, .pricing-cards { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .pricing-cards { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 8px; }
+  .pricing-cards .price-card { min-width: 260px; flex-shrink: 0; scroll-snap-align: start; }
+  .pricing-cards::-webkit-scrollbar { height: 4px; }
+  .pricing-cards::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 2px; }
+  .pricing-cards::-webkit-scrollbar-thumb { background: rgba(241,90,34,0.3); border-radius: 2px; }
   .steps-grid { flex-direction: column; align-items: stretch; max-width: 100%; gap: 0; }
   .step-connector { width: auto; height: 36px; padding-top: 0; transform: rotate(90deg); }
   .step-card { padding: 28px 20px; border-radius: 16px; }
@@ -406,7 +411,7 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
   .download-cta .stores { justify-content: center; flex-wrap: wrap; }
 
   /* Pricing */
-  .pricing-section { padding: 40px 20px; margin: 0 16px; border-radius: 16px; }
+  .pricing-section { padding: 20px 12px; margin: 0 8px; border-radius: 16px; }
 
   /* Stats */
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
