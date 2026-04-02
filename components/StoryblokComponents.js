@@ -89,7 +89,7 @@ function StepItem({ blok, index, total }) {
       </div>
       <h3 className="step-title">{blok.title}</h3>
       <p className="step-desc">{blok.description?.split("\n\n").map((p, i) => <span key={i}>{i > 0 && <br/>}{p}</span>)}</p>
-      <StepCTA index={index} />
+      <StepCTA index={index} blok={blok} />
       {isLast && <div className="step-status"><span className="step-status-dot"></span>Ready to Drive!</div>}
     </div>
   );

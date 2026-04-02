@@ -7,11 +7,11 @@ function trackEvent(eventName) {
   if (typeof window !== "undefined" && window.fbq) window.fbq("trackCustom", eventName);
 }
 
-export function StepCTA({ index }) {
+export function StepCTA({ index, blok }) {
   if (index === 0) {
     return (
       <div className="step-cta-group">
-        <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" className="step-cta-play" onClick={() => trackEvent("click_install_step1_playstore")}>
+        <a href={blok?.cta_link?.url || blok?.cta_link || "https://play.google.com/store"} target="_blank" rel="noopener noreferrer" className="step-cta-play" onClick={() => trackEvent("click_install_step1_playstore")}>
           <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.72.536-.893l.073-.027zm.524-.292L14.5 7.5l-2.9 2.9L4.133 1.522zM15.9 8.9l2.7 1.55a1 1 0 010 1.7l-2.7 1.55L12.6 12l3.3-3.1zM4.133 22.478L11.6 13.6l2.9 2.9-9.843 5.69-.524.288z"/></svg>
           Tải ngay trên Play Store
         </a>
@@ -25,7 +25,7 @@ export function StepCTA({ index }) {
     return (
       <div className="step-cta-group">
         <div className="step-cta-apk-wrap">
-          <a href="#" className="step-cta-apk" onClick={() => trackEvent("click_install_step2_apk")}>
+          <a href={blok?.cta_link?.url || blok?.cta_link || "#"} target="_blank" rel="noopener noreferrer" className="step-cta-apk" onClick={() => trackEvent("click_install_step2_apk")}>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Tải tệp APK dự phòng
           </a>

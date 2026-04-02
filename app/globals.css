@@ -1170,7 +1170,7 @@ header { background: transparent; position: relative; z-index: 50; }
 .step-cta-qr { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; min-height: 44px; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); border-radius: 8px; font-size: 12px; font-weight: 500; cursor: pointer; transition: border-color 0.2s, color 0.2s, box-shadow 0.2s; font-family: inherit; }
 .step-cta-qr:hover { border-color: var(--orange); color: var(--orange); box-shadow: 0 0 16px rgba(241,90,34,0.15); }
 .step-cta-apk-wrap { position: relative; }
-.step-cta-apk { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; min-height: 44px; background: transparent; border: 1px solid rgba(241,90,34,0.4); color: var(--orange); border-radius: 10px; font-size: 13px; font-weight: 600; text-decoration: none; transition: background 0.25s, transform 0.25s, box-shadow 0.25s; }
+.step-cta-apk { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; min-height: 36px; background: transparent; border: 1px solid rgba(241,90,34,0.4); color: var(--orange); border-radius: 8px; font-size: 12px; font-weight: 600; white-space: nowrap; text-decoration: none; transition: background 0.25s, transform 0.25s, box-shadow 0.25s; }
 .step-cta-apk:hover { background: rgba(241,90,34,0.1); transform: translateY(-3px); box-shadow: 0 8px 28px rgba(241,90,34,0.25), 0 0 0 1px rgba(241,90,34,0.15); }
 .step-cta-tooltip { display: none; position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: #1A1A1A; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.8); font-size: 11px; padding: 6px 12px; border-radius: 8px; white-space: nowrap; pointer-events: none; z-index: 10; }
 .step-cta-tooltip::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: #1A1A1A; }
@@ -1188,6 +1188,6 @@ header { background: transparent; position: relative; z-index: 50; }
   .step-cta-group { gap: 8px; }
   .step-cta-play { font-size: 12px; padding: 10px 16px; min-height: 44px; width: auto; justify-content: center; }
   .step-cta-qr { min-height: 44px; width: 100%; justify-content: center; }
-  .step-cta-apk { font-size: 13px; padding: 12px 18px; min-height: 44px; width: 100%; justify-content: center; }
+  .step-cta-apk { font-size: 12px; padding: 10px 16px; min-height: 44px; width: auto; justify-content: center; }
   .step-cta-tooltip { display: none !important; }
 }
