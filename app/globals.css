@@ -1063,20 +1063,12 @@ header { background: transparent; position: relative; z-index: 50; }
 /* Feature Checklist Animation */
 .pricing-feat-item {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 0;
-  font-size: 12px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 2px 0;
+  font-size: 11px;
 }
-.pricing-feat-item.pricing-feat-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.pricing-feat-item.disabled { opacity: 0; }
-.pricing-feat-item.disabled.pricing-feat-visible { opacity: 0.4; }
+.pricing-feat-item.disabled { opacity: 0.4; }
 .pricing-feat-check {
   font-weight: 700;
   color: #22c55e;
