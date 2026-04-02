@@ -79,7 +79,7 @@ export default function PricingEnhanced({ blok }) {
     <section className="section" id="pricing">
       <div className="pricing-section pricing-compact">
         <div style={{ textAlign: "center" }}>
-          <h2 className="section-heading" style={{ color: "#fff", fontSize: "28px" }}>{blok.heading}</h2>
+          <h2 className="section-heading" style={{ color: "#fff", fontSize: "24px" }}>{blok.heading}</h2>
           <div className="billing-toggle">
             <span className={!isYearly ? "billing-active" : ""} onClick={() => setIsYearly(false)}>
               {"Th\u00e1ng"}
