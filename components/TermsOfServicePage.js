@@ -3,18 +3,18 @@ import { useState, useEffect } from "react";
 import ScrollReveal from "./ScrollReveal";
 
 const SECTIONS = [
-  { id: "chap-nhan", title: "Chap nhan dieu khoan" },
-  { id: "dich-vu", title: "Pham vi dich vu" },
-  { id: "tai-khoan", title: "Tai khoan nguoi dung" },
-  { id: "an-toan", title: "An toan giao thong" },
-  { id: "apk", title: "Quy dinh ve APK/XAPK" },
-  { id: "subscription", title: "Goi Subscription" },
-  { id: "quy-tac", title: "Quy tac su dung" },
-  { id: "so-huu", title: "So huu tri tue" },
-  { id: "gioi-han", title: "Gioi han trach nhiem" },
-  { id: "cham-dut", title: "Cham dut dich vu" },
-  { id: "luat", title: "Luat ap dung" },
-  { id: "lien-he", title: "Lien he" },
+  { id: "chap-nhan", title: "Chấp nhận điều khoản" },
+  { id: "dich-vu", title: "Phạm vi dịch vụ" },
+  { id: "tai-khoan", title: "Tài khoản người dùng" },
+  { id: "an-toan", title: "An toàn giao thông" },
+  { id: "apk", title: "Quy định về APK/XAPK" },
+  { id: "subscription", title: "Gói Subscription" },
+  { id: "quy-tac", title: "Quy tắc sử dụng" },
+  { id: "so-huu", title: "Sở hữu trí tuệ" },
+  { id: "gioi-han", title: "Giới hạn trách nhiệm" },
+  { id: "cham-dut", title: "Chấm dứt dịch vụ" },
+  { id: "luat", title: "Luật áp dụng" },
+  { id: "lien-he", title: "Liên hệ" },
 ];
 
 function BackToTop() {
@@ -35,7 +35,7 @@ function BackToTop() {
 function TOC({ sections, activeId }) {
   return (
     <nav className="legal-toc">
-      <p className="legal-toc-title">Muc luc</p>
+      <p className="legal-toc-title">Mục lục</p>
       <ul>
         {sections.map((s, i) => (
           <li key={s.id}>
@@ -73,8 +73,8 @@ export default function TermsOfServicePage() {
         <div className="container">
           <ScrollReveal>
             <p className="legal-hero-tag">NAVINEXT</p>
-            <h1 className="legal-hero-title">Dieu khoan su dung</h1>
-            <p className="legal-hero-desc">Cap nhat lan cuoi: 01/04/2026</p>
+            <h1 className="legal-hero-title">Điều khoản sử dụng</h1>
+            <p className="legal-hero-desc">Cập nhật lần cuối: 01/04/2026</p>
           </ScrollReveal>
         </div>
       </section>
@@ -85,138 +85,138 @@ export default function TermsOfServicePage() {
         <div className="legal-content">
           <ScrollReveal>
             <section className="legal-section" id="chap-nhan">
-              <h2>1. Chap nhan dieu khoan</h2>
-              <p>Bang viec tai xuong, cai dat hoac su dung ung dung Navinext, ban dong y tuan thu cac dieu khoan su dung nay. Neu ban khong dong y, vui long ngung su dung ung dung va go cai dat.</p>
+              <h2>1. Chấp nhận điều khoản</h2>
+              <p>Bằng việc tải xuống, cài đặt hoặc sử dụng ứng dụng Navinext, bạn đồng ý tuân thủ các điều khoản sử dụng này. Nếu bạn không đồng ý, vui lòng ngưng sử dụng ứng dụng và gỡ cài đặt.</p>
             </section>
 
             <section className="legal-section" id="dich-vu">
-              <h2>2. Pham vi dich vu</h2>
-              <p>Navinext cung cap cac dich vu ho tro lai xe tai Nhat Ban:</p>
+              <h2>2. Phạm vi dịch vụ</h2>
+              <p>Navinext cung cấp các dịch vụ hỗ trợ lái xe tại Nhật Bản:</p>
               <ul>
-                <li><strong>Dan duong AI:</strong> Toi uu lo trinh, tranh ngo hep, canh bao giao thong</li>
-                <li><strong>Camera AI Dashcam:</strong> Nhan dien va dich bien bao giao thong Nhat Ban sang tieng Viet theo thoi gian thuc</li>
-                <li><strong>Ket noi OBD-II:</strong> Theo doi trang thai xe, quan ly chi phi nhien lieu va bao tri</li>
-                <li><strong>Du lieu cong dong:</strong> Cap nhat gia xang, canh bao ngo hep tu cong dong tai xe</li>
-                <li><strong>Dong bo Headunit:</strong> Ket noi giua Companion App (dien thoai) va Headunit (man hinh xe)</li>
+                <li><strong>Dẫn đường AI:</strong> Tối ưu lộ trình, tránh ngõ hẹp, cảnh báo giao thông</li>
+                <li><strong>Camera AI Dashcam:</strong> Nhận diện và dịch biển báo giao thông Nhật Bản sang tiếng Việt theo thời gian thực</li>
+                <li><strong>Kết nối OBD-II:</strong> Theo dõi trạng thái xe, quản lý chi phí nhiên liệu và bảo trì</li>
+                <li><strong>Dữ liệu cộng đồng:</strong> Cập nhật giá xăng, cảnh báo ngõ hẹp từ cộng đồng tài xế</li>
+                <li><strong>Đồng bộ Headunit:</strong> Kết nối giữa Companion App (điện thoại) và Headunit (màn hình xe)</li>
               </ul>
             </section>
 
             <section className="legal-section" id="tai-khoan">
-              <h2>3. Tai khoan nguoi dung</h2>
+              <h2>3. Tài khoản người dùng</h2>
               <ul>
-                <li>Ban phai cung cap thong tin chinh xac khi dang ky</li>
-                <li>Ban chiu trach nhiem bao mat tai khoan va mat khau</li>
-                <li>Moi hoat dong duoi tai khoan cua ban la trach nhiem cua ban</li>
-                <li>Thong bao cho chung toi ngay khi phat hien truy cap trai phep</li>
-                <li>Moi nguoi chi duoc so huu <strong>mot tai khoan duy nhat</strong></li>
+                <li>Bạn phải cung cấp thông tin chính xác khi đăng ký</li>
+                <li>Bạn chịu trách nhiệm bảo mật tài khoản và mật khẩu</li>
+                <li>Mọi hoạt động dưới tài khoản của bạn là trách nhiệm của bạn</li>
+                <li>Thông báo cho chúng tôi ngay khi phát hiện truy cập trái phép</li>
+                <li>Mỗi người chỉ được sở hữu <strong>một tài khoản duy nhất</strong></li>
               </ul>
             </section>
 
             <section className="legal-section" id="an-toan">
-              <h2>4. An toan giao thong</h2>
+              <h2>4. An toàn giao thông</h2>
               <div className="legal-highlight legal-highlight--warning">
-                <p><strong>Quan trong: Navinext la cong cu ho tro dan duong. Nguoi lai xe van phai chiu trach nhiem hoan toan ve hanh vi lai xe va tuan thu luat giao thong Nhat Ban.</strong></p>
+                <p><strong>Quan trọng: Navinext là công cụ hỗ trợ dẫn đường. Người lái xe vẫn phải chịu trách nhiệm hoàn toàn về hành vi lái xe và tuân thủ luật giao thông Nhật Bản.</strong></p>
               </div>
-              <p>Khi su dung Navinext, ban phai:</p>
+              <p>Khi sử dụng Navinext, bạn phải:</p>
               <ul>
-                <li>Tuan thu day du luat giao thong Nhat Ban</li>
-                <li>Tap trung quan sat duong khi lai xe</li>
-                <li><strong>Khong thao tac ung dung khi xe dang di chuyen</strong> (vi pham Dieu 71 Luat Giao thong Nhat Ban)</li>
-                <li>Tu phan doan tinh huong giao thong thuc te, khong phu thuoc hoan toan vao AI</li>
-                <li>Dung xe o noi an toan truoc khi thao tac ung dung</li>
+                <li>Tuân thủ đầy đủ luật giao thông Nhật Bản</li>
+                <li>Tập trung quan sát đường khi lái xe</li>
+                <li><strong>Không thao tác ứng dụng khi xe đang di chuyển</strong> (vi phạm Điều 71 Luật Giao thông Nhật Bản)</li>
+                <li>Tự phán đoán tình huống giao thông thực tế, không phụ thuộc hoàn toàn vào AI</li>
+                <li>Dừng xe ở nơi an toàn trước khi thao tác ứng dụng</li>
               </ul>
-              <p>Navinext <strong>khong chiu trach nhiem</strong> ve tai nan, vi pham giao thong hoac thiet hai phat sinh tu viec su dung ung dung.</p>
+              <p>Navinext <strong>không chịu trách nhiệm</strong> về tai nạn, vi phạm giao thông hoặc thiệt hại phát sinh từ việc sử dụng ứng dụng.</p>
             </section>
 
             <section className="legal-section" id="apk">
-              <h2>5. Quy dinh ve APK/XAPK</h2>
+              <h2>5. Quy định về APK/XAPK</h2>
               <div className="legal-highlight legal-highlight--warning">
-                <p><strong>Canh bao:</strong> Navinext chi phan phoi chinh thuc qua <strong>Google Play Store</strong> va <strong>Apple App Store</strong>.</p>
+                <p><strong>Cảnh báo:</strong> Navinext chỉ phân phối chính thức qua <strong>Google Play Store</strong> và <strong>Apple App Store</strong>.</p>
               </div>
-              <p>Neu ban tai va cai dat ban APK/XAPK tu nguon khong chinh thuc:</p>
+              <p>Nếu bạn tải và cài đặt bản APK/XAPK từ nguồn không chính thức:</p>
               <ul>
-                <li>Chung toi <strong>khong dam bao tinh an toan</strong> cua ban cai dat do</li>
-                <li>File co the bi chinh sua, chen ma doc hoac danh cap du lieu</li>
-                <li>Ban tu chiu <strong>toan bo rui ro</strong> ve bao mat va du lieu ca nhan</li>
-                <li>Chung toi khong ho tro ky thuat cho cac ban cai dat khong chinh thuc</li>
-                <li>Viec tu y can thiep vao ma nguon (reverse engineering, decompile) la <strong>vi pham dieu khoan</strong></li>
+                <li>Chúng tôi <strong>không đảm bảo tính an toàn</strong> của bản cài đặt đó</li>
+                <li>File có thể bị chỉnh sửa, chèn mã độc hoặc đánh cắp dữ liệu</li>
+                <li>Bạn tự chịu <strong>toàn bộ rủi ro</strong> về bảo mật và dữ liệu cá nhân</li>
+                <li>Chúng tôi không hỗ trợ kỹ thuật cho các bản cài đặt không chính thức</li>
+                <li>Việc tự ý can thiệp vào mã nguồn (reverse engineering, decompile) là <strong>vi phạm điều khoản</strong></li>
               </ul>
             </section>
 
             <section className="legal-section" id="subscription">
-              <h2>6. Goi Subscription</h2>
-              <h3>6.1 Cac goi dich vu</h3>
+              <h2>6. Gói Subscription</h2>
+              <h3>6.1 Các gói dịch vụ</h3>
               <ul>
-                <li><strong>Early Bird (Mien phi):</strong> Dan duong co ban, dich bien bao (gioi han), canh bao ngo hep</li>
-                <li><strong>Navigator Pro:</strong> Day du tinh nang AI, OBD-II, khong gioi han dich bien bao, uu tien ho tro</li>
-                <li><strong>Fleet Master:</strong> Goi doanh nghiep, quan ly nhieu xe, API tich hop, lien he de bao gia</li>
+                <li><strong>Early Bird (Miễn phí):</strong> Dẫn đường cơ bản, dịch biển báo (giới hạn), cảnh báo ngõ hẹp</li>
+                <li><strong>Navigator Pro:</strong> Đầy đủ tính năng AI, OBD-II, không giới hạn dịch biển báo, ưu tiên hỗ trợ</li>
+                <li><strong>Fleet Master:</strong> Gói doanh nghiệp, quản lý nhiều xe, API tích hợp, liên hệ để báo giá</li>
               </ul>
-              <h3>6.2 Thanh toan</h3>
+              <h3>6.2 Thanh toán</h3>
               <ul>
-                <li>Phi duoc tinh theo chu ky <strong>thang hoac nam</strong></li>
-                <li>Thanh toan qua Google Play / Apple App Store</li>
-                <li>Goi nam duoc <strong>giam 17%</strong> so voi goi thang</li>
+                <li>Phí được tính theo chu kỳ <strong>tháng hoặc năm</strong></li>
+                <li>Thanh toán qua Google Play / Apple App Store</li>
+                <li>Gói năm được <strong>giảm 17%</strong> so với gói tháng</li>
               </ul>
-              <h3>6.3 Gia han & huy</h3>
+              <h3>6.3 Gia hạn & hủy</h3>
               <ul>
-                <li>Goi tu dong gia han vao cuoi moi chu ky</li>
-                <li>Huy goi truoc it nhat <strong>24 gio</strong> truoc ngay gia han</li>
-                <li>Sau khi huy, ban van su dung duoc den het chu ky da thanh toan</li>
-                <li>Khong hoan tien cho phan chu ky chua su dung</li>
+                <li>Gói tự động gia hạn vào cuối mỗi chu kỳ</li>
+                <li>Hủy gói trước ít nhất <strong>24 giờ</strong> trước ngày gia hạn</li>
+                <li>Sau khi hủy, bạn vẫn sử dụng được đến hết chu kỳ đã thanh toán</li>
+                <li>Không hoàn tiền cho phần chu kỳ chưa sử dụng</li>
               </ul>
             </section>
 
             <section className="legal-section" id="quy-tac">
-              <h2>7. Quy tac su dung</h2>
-              <p>Khi su dung Navinext, ban <strong>khong duoc</strong>:</p>
+              <h2>7. Quy tắc sử dụng</h2>
+              <p>Khi sử dụng Navinext, bạn <strong>không được</strong>:</p>
               <ul>
-                <li>Su dung ung dung cho muc dich bat hop phap</li>
-                <li>Can thiep, reverse engineer hoac decompile ma nguon</li>
-                <li>Sao chep, phan phoi lai noi dung hoac du lieu ban do</li>
-                <li>Su dung bot, crawler hoac cong cu tu dong trai phep</li>
-                <li>Gia mao thong tin, vi tri hoac danh tinh</li>
-                <li>Spam hoac lam dung he thong bao cao cong dong</li>
-                <li>Su dung dien thoai khi dang lai xe</li>
+                <li>Sử dụng ứng dụng cho mục đích bất hợp pháp</li>
+                <li>Can thiệp, reverse engineer hoặc decompile mã nguồn</li>
+                <li>Sao chép, phân phối lại nội dung hoặc dữ liệu bản đồ</li>
+                <li>Sử dụng bot, crawler hoặc công cụ tự động trái phép</li>
+                <li>Giả mạo thông tin, vị trí hoặc danh tính</li>
+                <li>Spam hoặc lạm dụng hệ thống báo cáo cộng đồng</li>
+                <li>Sử dụng điện thoại khi đang lái xe</li>
               </ul>
             </section>
 
             <section className="legal-section" id="so-huu">
-              <h2>8. So huu tri tue</h2>
-              <p>Tat ca noi dung, thiet ke, ma nguon, thuat toan AI, du lieu ban do va thuong hieu Navinext thuoc quyen so huu cua chung toi. Ban khong duoc sao chep, sua doi hoac phan phoi bat ky phan nao ma khong co su cho phep bang van ban.</p>
+              <h2>8. Sở hữu trí tuệ</h2>
+              <p>Tất cả nội dung, thiết kế, mã nguồn, thuật toán AI, dữ liệu bản đồ và thương hiệu Navinext thuộc quyền sở hữu của chúng tôi. Bạn không được sao chép, sửa đổi hoặc phân phối bất kỳ phần nào mà không có sự cho phép bằng văn bản.</p>
             </section>
 
             <section className="legal-section" id="gioi-han">
-              <h2>9. Gioi han trach nhiem</h2>
+              <h2>9. Giới hạn trách nhiệm</h2>
               <ul>
-                <li>Dich vu duoc cung cap "nguyen trang" (as-is)</li>
-                <li>Chung toi <strong>khong dam bao do chinh xac 100%</strong> cua dan duong, dich thuat bien bao va du lieu OBD-II</li>
-                <li>Khong chiu trach nhiem ve thiet hai gian tiep tu viec su dung dich vu</li>
-                <li>Du lieu gia xang cong dong mang tinh tham khao, co the khong chinh xac</li>
-                <li>Tong muc boi thuong khong vuot qua so tien ban da thanh toan trong 12 thang gan nhat</li>
+                <li>Dịch vụ được cung cấp "nguyên trạng" (as-is)</li>
+                <li>Chúng tôi <strong>không đảm bảo độ chính xác 100%</strong> của dẫn đường, dịch thuật biển báo và dữ liệu OBD-II</li>
+                <li>Không chịu trách nhiệm về thiệt hại gián tiếp từ việc sử dụng dịch vụ</li>
+                <li>Dữ liệu giá xăng cộng đồng mang tính tham khảo, có thể không chính xác</li>
+                <li>Tổng mức bồi thường không vượt quá số tiền bạn đã thanh toán trong 12 tháng gần nhất</li>
               </ul>
             </section>
 
             <section className="legal-section" id="cham-dut">
-              <h2>10. Cham dut dich vu</h2>
-              <p>Chung toi co quyen tam ngung hoac cham dut tai khoan neu:</p>
+              <h2>10. Chấm dứt dịch vụ</h2>
+              <p>Chúng tôi có quyền tạm ngưng hoặc chấm dứt tài khoản nếu:</p>
               <ul>
-                <li>Vi pham dieu khoan su dung</li>
-                <li>Su dung ban APK/XAPK khong chinh thuc</li>
-                <li>Can thiep vao ma nguon hoac he thong</li>
-                <li>Hoat dong gian lan hoac lam dung bao cao cong dong</li>
-                <li>Khong thanh toan phi dich vu (goi tra phi)</li>
+                <li>Vi phạm điều khoản sử dụng</li>
+                <li>Sử dụng bản APK/XAPK không chính thức</li>
+                <li>Can thiệp vào mã nguồn hoặc hệ thống</li>
+                <li>Hoạt động gian lận hoặc lạm dụng báo cáo cộng đồng</li>
+                <li>Không thanh toán phí dịch vụ (gói trả phí)</li>
               </ul>
             </section>
 
             <section className="legal-section" id="luat">
-              <h2>11. Luat ap dung</h2>
-              <p>Cac dieu khoan nay duoc dieu chinh boi phap luat Nhat Ban. Moi tranh chap se duoc giai quyet tai toa an co tham quyen tai Tokyo, Nhat Ban.</p>
-              <p>Chung toi co the cap nhat dieu khoan theo thoi gian. Thay doi se duoc thong bao truoc <strong>30 ngay</strong> qua ung dung hoac email.</p>
+              <h2>11. Luật áp dụng</h2>
+              <p>Các điều khoản này được điều chỉnh bởi pháp luật Nhật Bản. Mọi tranh chấp sẽ được giải quyết tại tòa án có thẩm quyền tại Tokyo, Nhật Bản.</p>
+              <p>Chúng tôi có thể cập nhật điều khoản theo thời gian. Thay đổi sẽ được thông báo trước <strong>30 ngày</strong> qua ứng dụng hoặc email.</p>
             </section>
 
             <section className="legal-section" id="lien-he">
-              <h2>12. Lien he</h2>
-              <p>Neu co cau hoi ve dieu khoan su dung:</p>
+              <h2>12. Liên hệ</h2>
+              <p>Nếu có câu hỏi về điều khoản sử dụng:</p>
               <ul>
                 <li>Email: <a href="mailto:support@navinext.jp">support@navinext.jp</a></li>
                 <li>Website: <a href="https://navinext.huynguyen.it.com">navinext.huynguyen.it.com</a></li>

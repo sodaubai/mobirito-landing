@@ -3,17 +3,17 @@ import { useState, useEffect } from "react";
 import ScrollReveal from "./ScrollReveal";
 
 const SECTIONS = [
-  { id: "thu-thap", title: "Thu thap du lieu" },
-  { id: "muc-dich", title: "Muc dich su dung" },
-  { id: "bao-mat", title: "Cam ket bao mat" },
-  { id: "quyen", title: "Quyen cua nguoi dung" },
-  { id: "camera", title: "Chinh sach camera AI" },
-  { id: "obd", title: "Du lieu OBD-II" },
-  { id: "cong-dong", title: "Du lieu cong dong" },
-  { id: "cookie", title: "Cookie & theo doi" },
-  { id: "luu-tru", title: "Luu tru du lieu" },
-  { id: "thay-doi", title: "Thay doi chinh sach" },
-  { id: "lien-he", title: "Lien he" },
+  { id: "thu-thap", title: "Thu thập dữ liệu" },
+  { id: "muc-dich", title: "Mục đích sử dụng" },
+  { id: "bao-mat", title: "Cam kết bảo mật" },
+  { id: "quyen", title: "Quyền của người dùng" },
+  { id: "camera", title: "Chính sách camera AI" },
+  { id: "obd", title: "Dữ liệu OBD-II" },
+  { id: "cong-dong", title: "Dữ liệu cộng đồng" },
+  { id: "cookie", title: "Cookie & theo dõi" },
+  { id: "luu-tru", title: "Lưu trữ dữ liệu" },
+  { id: "thay-doi", title: "Thay đổi chính sách" },
+  { id: "lien-he", title: "Liên hệ" },
 ];
 
 function BackToTop() {
@@ -34,7 +34,7 @@ function BackToTop() {
 function TOC({ sections, activeId }) {
   return (
     <nav className="legal-toc">
-      <p className="legal-toc-title">Muc luc</p>
+      <p className="legal-toc-title">Mục lục</p>
       <ul>
         {sections.map((s, i) => (
           <li key={s.id}>
@@ -72,8 +72,8 @@ export default function PrivacyPolicyPage() {
         <div className="container">
           <ScrollReveal>
             <p className="legal-hero-tag">NAVINEXT</p>
-            <h1 className="legal-hero-title">Chinh sach bao mat</h1>
-            <p className="legal-hero-desc">Cap nhat lan cuoi: 01/04/2026</p>
+            <h1 className="legal-hero-title">Chính sách bảo mật</h1>
+            <p className="legal-hero-desc">Cập nhật lần cuối: 01/04/2026</p>
           </ScrollReveal>
         </div>
       </section>
@@ -84,133 +84,133 @@ export default function PrivacyPolicyPage() {
         <div className="legal-content">
           <ScrollReveal>
             <section className="legal-section" id="thu-thap">
-              <h2>1. Du lieu chung toi thu thap</h2>
-              <h3>1.1 Du lieu vi tri (GPS)</h3>
-              <p>Navinext thu thap du lieu vi tri GPS trong qua trinh su dung tinh nang dan duong de cung cap huong dan lo trinh chinh xac, canh bao ngo hep va tinh toan khoang cach.</p>
-              <h3>1.2 Hinh anh tu camera AI (Dashcam)</h3>
-              <p>Camera AI chi su dung de <strong>nhan dien bien bao giao thong va dich sang tieng Viet</strong> theo thoi gian thuc. Hinh anh duoc xu ly tren thiet bi (on-device) hoac gui len server de phan tich AI.</p>
-              <p><strong>Cam ket:</strong> Navinext <strong>khong luu tru khuon mat nguoi di duong</strong>. Hinh anh chi duoc xu ly tam thoi de nhan dien bien bao, sau do bi xoa ngay lap tuc.</p>
-              <h3>1.3 Du lieu xe qua OBD-II</h3>
-              <p>Khi ket noi OBD-II, chung toi thu thap: toc do xe, muc nhien lieu, trang thai dong co, so km da di. Du lieu nay phuc vu tinh nang quan ly chi phi va canh bao bao tri.</p>
-              <h3>1.4 Thong tin tai khoan</h3>
+              <h2>1. Dữ liệu chúng tôi thu thập</h2>
+              <h3>1.1 Dữ liệu vị trí (GPS)</h3>
+              <p>Navinext thu thập dữ liệu vị trí GPS trong quá trình sử dụng tính năng dẫn đường để cung cấp hướng dẫn lộ trình chính xác, cảnh báo ngõ hẹp và tính toán khoảng cách.</p>
+              <h3>1.2 Hình ảnh từ camera AI (Dashcam)</h3>
+              <p>Camera AI chỉ sử dụng để <strong>nhận diện biển báo giao thông và dịch sang tiếng Việt</strong> theo thời gian thực. Hình ảnh được xử lý trên thiết bị (on-device) hoặc gửi lên server để phân tích AI.</p>
+              <p><strong>Cam kết:</strong> Navinext <strong>không lưu trữ khuôn mặt người đi đường</strong>. Hình ảnh chỉ được xử lý tạm thời để nhận diện biển báo, sau đó bị xóa ngay lập tức.</p>
+              <h3>1.3 Dữ liệu xe qua OBD-II</h3>
+              <p>Khi kết nối OBD-II, chúng tôi thu thập: tốc độ xe, mức nhiên liệu, trạng thái động cơ, số km đã đi. Dữ liệu này phục vụ tính năng quản lý chi phí và cảnh báo bảo trì.</p>
+              <h3>1.4 Thông tin tài khoản</h3>
               <ul>
-                <li>Ho ten, email khi dang ky</li>
-                <li>Thong tin xe (loai xe, bien so) de toi uu dan duong</li>
-                <li>Thong tin thiet bi (model, he dieu hanh, phien ban app)</li>
+                <li>Họ tên, email khi đăng ký</li>
+                <li>Thông tin xe (loại xe, biển số) để tối ưu dẫn đường</li>
+                <li>Thông tin thiết bị (model, hệ điều hành, phiên bản app)</li>
               </ul>
             </section>
 
             <section className="legal-section" id="muc-dich">
-              <h2>2. Muc dich su dung du lieu</h2>
+              <h2>2. Mục đích sử dụng dữ liệu</h2>
               <ul>
-                <li><strong>Toi uu lo trinh:</strong> Su dung GPS va du lieu giao thong cong dong de tim duong nhanh nhat, tranh ngo hep</li>
-                <li><strong>Canh bao an toan:</strong> Nhan dien bien bao, gioi han toc do, vung cam qua camera AI</li>
-                <li><strong>Cap nhat gia xang cong dong:</strong> Tong hop du lieu tu nguoi dung de hien thi gia xang chinh xac tai cac tram gan nhat</li>
-                <li><strong>Quan ly chi phi xe:</strong> Theo doi xang, phi cau duong, bao tri qua du lieu OBD-II</li>
-                <li><strong>Ca nhan hoa trai nghiem:</strong> Ghi nho tuyen duong thuong di, tuy chon ngon ngu</li>
-                <li><strong>Cai thien dich vu:</strong> Phan tich du lieu an danh de nang cap AI va ban do</li>
+                <li><strong>Tối ưu lộ trình:</strong> Sử dụng GPS và dữ liệu giao thông cộng đồng để tìm đường nhanh nhất, tránh ngõ hẹp</li>
+                <li><strong>Cảnh báo an toàn:</strong> Nhận diện biển báo, giới hạn tốc độ, vùng cấm qua camera AI</li>
+                <li><strong>Cập nhật giá xăng cộng đồng:</strong> Tổng hợp dữ liệu từ người dùng để hiển thị giá xăng chính xác tại các trạm gần nhất</li>
+                <li><strong>Quản lý chi phí xe:</strong> Theo dõi xăng, phí cầu đường, bảo trì qua dữ liệu OBD-II</li>
+                <li><strong>Cá nhân hóa trải nghiệm:</strong> Ghi nhớ tuyến đường thường đi, tùy chọn ngôn ngữ</li>
+                <li><strong>Cải thiện dịch vụ:</strong> Phân tích dữ liệu ẩn danh để nâng cấp AI và bản đồ</li>
               </ul>
             </section>
 
             <section className="legal-section" id="bao-mat">
-              <h2>3. Cam ket bao mat</h2>
+              <h2>3. Cam kết bảo mật</h2>
               <div className="legal-highlight">
-                <p><strong>Navinext cam ket khong ban thong tin ca nhan cua ban cho bat ky ben thu ba nao.</strong></p>
+                <p><strong>Navinext cam kết không bán thông tin cá nhân của bạn cho bất kỳ bên thứ ba nào.</strong></p>
               </div>
-              <p>Chung toi ap dung cac bien phap bao mat tieu chuan nganh:</p>
+              <p>Chúng tôi áp dụng các biện pháp bảo mật tiêu chuẩn ngành:</p>
               <ul>
-                <li>Ma hoa du lieu truyen tai bang TLS/SSL</li>
-                <li>Ma hoa du lieu luu tru (AES-256)</li>
-                <li>Kiem soat truy cap nghiem ngat theo nguyen tac toi thieu quyen (least privilege)</li>
-                <li>Kiem tra bao mat va penetration testing dinh ky</li>
-                <li>Du lieu camera AI duoc xu ly va xoa ngay, khong luu tru dai han</li>
+                <li>Mã hóa dữ liệu truyền tải bằng TLS/SSL</li>
+                <li>Mã hóa dữ liệu lưu trữ (AES-256)</li>
+                <li>Kiểm soát truy cập nghiêm ngặt theo nguyên tắc tối thiểu quyền (least privilege)</li>
+                <li>Kiểm tra bảo mật và penetration testing định kỳ</li>
+                <li>Dữ liệu camera AI được xử lý và xóa ngay, không lưu trữ dài hạn</li>
               </ul>
-              <p>Chung toi chi chia se du lieu trong cac truong hop:</p>
+              <p>Chúng tôi chỉ chia sẻ dữ liệu trong các trường hợp:</p>
               <ul>
-                <li>Voi su dong y cua ban</li>
-                <li>Voi doi tac ky thuat (xu ly thanh toan, luu tru cloud) theo hop dong bao mat nghiem ngat</li>
-                <li>Khi phap luat Nhat Ban yeu cau</li>
-                <li>Du lieu giao thong <strong>an danh hoa</strong> de phuc vu cong dong</li>
+                <li>Với sự đồng ý của bạn</li>
+                <li>Với đối tác kỹ thuật (xử lý thanh toán, lưu trữ cloud) theo hợp đồng bảo mật nghiêm ngặt</li>
+                <li>Khi pháp luật Nhật Bản yêu cầu</li>
+                <li>Dữ liệu giao thông <strong>ẩn danh hóa</strong> để phục vụ cộng đồng</li>
               </ul>
             </section>
 
             <section className="legal-section" id="quyen">
-              <h2>4. Quyen cua nguoi dung</h2>
-              <p>Ban co day du quyen kiem soat du lieu cua minh:</p>
+              <h2>4. Quyền của người dùng</h2>
+              <p>Bạn có đầy đủ quyền kiểm soát dữ liệu của mình:</p>
               <ul>
-                <li><strong>Xoa du lieu hanh trinh:</strong> Xoa lich su lo trinh bat ky luc nao trong Settings</li>
-                <li><strong>Tat chia se vi tri:</strong> Vo hieu hoa GPS sharing ma van dung dan duong co ban</li>
-                <li><strong>Tat camera AI:</strong> Ngung tinh nang nhan dien bien bao neu khong muon</li>
-                <li><strong>Xuat du lieu:</strong> Tai xuong toan bo du lieu ca nhan cua ban</li>
-                <li><strong>Xoa tai khoan:</strong> Yeu cau xoa toan bo tai khoan va du lieu lien quan</li>
-                <li><strong>Tu choi thong bao:</strong> Huy nhan email tiep thi bat ky luc nao</li>
+                <li><strong>Xóa dữ liệu hành trình:</strong> Xóa lịch sử lộ trình bất kỳ lúc nào trong Settings</li>
+                <li><strong>Tắt chia sẻ vị trí:</strong> Vô hiệu hóa GPS sharing mà vẫn dùng dẫn đường cơ bản</li>
+                <li><strong>Tắt camera AI:</strong> Ngưng tính năng nhận diện biển báo nếu không muốn</li>
+                <li><strong>Xuất dữ liệu:</strong> Tải xuống toàn bộ dữ liệu cá nhân của bạn</li>
+                <li><strong>Xóa tài khoản:</strong> Yêu cầu xóa toàn bộ tài khoản và dữ liệu liên quan</li>
+                <li><strong>Từ chối thông báo:</strong> Hủy nhận email tiếp thị bất kỳ lúc nào</li>
               </ul>
             </section>
 
             <section className="legal-section" id="camera">
-              <h2>5. Chinh sach camera AI</h2>
-              <p>Day la tinh nang quan trong cua Navinext, chung toi minh bach hoa quy trinh xu ly:</p>
+              <h2>5. Chính sách camera AI</h2>
+              <p>Đây là tính năng quan trọng của Navinext, chúng tôi minh bạch hóa quy trình xử lý:</p>
               <ul>
-                <li>Camera chi <strong>bat khi nguoi dung kich hoat</strong> tinh nang dan duong</li>
-                <li>Hinh anh duoc xu ly bang AI de nhan dien bien bao giao thong Nhat Ban</li>
-                <li>Ket qua dich duoc hien thi tren man hinh theo thoi gian thuc</li>
-                <li><strong>Khong nhan dien khuon mat</strong> nguoi di duong hay tai xe khac</li>
-                <li><strong>Khong ghi am</strong> am thanh tu moi truong</li>
-                <li>Hinh anh <strong>khong duoc luu tru</strong> sau khi xu ly xong</li>
+                <li>Camera chỉ <strong>bật khi người dùng kích hoạt</strong> tính năng dẫn đường</li>
+                <li>Hình ảnh được xử lý bằng AI để nhận diện biển báo giao thông Nhật Bản</li>
+                <li>Kết quả dịch được hiển thị trên màn hình theo thời gian thực</li>
+                <li><strong>Không nhận diện khuôn mặt</strong> người đi đường hay tài xế khác</li>
+                <li><strong>Không ghi âm</strong> âm thanh từ môi trường</li>
+                <li>Hình ảnh <strong>không được lưu trữ</strong> sau khi xử lý xong</li>
               </ul>
             </section>
 
             <section className="legal-section" id="obd">
-              <h2>6. Du lieu OBD-II</h2>
-              <p>Khi ban ket noi thiet bi OBD-II voi Navinext:</p>
+              <h2>6. Dữ liệu OBD-II</h2>
+              <p>Khi bạn kết nối thiết bị OBD-II với Navinext:</p>
               <ul>
-                <li>Du lieu chi duoc doc (read-only), Navinext <strong>khong can thiep vao he thong xe</strong></li>
-                <li>Thong tin thu thap: toc do, RPM, muc nhien lieu, nhiet do dong co, ma loi</li>
-                <li>Du lieu phuc vu: tinh toan chi phi xang, nhac bao tri, canh bao su co</li>
-                <li>Ban co the ngat ket noi OBD-II bat ky luc nao</li>
+                <li>Dữ liệu chỉ được đọc (read-only), Navinext <strong>không can thiệp vào hệ thống xe</strong></li>
+                <li>Thông tin thu thập: tốc độ, RPM, mức nhiên liệu, nhiệt độ động cơ, mã lỗi</li>
+                <li>Dữ liệu phục vụ: tính toán chi phí xăng, nhắc bảo trì, cảnh báo sự cố</li>
+                <li>Bạn có thể ngắt kết nối OBD-II bất kỳ lúc nào</li>
               </ul>
             </section>
 
             <section className="legal-section" id="cong-dong">
-              <h2>7. Du lieu cong dong</h2>
-              <p>Navinext su dung du lieu cong dong de cai thien trai nghiem cho tat ca nguoi dung:</p>
+              <h2>7. Dữ liệu cộng đồng</h2>
+              <p>Navinext sử dụng dữ liệu cộng đồng để cải thiện trải nghiệm cho tất cả người dùng:</p>
               <ul>
-                <li><strong>Gia xang:</strong> Nguoi dung bao gia xang tai cac tram, du lieu duoc tong hop an danh</li>
-                <li><strong>Tinh trang giao thong:</strong> Du lieu luu luong tu GPS duoc an danh hoa de canh bao ket xe</li>
-                <li><strong>Canh bao ngo hep:</strong> Bao cao tu cong dong ve duong hep, kho di</li>
+                <li><strong>Giá xăng:</strong> Người dùng báo giá xăng tại các trạm, dữ liệu được tổng hợp ẩn danh</li>
+                <li><strong>Tình trạng giao thông:</strong> Dữ liệu lưu lượng từ GPS được ẩn danh hóa để cảnh báo kẹt xe</li>
+                <li><strong>Cảnh báo ngõ hẹp:</strong> Báo cáo từ cộng đồng về đường hẹp, khó đi</li>
               </ul>
-              <p>Moi du lieu cong dong deu duoc <strong>an danh hoa</strong> truoc khi tong hop. Khong ai co the truy nguoc den ca nhan ban.</p>
+              <p>Mọi dữ liệu cộng đồng đều được <strong>ẩn danh hóa</strong> trước khi tổng hợp. Không ai có thể truy ngược đến cá nhân bạn.</p>
             </section>
 
             <section className="legal-section" id="cookie">
-              <h2>8. Cookie & cong nghe theo doi</h2>
+              <h2>8. Cookie & công nghệ theo dõi</h2>
               <ul>
-                <li>Duy tri phien dang nhap</li>
-                <li>Ghi nho tuy chon ca nhan (ngon ngu, don vi do)</li>
-                <li>Phan tich hieu suat ung dung (analytics an danh)</li>
+                <li>Duy trì phiên đăng nhập</li>
+                <li>Ghi nhớ tùy chọn cá nhân (ngôn ngữ, đơn vị đo)</li>
+                <li>Phân tích hiệu suất ứng dụng (analytics ẩn danh)</li>
               </ul>
-              <p>Chung toi <strong>khong su dung cookie</strong> de theo doi hoat dong cua ban tren cac website khac.</p>
+              <p>Chúng tôi <strong>không sử dụng cookie</strong> để theo dõi hoạt động của bạn trên các website khác.</p>
             </section>
 
             <section className="legal-section" id="luu-tru">
-              <h2>9. Luu tru du lieu</h2>
-              <p>Du lieu ca nhan duoc luu tru trong thoi gian ban su dung dich vu. Khi ban yeu cau xoa tai khoan:</p>
+              <h2>9. Lưu trữ dữ liệu</h2>
+              <p>Dữ liệu cá nhân được lưu trữ trong thời gian bạn sử dụng dịch vụ. Khi bạn yêu cầu xóa tài khoản:</p>
               <ul>
-                <li>Du lieu ca nhan: xoa trong vong <strong>30 ngay</strong></li>
-                <li>Du lieu hanh trinh: xoa ngay lap tuc</li>
-                <li>Du lieu cong dong (an danh): duoc giu lai de phuc vu cong dong</li>
-                <li>Du lieu thanh toan: luu tru theo yeu cau phap luat Nhat Ban</li>
+                <li>Dữ liệu cá nhân: xóa trong vòng <strong>30 ngày</strong></li>
+                <li>Dữ liệu hành trình: xóa ngay lập tức</li>
+                <li>Dữ liệu cộng đồng (ẩn danh): được giữ lại để phục vụ cộng đồng</li>
+                <li>Dữ liệu thanh toán: lưu trữ theo yêu cầu pháp luật Nhật Bản</li>
               </ul>
             </section>
 
             <section className="legal-section" id="thay-doi">
-              <h2>10. Thay doi chinh sach</h2>
-              <p>Chung toi co the cap nhat chinh sach nay. Moi thay doi quan trong se duoc thong bao truoc <strong>30 ngay</strong> qua ung dung hoac email. Viec tiep tuc su dung dich vu dong nghia ban chap nhan chinh sach moi.</p>
+              <h2>10. Thay đổi chính sách</h2>
+              <p>Chúng tôi có thể cập nhật chính sách này. Mọi thay đổi quan trọng sẽ được thông báo trước <strong>30 ngày</strong> qua ứng dụng hoặc email. Việc tiếp tục sử dụng dịch vụ đồng nghĩa bạn chấp nhận chính sách mới.</p>
             </section>
 
             <section className="legal-section" id="lien-he">
-              <h2>11. Lien he</h2>
-              <p>Neu co cau hoi ve quyen rieng tu hoac du lieu ca nhan:</p>
+              <h2>11. Liên hệ</h2>
+              <p>Nếu có câu hỏi về quyền riêng tư hoặc dữ liệu cá nhân:</p>
               <ul>
                 <li>Email: <a href="mailto:support@navinext.jp">support@navinext.jp</a></li>
                 <li>Website: <a href="https://navinext.huynguyen.it.com">navinext.huynguyen.it.com</a></li>
