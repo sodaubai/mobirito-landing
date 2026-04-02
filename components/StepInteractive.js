@@ -55,68 +55,52 @@ function AndroidTab({ blok }) {
   const apkUrl = blok?.apk_url || "#";
 
   return (
-    <div className="journey-steps">
-      <div className="journey-step">
-        <div className="journey-step-left">
-          <StepNumber n={1} />
-          <div className="journey-step-line" />
-        </div>
-        <div className="journey-step-content">
-          <h3>{"Sở hữu Companion App"}</h3>
-          <p>{"Tải Navinext về smartphone để lên kế hoạch hành trình và quản lý chi phí mọi lúc mọi nơi."}</p>
-          <div className="journey-cta-row">
-            <a href={playUrl} target="_blank" rel="noopener noreferrer" className="journey-btn-primary" onClick={() => trackEvent("click_install_android_playstore")}>
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.72.536-.893l.073-.027zm.524-.292L14.5 7.5l-2.9 2.9L4.133 1.522zM15.9 8.9l2.7 1.55a1 1 0 010 1.7l-2.7 1.55L12.6 12l3.3-3.1zM4.133 22.478L11.6 13.6l2.9 2.9-9.843 5.69-.524.288z"/></svg>
-              {"Tải trên Google Play"}
-            </a>
-            <div className="journey-qr-wrap">
-              <button className="journey-btn-outline" onClick={() => { trackEvent("click_install_android_qr"); setQrOpen(!qrOpen); }}>
-                <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M0 0h7v7H0zm1 1v5h5V1zm1 1h3v3H2zm7-2h7v7H9zm1 1v5h5V1zm1 1h3v3h-3zM0 9h7v7H0zm1 1v5h5v-5zm1 1h3v3H2zm10-1h1v1h-1zm-2 0h1v1h-1zm4 0h1v1h-1zm-4 2h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm-4 2h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1z"/></svg>
-                {"Mã QR"}
-              </button>
-              {qrOpen && <QRPopover onClose={() => setQrOpen(false)} />}
-            </div>
+    <div className="journey-cards">
+      <div className="journey-card">
+        <StepNumber n={1} />
+        <h3>{"\u0053\u1edf h\u1eefu Companion App"}</h3>
+        <p>{"\u0054\u1ea3i Navinext v\u1ec1 smartphone \u0111\u1ec3 l\u00ean k\u1ebf ho\u1ea1ch h\u00e0nh tr\u00ecnh v\u00e0 qu\u1ea3n l\u00fd chi ph\u00ed."}</p>
+        <div className="journey-card-cta">
+          <a href={playUrl} target="_blank" rel="noopener noreferrer" className="journey-btn-primary" onClick={() => trackEvent("click_install_android_playstore")}>
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.72.536-.893l.073-.027zm.524-.292L14.5 7.5l-2.9 2.9L4.133 1.522zM15.9 8.9l2.7 1.55a1 1 0 010 1.7l-2.7 1.55L12.6 12l3.3-3.1zM4.133 22.478L11.6 13.6l2.9 2.9-9.843 5.69-.524.288z"/></svg>
+            Google Play
+          </a>
+          <div className="journey-qr-wrap">
+            <button className="journey-btn-outline" onClick={() => { trackEvent("click_install_android_qr"); setQrOpen(!qrOpen); }}>
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M0 0h7v7H0zm1 1v5h5V1zm1 1h3v3H2zm7-2h7v7H9zm1 1v5h5V1zm1 1h3v3h-3zM0 9h7v7H0zm1 1v5h5v-5zm1 1h3v3H2zm10-1h1v1h-1zm-2 0h1v1h-1zm4 0h1v1h-1zm-4 2h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm-4 2h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1z"/></svg>
+              QR
+            </button>
+            {qrOpen && <QRPopover onClose={() => setQrOpen(false)} />}
           </div>
         </div>
       </div>
 
-      <div className="journey-step">
-        <div className="journey-step-left">
-          <StepNumber n={2} />
-          <div className="journey-step-line" />
-        </div>
-        <div className="journey-step-content">
-          <h3>{"Trang bị cho Màn hình Xe"}</h3>
-          <p>{"Cài đặt trực tiếp Navinext lên Head Unit để tận hưởng bản đồ AI tránh ngõ hẹp trên màn hình lớn."}</p>
-          <PushAnimation />
-          <div className="journey-method">
-            <div className="journey-method-badge">{"Tiện lợi"}</div>
-            <strong>Remote Push</strong>
-            <p>{"Đẩy app từ Google Play sang màn hình xe chỉ với 1 chạm. Không cần USB."}</p>
-          </div>
-          <div className="journey-method">
-            <div className="journey-method-badge alt">{"Dự phòng"}</div>
-            <strong>{"Cài bằng APK"}</strong>
-            <p>{"Dành cho màn hình không có Google Play Store."}</p>
-            <a href={apkUrl} target="_blank" rel="noopener noreferrer" className="journey-btn-outline sm" onClick={() => trackEvent("click_install_android_apk")}>
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              {"Tải APK cho màn hình ô tô"}
-            </a>
-          </div>
-        </div>
+      <div className="journey-card-arrow">
+        <svg viewBox="0 0 24 12" width="24" height="12"><path d="M0 6h20" stroke="rgba(241,90,34,0.4)" strokeWidth="1.5" strokeDasharray="4 3"/><path d="M17 2l5 4-5 4" fill="none" stroke="rgba(241,90,34,0.6)" strokeWidth="1.5"/></svg>
       </div>
 
-      <div className="journey-step last">
-        <div className="journey-step-left">
-          <StepNumber n={3} />
-        </div>
-        <div className="journey-step-content">
-          <h3>{"Đồng bộ & Khởi hành"}</h3>
-          <p>{"Đăng nhập tài khoản duy nhất. Mọi dữ liệu về trạm xăng, biển báo và lộ trình sẽ được đồng bộ tức thì."}</p>
-          <div className="journey-ready">
-            <span className="journey-ready-dot" />
-            Ready to Drive!
-          </div>
+      <div className="journey-card">
+        <StepNumber n={2} />
+        <h3>{"Trang b\u1ecb M\u00e0n h\u00ecnh Xe"}</h3>
+        <p>{"C\u00e0i Navinext l\u00ean Head Unit qua Remote Push ho\u1eb7c APK."}</p>
+        <PushAnimation />
+        <a href={apkUrl} target="_blank" rel="noopener noreferrer" className="journey-btn-outline sm" onClick={() => trackEvent("click_install_android_apk")}>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          {"T\u1ea3i APK"}
+        </a>
+      </div>
+
+      <div className="journey-card-arrow">
+        <svg viewBox="0 0 24 12" width="24" height="12"><path d="M0 6h20" stroke="rgba(241,90,34,0.4)" strokeWidth="1.5" strokeDasharray="4 3"/><path d="M17 2l5 4-5 4" fill="none" stroke="rgba(241,90,34,0.6)" strokeWidth="1.5"/></svg>
+      </div>
+
+      <div className="journey-card">
+        <StepNumber n={3} />
+        <h3>{"\u0110\u1ed3ng b\u1ed9 & Kh\u1edfi h\u00e0nh"}</h3>
+        <p>{"\u0110\u0103ng nh\u1eadp 1 l\u1ea7n, m\u1ecdi d\u1eef li\u1ec7u \u0111\u1ed3ng b\u1ed9 t\u1ee9c th\u00ec."}</p>
+        <div className="journey-ready">
+          <span className="journey-ready-dot" />
+          Ready to Drive!
         </div>
       </div>
     </div>
@@ -126,66 +110,24 @@ function AndroidTab({ blok }) {
 function IOSTab({ blok }) {
   const apkUrl = blok?.apk_url || "#";
   return (
-    <div className="journey-ios">
-      <div className="journey-ios-header">
-        <div className="journey-ios-icon">
-          <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        </div>
-        <h3>{"Dùng iPhone? Bạn vẫn có thể trải nghiệm Navinext trên xe!"}</h3>
-        <p>{"Navinext chạy độc lập trên "}<strong>{"Màn hình Android / Android Box"}</strong>{" của xe."}</p>
+    <div className="journey-ios-compact">
+      <div className="journey-ios-icon-sm">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
       </div>
-      <div className="journey-steps">
-        <div className="journey-step">
-          <div className="journey-step-left">
-            <StepNumber n={1} />
-            <div className="journey-step-line" />
-          </div>
-          <div className="journey-step-content">
-            <h3>{"Cài đặt trực tiếp trên màn hình xe"}</h3>
-            <div className="journey-method">
-              <div className="journey-method-badge">{"Cách 1"}</div>
-              <strong>{"Mở Store trên xe"}</strong>
-              <p>{"Mở Google Play Store trên màn hình xe, tìm “Navinext” và cài đặt."}</p>
-            </div>
-            <div className="journey-method">
-              <div className="journey-method-badge alt">{"Cách 2"}</div>
-              <strong>{"Cắm USB chứa APK"}</strong>
-              <p>{"Dành cho màn hình không có Store. Tải APK vào USB, cắm vào xe."}</p>
-              <a href={apkUrl} target="_blank" rel="noopener noreferrer" className="journey-btn-outline sm" onClick={() => trackEvent("click_install_ios_apk")}>
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                {"Tải tệp APK"}
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="journey-step">
-          <div className="journey-step-left">
-            <StepNumber n={2} />
-            <div className="journey-step-line" />
-          </div>
-          <div className="journey-step-content">
-            <h3>{"Quản lý qua Web/Cloud"}</h3>
-            <p>{"Dùng thiết bị Android phụ hoặc trình duyệt web để thiết lập lộ trình."}</p>
-            <p className="journey-ios-note">{"Tính năng Web Dashboard sẽ sớm ra mắt."}</p>
-          </div>
-        </div>
-        <div className="journey-step last">
-          <div className="journey-step-left">
-            <StepNumber n={3} />
-          </div>
-          <div className="journey-step-content">
-            <h3>{"Tận hưởng hành trình"}</h3>
-            <p>{"Apple Maps dẫn đường đi bộ, Navinext dẫn đường ô tô trên màn hình xe."}</p>
-            <div className="journey-ready">
-              <span className="journey-ready-dot" />
-              Ready to Drive!
-            </div>
-          </div>
-        </div>
+      <h3>{"D\u00f9ng iPhone? Navinext ch\u1ea1y \u0111\u1ed9c l\u1eadp tr\u00ean m\u00e0n h\u00ecnh xe!"}</h3>
+      <div className="journey-ios-steps">
+        <div className="journey-ios-step"><strong>1.</strong> {"C\u00e0i Navinext tr\u1ef1c ti\u1ebfp tr\u00ean m\u00e0n h\u00ecnh xe (Store ho\u1eb7c USB)"}</div>
+        <div className="journey-ios-step"><strong>2.</strong> {"D\u00f9ng thi\u1ebft b\u1ecb Android ph\u1ee5 ho\u1eb7c web \u0111\u1ec3 qu\u1ea3n l\u00fd"}</div>
+        <div className="journey-ios-step"><strong>3.</strong> {"Apple Maps \u0111i b\u1ed9, Navinext d\u1eabn \u0111\u01b0\u1eddng \u00f4 t\u00f4 tr\u00ean xe"}</div>
       </div>
+      <a href={apkUrl} target="_blank" rel="noopener noreferrer" className="journey-btn-outline sm" onClick={() => trackEvent("click_install_ios_apk")}>
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        {"T\u1ea3i t\u1ec7p APK"}
+      </a>
     </div>
   );
 }
+
 
 export function InstallJourney({ blok }) {
   const [tab, setTab] = useState("android");
