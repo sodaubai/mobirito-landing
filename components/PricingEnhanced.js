@@ -58,16 +58,13 @@ function AnimatedPrice({ price, isYearly }) {
   return <div className="price">{display}</div>;
 }
 
-const MOBILE_VISIBLE_COUNT = 5;
 
 function PricingCard({ p, idx, isYearly }) {
-  const [expanded, setExpanded] = useState(false);
   const isFeatured = p.is_featured;
   const isEarlyBird = idx === 2;
   const displayPrice = (isFeatured && isYearly) ? "\u00a59.800" : p.price;
   const displayPeriod = (isFeatured && isYearly) ? "M\u1ed7i n\u0103m" : p.billing_period;
   const features = p.features || [];
-  const hasMore = isFeatured && features.length > MOBILE_VISIBLE_COUNT;
 
   return (
     <div className={`price-card ${isFeatured ? "featured" : ""} ${isEarlyBird ? "early-bird" : ""}`}>
@@ -77,16 +74,11 @@ function PricingCard({ p, idx, isYearly }) {
         {isFeatured ? <AnimatedPrice price={displayPrice} isYearly={isYearly} /> : <div className="price">{displayPrice}</div>}
         <div className="period">{displayPeriod}</div>
       </div>
-      <ul className={`features ${hasMore && !expanded ? "features-collapsed" : ""}`}>
+      <ul className="features">
         {features.map((f, fi) => (
           <PricingFeatureItem key={f._uid || fi} text={f.text} enabled={f.enabled !== false} />
         ))}
       </ul>
-      {hasMore && (
-        <button className="features-toggle" onClick={() => setExpanded(!expanded)}>
-          {expanded ? "Thu g\u1ecdn \u25b2" : `Xem th\u00eam ${features.length - MOBILE_VISIBLE_COUNT} t\u00ednh n\u0103ng \u25bc`}
-        </button>
-      )}
       <div className="price-card-bottom">
         {isEarlyBird ? (
           <a href="/contact?issue=early-bird" className="btn btn-dark btn-sm pricing-cta">

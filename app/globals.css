@@ -230,7 +230,9 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
 
 @media (max-width: 768px) {
   .features-collapsed { max-height: 200px; overflow: hidden; position: relative; }
-  .features-collapsed::after { display: none; }
+  .features-collapsed::after { display: none !important; }
+  .price-card.featured .features-collapsed { max-height: none; overflow: visible; }
+  .price-card.featured .features-collapsed::after { display: none !important; content: none !important; }
   .features-toggle { display: block; }
 }
 
