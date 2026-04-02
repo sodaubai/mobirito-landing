@@ -85,20 +85,69 @@ function AndroidTab({ blok }) {
   );
 }
 
-function IOSTab() {
+function IOSTab({ blok }) {
+  const apkUrl = blok?.apk_url || "#";
   return (
     <div className="journey-ios">
-      <div className="journey-ios-icon">
-        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18.01" strokeWidth="2"/></svg>
+      <div className="journey-ios-header">
+        <div className="journey-ios-icon">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        </div>
+        <h3>Dùng iPhone? Bạn vẫn có thể trải nghiệm Navinext trên xe!</h3>
+        <p>Navinext chạy độc lập trên <strong>Màn hình Android / Android Box</strong> của xe. Không cần kết nối iPhone.</p>
       </div>
-      <h3>Dung iPhone? Ban van co the trai nghiem Navinext tren xe!</h3>
-      <p>Navinext chay doc lap tren <strong>Man hinh Android / Android Box</strong> cua xe. Ban chi can:</p>
-      <ol>
-        <li>Cai Navinext truc tiep tren man hinh xe (qua Play Store hoac APK)</li>
-        <li>Dang ky tai khoan tren man hinh xe</li>
-        <li>Bat dau su dung - khong can ket noi iPhone</li>
-      </ol>
-      <p className="journey-ios-note">Phien ban iOS Companion App se som ra mat de ho tro dong bo lo trinh tu iPhone.</p>
+
+      <div className="journey-steps">
+        <div className="journey-step">
+          <div className="journey-step-left">
+            <StepNumber n={1} />
+            <div className="journey-step-line" />
+          </div>
+          <div className="journey-step-content">
+            <h3>Cài đặt trực tiếp trên màn hình xe</h3>
+            <div className="journey-method">
+              <div className="journey-method-badge">Cách 1</div>
+              <strong>Mở Store trên xe</strong>
+              <p>Mở Google Play Store trên màn hình xe, tìm "Navinext" và cài đặt.</p>
+            </div>
+            <div className="journey-method">
+              <div className="journey-method-badge alt">Cách 2</div>
+              <strong>Cắm USB chứa APK</strong>
+              <p>Dành cho màn hình không có Store. Tải APK vào USB, cắm vào xe và cài đặt.</p>
+              <a href={apkUrl} target="_blank" rel="noopener noreferrer" className="journey-btn-outline sm" onClick={() => trackEvent("click_install_ios_apk")}>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Tải tệp APK
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="journey-step">
+          <div className="journey-step-left">
+            <StepNumber n={2} />
+            <div className="journey-step-line" />
+          </div>
+          <div className="journey-step-content">
+            <h3>Quản lý qua Web/Cloud</h3>
+            <p>Dùng thiết bị Android phụ hoặc trình duyệt web để thiết lập lộ trình và đồng bộ điểm yêu thích.</p>
+            <p className="journey-ios-note">Tính năng Web Dashboard sẽ sớm ra mắt.</p>
+          </div>
+        </div>
+
+        <div className="journey-step last">
+          <div className="journey-step-left">
+            <StepNumber n={3} />
+          </div>
+          <div className="journey-step-content">
+            <h3>Tận hưởng hành trình</h3>
+            <p>Apple Maps dẫn đường đi bộ, Navinext dẫn đường ô tô ngay trên màn hình xe.</p>
+            <div className="journey-ready">
+              <span className="journey-ready-dot" />
+              Ready to Drive!
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -119,7 +168,7 @@ export function InstallJourney({ blok }) {
         </button>
       </div>
 
-      {tab === "android" ? <AndroidTab blok={blok} /> : <IOSTab />}
+      {tab === "android" ? <AndroidTab blok={blok} /> : <IOSTab blok={blok} />}
     </div>
   );
 }
