@@ -76,28 +76,19 @@ const STEP_ICONS = [
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12h16"/><circle cx="4" cy="12" r="2"/><circle cx="20" cy="12" r="2"/><path d="M9 8l3 4-3 4"/><path d="M15 8l-3 4 3 4"/></svg>,
 ];
 
-function StepItem({ blok, index }) {
-  const paragraphs = blok.description?.split("\n\n") || [];
-  const hasNumbered = paragraphs.some(p => /^\d+\./.test(p));
+function StepItem({ blok, index, total }) {
   const icon = STEP_ICONS[index] || STEP_ICONS[0];
+  const isLast = index === total - 1;
   return (
     <div className="step-card">
       <div className="step-icon-wrap">
+        <div className="step-icon-pulse"></div>
         <div className="step-icon">{icon}</div>
         <span className="step-badge">{blok.step_number}</span>
       </div>
-      <h3>{blok.title}</h3>
-      {hasNumbered ? (
-        <ol className="step-list">
-          {paragraphs.map((p, i) => {
-            if (p.startsWith("Lưu ý:")) return <p key={i} style={{fontStyle:"italic",color:"var(--orange)",fontSize:13,marginTop:8}}>{p}</p>;
-            const text = p.replace(/^\d+\.\s*/, "");
-            return <li key={i}>{text}</li>;
-          })}
-        </ol>
-      ) : (
-        paragraphs.map((p, i) => <p key={i} style={p.startsWith("Lưu ý:") ? {fontStyle:"italic",color:"var(--orange)",fontSize:13} : undefined}>{p}</p>)
-      )}
+      <h3 className="step-title">{blok.title}</h3>
+      <p className="step-desc">{blok.description?.split("\n\n").map((p, i) => <span key={i}>{i > 0 && <br/>}{p}</span>)}</p>
+      {isLast && <div className="step-status"><span className="step-status-dot"></span>Ready to Drive!</div>}
     </div>
   );
 }
@@ -331,7 +322,7 @@ function StepsSection({ blok }) {
       <div className="container">
         <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center",color:isDark?"#fff":undefined}}>{blok.heading}</h2>
         {blok.description && <p className="section-desc" style={{margin:"0 auto 32px",textAlign:"center",color:isDark?"rgba(255,255,255,0.7)":undefined}}>{blok.description}</p>}
-        <div className="steps-grid">{blok.steps?.map((s, i) => (<><StepItem key={s._uid} blok={s} index={i} />{i < blok.steps.length - 1 && <div className="step-connector"><svg viewBox="0 0 40 24"><path d="M0 12h40" stroke="rgba(241,90,34,0.4)" strokeWidth="2" strokeDasharray="6 4"/><path d="M32 6l8 6-8 6" fill="none" stroke="rgba(241,90,34,0.6)" strokeWidth="2"/></svg></div>}</>))}</div>
+        <div className="steps-grid">{blok.steps?.map((s, i) => (<><StepItem key={s._uid} blok={s} index={i} total={blok.steps.length} />{i < blok.steps.length - 1 && <div className="step-connector"><svg viewBox="0 0 40 24"><path d="M0 12h40" stroke="rgba(241,90,34,0.4)" strokeWidth="2" strokeDasharray="6 4"/><path d="M32 6l8 6-8 6" fill="none" stroke="rgba(241,90,34,0.6)" strokeWidth="2"/></svg></div>}</>))}</div>
       </div>
     </section>
   );
