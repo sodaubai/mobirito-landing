@@ -89,7 +89,7 @@ function PricingCard({ p, idx, isYearly }) {
       )}
       <div className="price-card-bottom">
         {isEarlyBird ? (
-          <a href="/contact" className="btn btn-dark btn-sm pricing-cta">
+          <a href="/contact?issue=early-bird" className="btn btn-dark btn-sm pricing-cta">
             {p.cta_label}
           </a>
         ) : (

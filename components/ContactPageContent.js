@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import ScrollReveal from "./ScrollReveal";
 
 function FloatingInput({ label, name, type = "text", required = false }) {
@@ -121,6 +122,9 @@ const CONTACT_INFO = [
 ];
 
 export default function ContactPageContent() {
+  const searchParams = useSearchParams();
+  const issueParam = searchParams.get("issue");
+  const defaultIssue = issueParam === "early-bird" ? "Đăng ký Early Bird (-50%)" : "";
   const [sending, setSending] = useState(false);
   const [showPlane, setShowPlane] = useState(false);
   const [showToast, setShowToast] = useState(false);
@@ -250,7 +254,9 @@ export default function ContactPageContent() {
                   <FloatingSelect
                     label="Vấn đề cần hỗ trợ"
                     name="issue"
+                    defaultValue={defaultIssue}
                     options={[
+                      "Đăng ký Early Bird (-50%)",
                       "Cài đặt ứng dụng",
                       "Mua thiết bị OBD-II",
                       "Hợp tác đại lý",
