@@ -181,7 +181,7 @@ header { background: rgba(13,13,13,0.8); backdrop-filter: blur(12px); -webkit-ba
 .testimonial-card .text { font-size: 14px; color: rgba(255,255,255,0.7); }
 
 /* Pricing */
-.pricing-section { background: #0A0A0A; border-radius: 20px; padding: 20px 24px 20px; margin: 0 24px; color: var(--white); border: 1px solid rgba(255,255,255,0.06); }
+.pricing-section { background: #0A0A0A !important; border-radius: 20px; padding: 20px 24px 20px; margin: 0 24px; color: var(--white); border: 1px solid rgba(255,255,255,0.06); }
 .pricing-compact .section-heading { margin-bottom: 0; }
 /* Sticky billing toggle */
 .pricing-section { position: relative; }
