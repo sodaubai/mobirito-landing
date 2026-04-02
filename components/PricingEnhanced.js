@@ -80,6 +80,13 @@ export default function PricingEnhanced({ blok }) {
             );
           })}
         </div>
+
+        <div className="pricing-footnotes">
+          <p>{"*(1): Các cảnh báo dựa trên dữ liệu bản đồ thời gian thực giúp hạn chế tối đa vi phạm giao thông tại Nhật."}</p>
+          <p>{"*(2): Quảng cáo được tối ưu để không gây xao nhãn, ưu tiên trải nghiệm lái xe tập trung."}</p>
+          <p>{"*(3): Hệ thống đề xuất thông minh dựa trên Vehicle Profile đã đăng ký khi nhiên liệu xuống mức User-defined."}</p>
+          <p>{"*(4): Thiết bị hỗ trợ chuẩn ELM327."}</p>
+        </div>
       </div>
     </section>
   );
