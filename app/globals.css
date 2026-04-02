@@ -1328,3 +1328,4 @@ header { background: transparent; position: relative; z-index: 50; }
   .journey-card-arrow { transform: rotate(90deg); width: auto; height: 24px; padding-top: 0; }
   .journey-ios-steps { flex-direction: column; gap: 6px; }
 }
+/* v2 */
