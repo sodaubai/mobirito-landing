@@ -323,7 +323,7 @@ function StepsSection({ blok }) {
     <section className={`section steps-section${isDark ? " steps-dark" : ""}`}>
       <div className="container">
         <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center",color:isDark?"#fff":undefined}}>{blok.heading || "Bat dau hanh trinh cung Navinext"}</h2>
-        {blok.description && <p className="section-desc" style={{margin:"0 auto 32px",textAlign:"center",color:isDark?"rgba(255,255,255,0.7)":undefined}}>{blok.description}</p>}
+        {blok.description && <p className="section-desc" style={{margin:"0 auto 12px",textAlign:"center",color:isDark?"rgba(255,255,255,0.7)":undefined}}>{blok.description}</p>}
         <InstallJourney blok={blok} />
       </div>
     </section>
