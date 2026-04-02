@@ -114,14 +114,11 @@ export default function PricingEnhanced({ blok }) {
             <span className={!isYearly ? "billing-active" : ""} onClick={() => setIsYearly(false)}>
               {"Th\u00e1ng"}
             </span>
-            <div className="billing-switch" onClick={() => setIsYearly(!isYearly)}>
-              <div className={`billing-knob ${isYearly ? "billing-knob-right" : ""}`} />
-            </div>
             <span className={isYearly ? "billing-active" : ""} onClick={() => setIsYearly(true)}>
               {"N\u0103m"}
             </span>
             <span className={`billing-save-inline ${isYearly ? "billing-save-show" : ""}`}>
-              {"Ti\u1ebft ki\u1ec7m 17%"}
+              {"-17%"}
             </span>
           </div>
         </div>
