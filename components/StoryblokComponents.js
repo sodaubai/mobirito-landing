@@ -70,12 +70,22 @@ function StatItem({ blok }) {
   );
 }
 
-function StepItem({ blok }) {
+const STEP_ICONS = [
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18.01" strokeWidth="2"/><path d="M9 6h6M9 9h6"/></svg>,
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 18v3"/><path d="M7 8l3 3-3 3"/><line x1="13" y1="14" x2="17" y2="14"/></svg>,
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12h16"/><circle cx="4" cy="12" r="2"/><circle cx="20" cy="12" r="2"/><path d="M9 8l3 4-3 4"/><path d="M15 8l-3 4 3 4"/></svg>,
+];
+
+function StepItem({ blok, index }) {
   const paragraphs = blok.description?.split("\n\n") || [];
   const hasNumbered = paragraphs.some(p => /^\d+\./.test(p));
+  const icon = STEP_ICONS[index] || STEP_ICONS[0];
   return (
     <div className="step-card">
-      <div className="step-num">{blok.step_number}</div>
+      <div className="step-icon-wrap">
+        <div className="step-icon">{icon}</div>
+        <span className="step-badge">{blok.step_number}</span>
+      </div>
       <h3>{blok.title}</h3>
       {hasNumbered ? (
         <ol className="step-list">
@@ -321,7 +331,7 @@ function StepsSection({ blok }) {
       <div className="container">
         <h2 className="section-heading" style={{fontSize:blok.heading_size||undefined,textAlign:blok.heading_align||"center",color:isDark?"#fff":undefined}}>{blok.heading}</h2>
         {blok.description && <p className="section-desc" style={{margin:"0 auto 32px",textAlign:"center",color:isDark?"rgba(255,255,255,0.7)":undefined}}>{blok.description}</p>}
-        <div className="steps-grid">{blok.steps?.map((s) => <StepItem key={s._uid} blok={s} />)}</div>
+        <div className="steps-grid">{blok.steps?.map((s, i) => (<><StepItem key={s._uid} blok={s} index={i} />{i < blok.steps.length - 1 && <div className="step-connector"><svg viewBox="0 0 40 24"><path d="M0 12h40" stroke="rgba(241,90,34,0.4)" strokeWidth="2" strokeDasharray="6 4"/><path d="M32 6l8 6-8 6" fill="none" stroke="rgba(241,90,34,0.6)" strokeWidth="2"/></svg></div>}</>))}</div>
       </div>
     </section>
   );

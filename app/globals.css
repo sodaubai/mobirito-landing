@@ -127,13 +127,19 @@ header { background: transparent; position: relative; z-index: 50; }
 
 /* Steps */
 .steps-section { text-align: center; }
-.steps-grid { display: flex; gap: 0; margin-top: 32px; max-width: 900px; margin-left: auto; margin-right: auto; position: relative; align-items: flex-start; }
-.steps-grid::before { content: ""; position: absolute; top: 24px; left: 60px; right: 60px; height: 2px; background: rgba(255,255,255,0.12); z-index: 0; }
-.steps-dark .steps-grid::before { background: rgba(255,255,255,0.12); }
-.step-card { flex: 1; text-align: center; padding: 0 16px; position: relative; z-index: 1; }
-.step-num { width: 48px; height: 48px; background: var(--orange); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; margin: 0 auto 16px; box-shadow: 0 4px 16px rgba(241,90,34,0.3); position: relative; z-index: 2; }
-.step-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
-.step-card p { font-size: 13px; color: var(--gray-400); line-height: 1.6; margin-bottom: 6px; }
+.steps-grid { display: flex; gap: 0; margin-top: 32px; max-width: 960px; margin-left: auto; margin-right: auto; align-items: stretch; justify-content: center; }
+.steps-grid::before { display: none; }
+.step-card { flex: 1; text-align: center; padding: 28px 20px 24px; position: relative; z-index: 1; background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+.step-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(241,90,34,0.15); border-color: rgba(241,90,34,0.25); }
+.step-icon-wrap { position: relative; width: 56px; height: 56px; margin: 0 auto 16px; }
+.step-icon { width: 56px; height: 56px; background: linear-gradient(135deg, rgba(241,90,34,0.15), rgba(241,90,34,0.05)); border: 1px solid rgba(241,90,34,0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--orange); }
+.step-icon svg { width: 28px; height: 28px; }
+.step-badge { position: absolute; top: -6px; right: -6px; width: 22px; height: 22px; background: var(--orange); color: #fff; border-radius: 50%; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(241,90,34,0.4); }
+.step-connector { display: flex; align-items: center; justify-content: center; width: 48px; flex-shrink: 0; padding-top: 28px; }
+.step-connector svg { width: 40px; height: 24px; animation: dashFlow 1.5s linear infinite; }
+@keyframes dashFlow { to { stroke-dashoffset: -20; } }
+.step-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: #fff; }
+.step-card p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 6px; }
 .step-card p:last-child { margin-bottom: 0; }
 .step-list { list-style: none; counter-reset: step-item; padding: 0; margin: 0; }
 .step-list li { counter-increment: step-item; position: relative; padding-left: 28px; font-size: 14px; color: var(--gray-400); line-height: 1.7; margin-bottom: 10px; }
@@ -144,10 +150,10 @@ header { background: transparent; position: relative; z-index: 50; }
 
 /* Steps Dark Theme */
 .steps-dark { background: linear-gradient(135deg, #0D0D0D 0%, #1E1E1E 60%, #2C2C2C 100%); }
-.steps-dark .step-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
-.steps-dark .step-num { background: var(--orange); box-shadow: 0 4px 16px rgba(241,90,34,0.4); }
-.steps-dark .step-card h3 { color: #fff; }
-.steps-dark .step-card p { color: rgba(255,255,255,0.7); }
+
+
+
+
 
 /* Testimonials */
 .testimonials-section .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
@@ -243,6 +249,8 @@ header { background: transparent; position: relative; z-index: 50; }
   .hero h1 { font-size: 36px; }
   .features-grid .cards { grid-template-columns: repeat(2, 1fr); }
   .steps-grid { max-width: 700px; }
+  .step-connector { width: 32px; }
+  .step-connector svg { width: 28px; }
   .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
   .pricing-cards { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .img-text { gap: 32px; }
@@ -300,9 +308,9 @@ header { background: transparent; position: relative; z-index: 50; }
   /* Grids → stacked */
   .img-text, .download-cta, .footer-grid { grid-template-columns: 1fr; }
   .features-grid .cards, .testimonials-grid, .pricing-cards { grid-template-columns: 1fr; }
-  .steps-grid { flex-direction: column; align-items: center; max-width: 400px; }
-  .steps-grid::before { display: none; }
-  .step-card { padding: 12px 0; }
+  .steps-grid { flex-direction: column; align-items: stretch; max-width: 100%; gap: 0; }
+  .step-connector { width: auto; height: 32px; padding-top: 0; transform: rotate(90deg); }
+  .step-card { padding: 24px 20px; border-radius: 16px; }
 
   /* Typography */
   .section-heading { font-size: 24px; }
@@ -312,7 +320,7 @@ header { background: transparent; position: relative; z-index: 50; }
   /* Cards */
   
   .features-grid .card { padding: 24px; }
-  .step-card { padding: 12px 0; }
+  .step-card { padding: 20px 16px; }
   .testimonial-card { padding: 20px; }
 
   /* Reverse layout fix */
