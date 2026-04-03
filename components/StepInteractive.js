@@ -53,13 +53,17 @@ function AndroidTab({ blok }) {
   const [qrOpen, setQrOpen] = useState(false);
   const playUrl = getPlayStoreUrl(blok?.play_store_url);
   const apkUrl = blok?.apk_url || "#";
+  const steps = blok?.steps || [];
+  const s1 = steps[0] || {};
+  const s2 = steps[1] || {};
+  const s3 = steps[2] || {};
 
   return (
     <div className="journey-cards">
       <div className="journey-card">
-        <StepNumber n={1} />
-        <h3>{"\u0053\u1edf h\u1eefu Companion App"}</h3>
-        <p>{"\u0054\u1ea3i Navinext v\u1ec1 smartphone \u0111\u1ec3 l\u00ean k\u1ebf ho\u1ea1ch h\u00e0nh tr\u00ecnh v\u00e0 qu\u1ea3n l\u00fd chi ph\u00ed."}</p>
+        <StepNumber n={s1.step_number || 1} />
+        <h3>{s1.title || "S\u1edf h\u1eefu Companion App"}</h3>
+        <p>{s1.description || "T\u1ea3i Navinext v\u1ec1 smartphone \u0111\u1ec3 l\u00ean k\u1ebf ho\u1ea1ch h\u00e0nh tr\u00ecnh v\u00e0 qu\u1ea3n l\u00fd chi ph\u00ed."}</p>
         <div className="journey-card-cta">
           <a href={playUrl} target="_blank" rel="noopener noreferrer" className="journey-btn-primary" onClick={() => trackEvent("click_install_android_playstore")}>
             <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.72.536-.893l.073-.027zm.524-.292L14.5 7.5l-2.9 2.9L4.133 1.522zM15.9 8.9l2.7 1.55a1 1 0 010 1.7l-2.7 1.55L12.6 12l3.3-3.1zM4.133 22.478L11.6 13.6l2.9 2.9-9.843 5.69-.524.288z"/></svg>
@@ -80,9 +84,9 @@ function AndroidTab({ blok }) {
       </div>
 
       <div className="journey-card">
-        <StepNumber n={2} />
-        <h3>{"Trang b\u1ecb M\u00e0n h\u00ecnh Xe"}</h3>
-        <p>{"C\u00e0i Navinext l\u00ean Head Unit qua Remote Push ho\u1eb7c APK."}</p>
+        <StepNumber n={s2.step_number || 2} />
+        <h3>{s2.title || "Trang b\u1ecb M\u00e0n h\u00ecnh Xe"}</h3>
+        <p>{s2.description || "C\u00e0i Navinext l\u00ean Head Unit qua Remote Push ho\u1eb7c APK."}</p>
         <PushAnimation />
         <a href={apkUrl} target="_blank" rel="noopener noreferrer" className="journey-btn-outline sm" onClick={() => trackEvent("click_install_android_apk")}>
           <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -95,9 +99,9 @@ function AndroidTab({ blok }) {
       </div>
 
       <div className="journey-card">
-        <StepNumber n={3} />
-        <h3>{"\u0110\u1ed3ng b\u1ed9 & Kh\u1edfi h\u00e0nh"}</h3>
-        <p>{"\u0110\u0103ng nh\u1eadp 1 l\u1ea7n, m\u1ecdi d\u1eef li\u1ec7u \u0111\u1ed3ng b\u1ed9 t\u1ee9c th\u00ec."}</p>
+        <StepNumber n={s3.step_number || 3} />
+        <h3>{s3.title || "\u0110\u1ed3ng b\u1ed9 & Kh\u1edfi h\u00e0nh"}</h3>
+        <p>{s3.description || "\u0110\u0103ng nh\u1eadp 1 l\u1ea7n, m\u1ecdi d\u1eef li\u1ec7u \u0111\u1ed3ng b\u1ed9 t\u1ee9c th\u00ec."}</p>
         <div className="journey-ready">
           <span className="journey-ready-dot" />
           Ready to Drive!
