@@ -449,8 +449,9 @@ function PageHeroBanner({ blok }) {
   return (
     <section className="hero" style={{padding:"140px 0 60px",textAlign:"center"}}>
       <div className="container">
-        <span className="btn btn-primary btn-sm" style={{marginBottom:16}}>{blok.badge_text}</span>
-        <h1 style={{color:"#fff",fontSize:40,maxWidth:600,margin:"0 auto"}}>{blok.heading}</h1>
+        {blok.badge_text && <span className="btn btn-primary btn-sm" style={{marginBottom:16}}>{blok.badge_text}</span>}
+        <h1 style={{color:"#fff",fontSize:"clamp(24px, 4.5vw, 36px)",maxWidth:600,margin:"0 auto",letterSpacing:"-0.02em"}}>{blok.heading}</h1>
+        {blok.description && <p className="section-desc" style={{margin:"16px auto 0",maxWidth:500,color:"rgba(255,255,255,0.7)"}}>{blok.description}</p>}
       </div>
     </section>
   );
