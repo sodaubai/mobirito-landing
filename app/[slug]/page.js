@@ -24,7 +24,6 @@ export async function generateStaticParams() {
 }
 
 const CUSTOM_PAGES = {
-  service: FeaturesPageContent,
   portfolio: RoadmapPageContent,
   about: AboutPageContent,
   contact: ContactPageContent,
