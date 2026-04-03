@@ -159,7 +159,7 @@ function FooterColumn({ blok }) {
   return (
     <div>
       <h4>{blok.heading}</h4>
-      <ul>{blok.links?.map((l) => <li key={l._uid}><a href={l.link?.url || "#"}>{l.label}</a></li>)}</ul>
+      <ul>{blok.links?.map((l) => <li key={l._uid}><a href={l.link?.linktype === "story" ? ("/" + (l.link?.cached_url || "")) : (l.link?.url || "#")}>{l.label}</a></li>)}</ul>
     </div>
   );
 }
