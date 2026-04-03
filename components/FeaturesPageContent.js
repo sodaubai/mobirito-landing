@@ -6,14 +6,13 @@ const FEATURES = [
   {
     id: "hybrid",
     tag: "01",
-    title: "Hệ thống dẫn đường Hybrid",
-    subtitle: "Phá vỡ giới hạn",
-    desc: "Đồng bộ liền mạch giữa Headunit (màn hình xe) và Companion App trên điện thoại. Lập kế hoạch chuyến đi trên điện thoại, tự động \"đẩy\" lên hệ thống xe khi bắt đầu khởi hành.",
+    title: "Dẫn Đường Thông Minh & Tối Ưu Lộ Trình",
+    subtitle: "Đồng bộ mọi thiết bị",
+    desc: "Hệ thống chuyên dụng cho thị trường Nhật Bản, hỗ trợ thiết lập lộ trình thông minh giúp hạn chế các cung đường hẹp dưới 2.5m. Đồng bộ hóa tức thì giữa Companion App (Phone) và Navigation (Head Unit) giúp bạn lập kế hoạch mọi lúc mọi nơi.",
     points: [
-      "Đồng bộ real-time giữa điện thoại & màn hình xe",
-      "Lập kế hoạch chuyến đi trước khi lên xe",
-      "Tự động chuyển đổi thiết bị liền mạch",
-      "Hoạt động cả khi mất kết nối Internet",
+      "Tối ưu di chuyển an toàn trên các tuyến đường chính.",
+      "Đồng bộ hành trình giữa điện thoại và màn hình ô tô Android.",
+      "Giao diện tương thích hoàn hảo cho Head Unit từ 7 - 12 inch.",
     ],
     icon: "🔗",
     visual: "hybrid",
@@ -21,61 +20,42 @@ const FEATURES = [
   {
     id: "narrow",
     tag: "02",
-    title: "Thuật toán tránh ngõ hẹp 2.5m",
-    subtitle: "Không còn kẹt trong ngõ cụt",
-    desc: "AI phân tích và lọc dữ liệu bản đồ để loại bỏ các tuyến đường hẹp dưới 2.5m, vấn đề phổ biến khi lái xe tại Nhật Bản. Luôn dẫn bạn qua đường lớn, an toàn hơn.",
+    title: "Trợ Lý Cảnh Báo Giao Thông (JARTIC Integration)",
+    subtitle: "Người bạn đồng hành tin cậy",
+    desc: "Tích hợp dữ liệu giao thông thời gian thực giúp cảnh báo chủ động các khu vực hạn chế di chuyển (Restriction Alerts). Hệ thống hoạt động như một người bạn đồng hành tin cậy.",
     points: [
-      "Lọc tự động đường hẹp < 2.5m",
-      "So sánh: Google Maps vào ngõ cụt vs Navinext đi đường lớn",
-      "Dữ liệu cập nhật liên tục từ cộng đồng",
-      "Tối ưu cho xe ô tô tại thành phố Nhật",
+      "Cảnh báo biển cấm, làn xe buýt, khu vực giới hạn tốc độ theo khung giờ.",
+      "Dữ liệu giao thông chuẩn từ nguồn JARTIC Nhật Bản.",
+      "Chỉ dẫn giọng nói đa ngôn ngữ: Tiếng Việt, Anh, Nhật.",
     ],
     icon: "🛡️",
     visual: "narrow",
     hasComparison: true,
   },
   {
-    id: "vision",
-    tag: "03",
-    title: "Thị giác máy tính & Dịch biển báo",
-    subtitle: "Hiểu biển báo bằng tiếng Việt",
-    desc: "Công nghệ nhận diện biển báo qua Camera/Dashcam, tự động dịch và cảnh báo bằng tiếng Việt. Không cần biết tiếng Nhật để hiểu luật giao thông.",
-    points: [
-      "Biển cấm theo giờ (時間制限)",
-      "Biển dừng tạm thời - Tomare (止まれ)",
-      "Làn xe buýt chuyên dụng",
-      "Khu vực giới hạn tốc độ",
-      "Biển cấm rẽ, cấm đỗ",
-    ],
-    icon: "👁️",
-    visual: "vision",
-  },
-  {
     id: "cost",
-    tag: "04",
-    title: "Quản lý chi phí & Dữ liệu cộng đồng",
-    subtitle: "Crowdsource thông minh",
-    desc: "AI Dashcam tự nhận diện bảng giá tại các trạm xăng để cập nhật lên hệ thống chung. Tự động ghi chép nhật ký chi tiêu: xăng, phí cầu đường, bảo trì xe.",
+    tag: "03",
+    title: "Quản Lý Chi Phí & Trạm Xăng Bản Địa",
+    subtitle: "Tối ưu tài chính",
+    desc: "Tối ưu hóa tài chính với hệ thống theo dõi chi phí vận hành (Driving Cost Tracking). Hỗ trợ tìm kiếm nhanh trạm xăng và bãi đỗ xe giá rẻ từ nguồn dữ liệu nội địa uy tín.",
     points: [
-      "Nhận diện giá xăng tự động qua Dashcam",
-      "Bản đồ giá xăng real-time từ cộng đồng",
-      "Nhật ký chi tiêu tự động (xăng, cầu đường, bảo trì)",
-      "Báo cáo chi phí hàng tháng",
+      "Tự động tổng hợp và theo dõi chi phí vận hành hàng tháng.",
+      "Gợi ý trạm xăng/EV và bãi đỗ giá tốt nhất trên lộ trình.",
+      "Dữ liệu cập nhật liên tục, hỗ trợ tiết kiệm tài chính hiệu quả.",
     ],
     icon: "💰",
     visual: "cost",
   },
   {
     id: "obd",
-    tag: "05",
-    title: "Kết nối phần cứng OBD-II",
-    subtitle: "Theo dõi sức khỏe xe real-time",
-    desc: "Kết nối OBD-II để theo dõi sức khỏe xe theo thời gian thực. Cảnh báo lỗi động cơ, áp suất lốp và nhắc lịch bảo dưỡng tự động.",
+    tag: "04",
+    title: "Kết Nối OBD-II & Hệ Sinh Thái Trải Nghiệm",
+    subtitle: "Chẩn đoán sức khỏe xe",
+    desc: "Hỗ trợ kết nối qua cổng OBD-II (chuẩn ELM327) giúp chẩn đoán sức khỏe xe và theo dõi thông số vận hành thực tế. Đồng thời gợi ý các điểm du lịch, mua sắm hấp dẫn dọc hành trình.",
     points: [
-      "Đọc mã lỗi động cơ (DTC) realtime",
-      "Theo dõi áp suất lốp (nếu xe hỗ trợ TPMS)",
-      "Nhắc lịch bảo dưỡng dựa trên km thực tế",
-      "Cảnh báo nhiệt độ động cơ bất thường",
+      "Chẩn đoán lỗi xe cơ bản và theo dõi vận hành qua cổng OBD.",
+      "Hỗ trợ thiết bị kết nối chuẩn ELM327 phổ biến.",
+      "Gợi ý điểm dừng chân, du lịch và ưu đãi mua sắm dọc đường.",
     ],
     icon: "🔧",
     visual: "obd",
@@ -89,35 +69,20 @@ function FeatureVisual({ feature }) {
     return (
       <div className="feature-visual feature-visual--comparison">
         <div className="comparison-card comparison-card--bad">
-          <div className="comparison-label">❌ Google Maps</div>
+          <div className="comparison-label">⚠️ Không có cảnh báo</div>
           <div className="comparison-route">
             <div className="route-line route-line--bad"></div>
-            <span>Vào ngõ hẹp 1.8m → Kẹt</span>
+            <span>Vi phạm biển cấm → Phạt tiền</span>
           </div>
         </div>
         <div className="comparison-vs">VS</div>
         <div className="comparison-card comparison-card--good">
-          <div className="comparison-label">✅ Navinext</div>
+          <div className="comparison-label">✅ Với Navinext</div>
           <div className="comparison-route">
             <div className="route-line route-line--good"></div>
-            <span>Đường lớn 6m → An toàn</span>
+            <span>Cảnh báo trước → An toàn</span>
           </div>
         </div>
-      </div>
-    );
-  }
-
-  if (feature.id === "vision") {
-    const signs = ["止まれ\nDỪNG LẠI", "速度制限\n30 KM/H", "駐車禁止\nCẤM ĐỖ XE", "一方通行\nMỘT CHIỀU"];
-    return (
-      <div className="feature-visual feature-visual--signs">
-        {signs.map((s, i) => (
-          <div key={i} className="sign-card">
-            <div className="sign-jp">{s.split("\n")[0]}</div>
-            <div className="sign-arrow">→</div>
-            <div className="sign-vi">{s.split("\n")[1]}</div>
-          </div>
-        ))}
       </div>
     );
   }
@@ -193,10 +158,10 @@ export default function FeaturesPageContent() {
           <ScrollReveal>
             <p className="features-hero-tag">TÍNH NĂNG</p>
             <h1 className="features-hero-title">
-              Công nghệ AI giải quyết<br />mọi nỗi đau lái xe tại Nhật
+              Tính Năng Navinext
             </h1>
             <p className="features-hero-desc">
-              Khám phá cách Navinext sử dụng AI và dữ liệu cộng đồng để biến việc lái xe tại Nhật Bản trở nên an toàn hơn.
+              Giải pháp dẫn đường chuyên dụng cho người lái xe tại Nhật Bản
             </p>
           </ScrollReveal>
         </div>

@@ -2,9 +2,8 @@
 import { useState, useEffect } from "react";
 
 const SECTIONS = [
-  { id: "hybrid", label: "Dẫn đường Hybrid" },
-  { id: "narrow", label: "Tránh ngõ hẹp" },
-  { id: "vision", label: "Dịch biển báo" },
+  { id: "hybrid", label: "Dẫn đường & Đồng bộ" },
+  { id: "narrow", label: "Cảnh báo giao thông" },
   { id: "cost", label: "Quản lý chi phí" },
   { id: "obd", label: "Kết nối OBD-II" },
 ];
